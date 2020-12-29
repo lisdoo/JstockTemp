@@ -1,4 +1,4 @@
-package org.lisdoo.jstock.exchange;
+package com.lisdoo.jstock.exchange;
 
 import org.junit.Before;
 import org.junit.Test;

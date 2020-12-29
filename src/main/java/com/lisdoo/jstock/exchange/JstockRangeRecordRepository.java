@@ -13,10 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.lisdoo.jstock.exchange;
+package com.lisdoo.jstock.exchange;
 
 import org.springframework.data.repository.CrudRepository;
 
-public interface JstockRepository extends CrudRepository<Jstock, Long> {
+public interface JstockRangeRecordRepository extends CrudRepository<JstockRangeRecord, Long> {
 
 }

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.lisdoo.jstock.exchange;
+package com.lisdoo.jstock.exchange;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -27,19 +27,19 @@ import java.util.Date;
 @Data
 @NoArgsConstructor(force = true, access = AccessLevel.PRIVATE)
 @AllArgsConstructor
-public class JstockRange {
+public class JstockRangeRecord {
 
 	private final @Id @GeneratedValue Long id = null;
 
 	/*
 	 * 所属
 	 */
-	private @ManyToOne Jstock jstock;
+	private @ManyToOne JstockRange jstockRange;
 
 	/*
 	 * 基准价格
 	 */
-	private Float basePrise;
+	private Float basePrice;
 
 	/*
 	 * 交易策略
@@ -47,22 +47,7 @@ public class JstockRange {
 	private @ManyToOne JstockStrategy jstockStrategy;
 
 	/*
-	 * 总交易量
-	 */
-	private int volume;
-
-	/*
-	 * 总交易额
-	 */
-	private Float amount;
-
-	/*
 	 * 产生时间
 	 */
 	private Date createDate;
-
-	/*
-	 * 修改时间
-	 */
-	private Date modifyDate;
 }

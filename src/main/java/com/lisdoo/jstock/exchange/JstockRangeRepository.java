@@ -13,27 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.lisdoo.jstock.exchange;
+package com.lisdoo.jstock.exchange;
 
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import org.springframework.data.repository.CrudRepository;
 
-import javax.persistence.*;
-import java.util.Date;
+public interface JstockRangeRepository extends CrudRepository<JstockRange, Long> {
 
-@Entity
-@Data
-@NoArgsConstructor(force = true, access = AccessLevel.PRIVATE)
-@AllArgsConstructor
-@Table(name = "jstock_code", uniqueConstraints = {@UniqueConstraint(columnNames="code")})
-public class Jstock {
-
-	private final @Id @GeneratedValue Long id = null;
-	private String code;
-	private String name;
-	private String notes;
-	private Date createDate;
-	private Date modifyDate;
 }
