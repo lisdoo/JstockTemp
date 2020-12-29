@@ -52,6 +52,11 @@ public class JstockStrategy {
 	private String fre;
 
 	/*
+	 * 挡位比率
+	 */
+	private Float ratio;
+
+	/*
 	 * 产生时间
 	 */
 	private Date createDate;
