@@ -27,7 +27,7 @@ import java.util.Date;
 @Data
 @NoArgsConstructor(force = true, access = AccessLevel.PRIVATE)
 @AllArgsConstructor
-@Table(name = "jstock_code", uniqueConstraints = {@UniqueConstraint(columnNames="code")})
+@Table(name = "jstock", uniqueConstraints = {@UniqueConstraint(columnNames="code")})
 public class Jstock {
 
 	private final @Id @GeneratedValue Long id = null;
