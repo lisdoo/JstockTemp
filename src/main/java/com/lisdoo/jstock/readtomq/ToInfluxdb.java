@@ -7,7 +7,10 @@ import org.influxdb.InfluxDBFactory;
 import org.influxdb.dto.Point;
 import org.influxdb.dto.Query;
 
+import java.io.File;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Predicate;
@@ -34,13 +37,18 @@ public class ToInfluxdb {
             @Override
             public boolean test(JSONArray o) {
 
-                if (!jstockCode.equalsIgnoreCase(o.getString(33))) return true;
-
                 Data data = null;
                 try {
                     data = new Data(o);
                 } catch (Exception e) {
                     e.printStackTrace();
+                    return true;
+                }
+
+                /*
+                 * 跳过异常值
+                 */
+                if (!Filter.check(jstockCode, data)) {
                     return true;
                 }
 
@@ -258,16 +266,31 @@ public class ToInfluxdb {
             }
         };
 
-//        Read.testRead("H:\\jstock\\stocksinfo.2020-05-26_folder\\stocksinfo", p);
-//        Read.testRead("H:\\jstock\\stocksinfo.2020-05-25_folder\\stocksinfo", p);
-//        Read.testRead("H:\\jstock\\stocksinfo.2020-05-20_folder\\stocksinfo", p);
-//        Read.testRead("H:\\jstock\\stocksinfo.2020-05-19_folder\\stocksinfo", p);
-//        Read.testRead("H:\\jstock\\stocksinfo.2020-05-18_folder\\stocksinfo", p);
-//        Read.testRead("H:\\jstock\\stocksinfo.2020-05-15_folder\\stocksinfo", p);
-//        Read.testRead("H:\\jstock\\stocksinfo.2020-06-01_folder\\stocksinfo", p);
-        Read.testRead("I:\\jstock\\stocksinfo.2020-06-02_folder\\stocksinfo", p);
 
-        influxDB.flush();
+
+
+
+
+        String folderInStr = "I:\\jstock\\";
+        String[] foldersInStr = new File(folderInStr).list((f1, f2) -> {
+//            if (f2.contains("_folder")) return true;
+            if (f2.contains("out")) return true;
+//            if (f2.contains("stocksinfo.2020-01-10_folder")) return true;
+            return false;
+        });
+
+        Arrays.sort(foldersInStr);
+        for (String str:foldersInStr) {
+            System.out.println(str);
+        }
+
+        for (String folder: foldersInStr) {
+            for (String fullFolder : new File(folder).list()) {
+                System.out.println(fullFolder);
+                Read.testRead(fullFolder, p);
+            }
+        }
+
         influxDB.close();
     }
 }

@@ -1,23 +1,15 @@
 package com.lisdoo.jstock.readtomq;
 
-import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONException;
-import com.alibaba.fastjson.JSONObject;
 import com.lisdoo.jstock.MqProductFactory;
+import lombok.SneakyThrows;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStreamReader;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
-import java.util.Date;
-import java.util.Iterator;
 import java.util.function.Predicate;
 
-public class ToMq {
+public class ToFile {
 
     static SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddhhmmss");
 
@@ -26,8 +18,11 @@ public class ToMq {
         String jstockCode = "000089";
         MqProductFactory.get(jstockCode);
 
+        Write w = new Write("I:\\jstock\\out", jstockCode);
+
         Predicate p = new Predicate<JSONArray>() {
 
+            @SneakyThrows
             @Override
             public boolean test(JSONArray o) {
 
@@ -47,7 +42,7 @@ public class ToMq {
                 }
 
                 if (jstockCode.equalsIgnoreCase(data.getCode())) {
-                    MqProductFactory.get(jstockCode).convertAndSend(o);
+                    w.put(o);
                 }
                 return true;
             }
@@ -56,7 +51,6 @@ public class ToMq {
         String folderInStr = "I:\\jstock\\";
         String[] foldersInStr = new File(folderInStr).list((f1, f2) -> {
             if (f2.contains("_folder")) return true;
-            if (f2.contains("out")) return true;
 //            if (f2.contains("stocksinfo.2020-01-10_folder")) return true;
             return false;
         });
@@ -67,11 +61,11 @@ public class ToMq {
         }
 
         for (String folder: foldersInStr) {
-            for (String fullFolder : new File(folder).list()) {
-                System.out.println(fullFolder);
-                Read.testRead(fullFolder, p);
-            }
+            String fullFolder = folderInStr + "\\" + folder + "\\" + "stocksinfo";
+            System.out.println(fullFolder);
+            Read.testRead(fullFolder, p);
         }
+        w.close();
     }
 }
 
