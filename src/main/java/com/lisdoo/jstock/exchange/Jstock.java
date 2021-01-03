@@ -15,6 +15,7 @@
  */
 package com.lisdoo.jstock.exchange;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,6 +23,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Data
@@ -34,6 +36,8 @@ public class Jstock {
 	private String code;
 	private String name;
 	private String notes;
+	private @OneToMany(mappedBy = "jstock") @JsonManagedReference
+	List<JstockRange> jstockRanges;
 	private Date createDate;
 	private Date modifyDate;
 }

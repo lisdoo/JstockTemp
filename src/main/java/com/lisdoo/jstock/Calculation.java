@@ -5,11 +5,13 @@ import com.lisdoo.jstock.exchange.exception.NotInRangeException;
 import com.lisdoo.jstock.exchange.exception.NotInTheTradingCycle;
 
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.*;
 
 public class Calculation {
 
     public enum Frequency {HOUR, DAY, WEEK, MONTH, YEAR, ALWAYS};
+    static DecimalFormat decimalFormat=new DecimalFormat("#.##");
 
     /*
      * current price
@@ -42,6 +44,7 @@ public class Calculation {
         StringBuffer sb = new StringBuffer();
         for (Map.Entry<Integer, Float> entry: prices.entrySet()) {
             sb.insert(0, String.format("% 2d | % 6.2f%% | % 6.2f \r\n", entry.getKey(), entry.getValue()*100, basePrice*(1+entry.getValue())));
+            entry.setValue(Float.valueOf(decimalFormat.format(basePrice*(1+entry.getValue()))));
         }
         System.out.println(sb.toString());
 
@@ -54,7 +57,11 @@ public class Calculation {
     public static Map.Entry<Integer, Float> getRangePosition(Float currentPrice, Map<Integer, Float> range, Frequency fre, Date lastTrans, Date cur) throws NotInRangeException, NotInTheTradingCycle {
 
         Calendar last = Calendar.getInstance();
-        last.setTime(lastTrans);
+        if (lastTrans == null) {
+            last.setTimeInMillis(0);
+        } else {
+            last.setTime(lastTrans);
+        }
         Calendar current = Calendar.getInstance();
         if (cur != null) current.setTime(cur);
 
@@ -135,12 +142,22 @@ public class Calculation {
             Float min = Collections.min(range.values());
 
             if (currentPrice>min && currentPrice<max) {
+                // 比较前对Map中值进行排序
+                List<Map.Entry<Integer,Float>> list = new ArrayList<Map.Entry<Integer,Float>>(range.entrySet());
+                Collections.sort(list,new Comparator<Map.Entry<Integer,Float>>() {
+                    public int compare(Map.Entry<Integer, Float> o1,
+                                       Map.Entry<Integer, Float> o2) {
+                        Float f = ((Float)((Math.abs(currentPrice-o2.getValue()) - Math.abs(currentPrice-o1.getValue()))));
+                        Integer i = ((Float)(f*1000000)).intValue();
+                        return i;
+                    }
+                });
                 // 找出绝对值最小的
                 Stack<Map.Entry<Integer, Float>> stack = new Stack<>();
-                for (Map.Entry<Integer, Float> entry: range.entrySet()) {
+                for (Map.Entry<Integer, Float> entry: list) {
                     Float temp = Math.abs(currentPrice-entry.getValue());
                     if (stack.isEmpty()) stack.push(entry);
-                    if (currentPrice-stack.peek().getValue() > temp) {
+                    if (entry!=stack.peek() && Math.abs(currentPrice-stack.peek().getValue()) >= temp) {
                         stack.push(entry);
                     }
                 }
@@ -152,7 +169,7 @@ public class Calculation {
                     return stack.peek();
                 } else {
                     stack.pop();
-                    if (stack.isEmpty()) return null;
+                    if (stack.isEmpty()) throw new NotInRangeException("none position");
                     if (stack.peek().getKey() > 0 && currentPrice-stack.peek().getValue()>=0) {
                         return stack.peek();
                     } else if (stack.peek().getKey() < 0 && currentPrice-stack.peek().getValue()<=0) {
@@ -184,7 +201,7 @@ public class Calculation {
                 }
 
             } else {
-                throw new NotInRangeException();
+                throw new NotInRangeException(String.format("Current: %.2f  max: %.2f  min: %.2f", currentPrice, max, min));
             }
         } else {
             throw new NotInTheTradingCycle();
@@ -224,6 +241,7 @@ public class Calculation {
     public static void main(String[] args) throws NotInRangeException, IOException, NotInTheTradingCycle {
 
 //        createRangeValueTest();
+//        getRangeStrategyTest();
         getRangeStrategyTest2();
     }
 
@@ -250,6 +268,8 @@ public class Calculation {
         getRangePosition(0f,null, Frequency.MONTH, lastTransCalendar.getTime(), currentCalendar.getTime());
         lastTransCalendar.set(2019,11,28,17,20,20);
         getRangePosition(0f,null, Frequency.YEAR, lastTransCalendar.getTime(), currentCalendar.getTime());
+        lastTransCalendar.set(2019,11,28,17,20,20);
+        getRangePosition(0f,null, Frequency.YEAR, null, currentCalendar.getTime());
     }
 
     public static void getRangeStrategyTest2() throws NotInRangeException, NotInTheTradingCycle {
@@ -267,11 +287,15 @@ public class Calculation {
         prices.put(-4, 9.3f);
         prices.put(-5, 9.0f);
         Map.Entry<Integer, Float> entry = null;
+        entry = getRangePosition(10.71f,prices, Frequency.ALWAYS, currentCalendar.getTime(), currentCalendar.getTime());
+        System.out.println(entry == null? null: String.format("key:%d value:%.2f", entry.getKey(), entry.getValue()));
+        entry = getRangePosition(10.69f,prices, Frequency.ALWAYS, currentCalendar.getTime(), currentCalendar.getTime());
+        System.out.println(entry == null? null: String.format("key:%d value:%.2f", entry.getKey(), entry.getValue()));
         entry = getRangePosition(10.5f,prices, Frequency.ALWAYS, currentCalendar.getTime(), currentCalendar.getTime());
         System.out.println(entry == null? null: String.format("key:%d value:%.2f", entry.getKey(), entry.getValue()));
         entry = getRangePosition(9.8f,prices, Frequency.ALWAYS, currentCalendar.getTime(), currentCalendar.getTime());
         System.out.println(entry == null? null: String.format("key:%d value:%.2f", entry.getKey(), entry.getValue()));
-        entry = getRangePosition(9.5f,prices, Frequency.ALWAYS, currentCalendar.getTime(), currentCalendar.getTime());
+        entry = getRangePosition(9.49f,prices, Frequency.ALWAYS, currentCalendar.getTime(), currentCalendar.getTime());
         System.out.println(entry == null? null: String.format("key:%d value:%.2f", entry.getKey(), entry.getValue()));
         entry = getRangePosition(10.61f,prices, Frequency.ALWAYS, currentCalendar.getTime(), currentCalendar.getTime());
         System.out.println(entry == null? null: String.format("key:%d value:%.2f", entry.getKey(), entry.getValue()));

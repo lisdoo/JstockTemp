@@ -29,7 +29,7 @@ public class JstockConsumeHandler {
     }
 
 
-    void show(JSONArray ja) throws Exception {
+    public static void show(JSONArray ja) throws Exception {
 
         Object innerJo = ja;
         int i = 0;

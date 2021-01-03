@@ -15,6 +15,8 @@
  */
 package com.lisdoo.jstock.exchange;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,6 +24,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Data
@@ -34,7 +37,8 @@ public class JstockRange {
 	/*
 	 * 所属
 	 */
-	private @ManyToOne Jstock jstock;
+	private @ManyToOne @JsonBackReference
+	Jstock jstock;
 
 	/*
 	 * 基准价格
@@ -55,6 +59,27 @@ public class JstockRange {
 	 * 总交易额
 	 */
 	private Float amount;
+
+	/*
+	 * 平均价格
+	 */
+	private Float averagePrise;
+
+	/*
+	 * 引出的
+	 */
+	private @OneToMany(mappedBy = "parent") @JsonManagedReference
+	List<JstockRange> childrens;
+
+	/*
+	 * 引出的
+	 */
+	private @ManyToOne @JsonBackReference JstockRange parent;
+
+	/*
+	 * 档位
+	 */
+	private Integer position;
 
 	/*
 	 * 产生时间

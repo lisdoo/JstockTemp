@@ -17,6 +17,9 @@ package com.lisdoo.jstock.exchange;
 
 import org.springframework.data.repository.CrudRepository;
 
+import java.util.Optional;
+
 public interface JstockRepository extends CrudRepository<Jstock, Long> {
 
+    public Optional<Jstock> findByCode(String code) ;
 }
