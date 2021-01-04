@@ -67,6 +67,11 @@ public class JstockRangeRecord {
 	private Boolean conform;
 
 	/*
+	 * 报价时间
+	 */
+	private Date quoteTime;
+
+	/*
 	 * 产生时间
 	 */
 	private Date createDate;

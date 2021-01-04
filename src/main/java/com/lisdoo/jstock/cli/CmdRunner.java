@@ -15,7 +15,7 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 import java.io.StringReader;
 
-@Component
+//@Component
 public class CmdRunner implements CommandLineRunner {
 
     @Autowired

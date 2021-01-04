@@ -30,7 +30,7 @@ public class JstockRangeController {
     public Result<JstockRange> test() throws JsonProcessingException {
 
         Jstock j = jr.findByCode("000089").get();
-        JstockRange jr = new JstockRange(j, 0f,null, 0, 0f, 0f, null, null, null, null, null);
+        JstockRange jr = new JstockRange(j, 0f,null, 0, 0f, 0f, null, null, null, null, null, null,null, null);
 
         try {
             return ResultUtil.success(jrs.createJstockRange(jr));

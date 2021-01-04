@@ -87,6 +87,16 @@ public class JstockRange {
 	private String status;
 
 	/*
+	 * 最后交易档位
+	 */
+	private Integer lastPosition;
+
+	/*
+	 * 最后交易时间
+	 */
+	private Date lastTradeDate;
+
+	/*
 	 * 产生时间
 	 */
 	private Date createDate;

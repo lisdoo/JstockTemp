@@ -35,15 +35,20 @@ public class JstockRangeService {
         }
     }
 
-    public JstockRange updateJstockRangeStatus(JstockRange jr, String state) throws EntityNoneException {
+    public JstockRange updateJstockRangeStatus(JstockRange jr, Integer position, String state, Date quoteTime) throws EntityNoneException {
 
         if (!jrp.existsById(jr.getId())) {
             throw new EntityNoneException();
         }
 
+        JstockRange pjr = jr.getParent();
+        pjr.setLastPosition(position);
+        pjr.setLastTradeDate(new Date());
+        jrp.save(pjr);
+
         Calculation.Status status = Calculation.Status.valueOf(state);
 
-        JstockRangeRecord jrr = new JstockRangeRecord(jr, jr.getBasePrise(), jr.getJstockStrategy(), 0, 0f, null, false, new Date(), null);;
+        JstockRangeRecord jrr = new JstockRangeRecord(jr, jr.getBasePrise(), jr.getJstockStrategy(), 0, 0f, null, false, quoteTime, new Date(), null);;
 
         jr.setStatus(state);
         switch(status) {
