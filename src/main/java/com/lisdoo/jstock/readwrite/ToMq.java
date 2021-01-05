@@ -46,7 +46,7 @@ public class ToMq {
 
         String folderInStr = "I:\\jstock\\";
         String[] foldersInStr = new File(folderInStr).list((f1, f2) -> {
-            if (f2.contains("_folder")) return true;
+//            if (f2.contains("_folder")) return true;
             if (f2.contains("out")) return true;
 //            if (f2.contains("stocksinfo.2020-01-10_folder")) return true;
             return false;

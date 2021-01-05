@@ -48,7 +48,7 @@ public class JstockRangeService {
 
         Calculation.Status status = Calculation.Status.valueOf(state);
 
-        JstockRangeRecord jrr = new JstockRangeRecord(jr, jr.getBasePrise(), jr.getJstockStrategy(), 0, 0f, null, false, quoteTime, new Date(), null);;
+        JstockRangeRecord jrr = new JstockRangeRecord(pjr, jr, jr.getBasePrise(), jr.getJstockStrategy(), 0, 0f, null, false, quoteTime, new Date(), null);;
 
         jr.setStatus(state);
         switch(status) {

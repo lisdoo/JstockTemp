@@ -156,7 +156,7 @@ public class JstockProcessTests {
         System.out.println(om.writeValueAsString(j.get()));
 
         for (JstockRange jr: j.get().getJstockRanges()) {
-            for (int i=0; i<41000; i++) {
+            for (int i=0; i<1000; i++) {
                 if (makeRange(jr)) {
                     em.clear();
                     jr = jrr.findByJstock(j.get()).get();

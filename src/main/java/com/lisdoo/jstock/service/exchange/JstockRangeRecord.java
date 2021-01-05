@@ -32,6 +32,11 @@ public class JstockRangeRecord {
 	private final @Id @GeneratedValue Long id = null;
 
 	/*
+	 * 所属顶层
+	 */
+	private @ManyToOne JstockRange pJstockRange;
+
+	/*
 	 * 所属
 	 */
 	private @ManyToOne JstockRange jstockRange;
