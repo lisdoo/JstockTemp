@@ -82,6 +82,11 @@ public class JstockRange {
 	private Integer position;
 
 	/*
+	 * 档位价格
+	 */
+	private Float positionPrise;
+
+	/*
 	 * 状态
 	 */
 	private String status;
@@ -95,6 +100,12 @@ public class JstockRange {
 	 * 最后交易时间
 	 */
 	private Date lastTradeDate;
+
+	/*
+	 * 信息
+	 */
+	@Column(length=5000)
+	private String info;
 
 	/*
 	 * 产生时间

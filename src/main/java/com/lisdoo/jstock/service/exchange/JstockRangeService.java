@@ -1,15 +1,18 @@
 package com.lisdoo.jstock.service.exchange;
 
+import com.lisdoo.jstock.readwrite.Data;
 import com.lisdoo.jstock.service.exchange.exception.db.EntityExistException;
 import com.lisdoo.jstock.service.exchange.exception.db.EntityNoneException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
 import java.util.Date;
 import java.util.Optional;
 
 @Service
+@Transactional
 public class JstockRangeService {
 
     @Autowired
@@ -35,7 +38,7 @@ public class JstockRangeService {
         }
     }
 
-    public JstockRange updateJstockRangeStatus(JstockRange jr, Integer position, String state, Date quoteTime) throws EntityNoneException {
+    public JstockRange updateJstockRangeStatus(JstockRange jr, Integer position, String state, Data data) throws EntityNoneException {
 
         if (!jrp.existsById(jr.getId())) {
             throw new EntityNoneException();
@@ -48,15 +51,17 @@ public class JstockRangeService {
 
         Calculation.Status status = Calculation.Status.valueOf(state);
 
-        JstockRangeRecord jrr = new JstockRangeRecord(pjr, jr, jr.getBasePrise(), jr.getJstockStrategy(), 0, 0f, null, false, quoteTime, new Date(), null);;
+        JstockRangeRecord jrr = new JstockRangeRecord(pjr, jr, 0f, jr.getJstockStrategy(), 0, 0f, null, false, data.getDateTime(), new Date(), null);;
 
         jr.setStatus(state);
         switch(status) {
             case BUY: {
                 jrr.setStatus(Calculation.Status.BUY.name());
+                jrr.setPrice(data.getBuyPrice()/100);
             } break;
             case SELL: {
                 jrr.setStatus(Calculation.Status.SELL.name());
+                jrr.setPrice(data.getSellPrice()/100);
             } break;
         }
 
