@@ -2,6 +2,7 @@ package com.lisdoo.jstock.readwrite;
 
 import com.alibaba.fastjson.JSONArray;
 import com.lisdoo.jstock.factory.MqProductFactory;
+import com.lisdoo.jstock.service.exchange.exception.NotInTheTradingCycle;
 import lombok.SneakyThrows;
 
 import java.io.File;
@@ -13,7 +14,7 @@ public class ToFile {
 
     static SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddhhmmss");
 
-    public static void main(String args[]) throws Exception {
+    public static void main(String args[]) throws Exception, NotInTheTradingCycle {
 
         String jstockCode = "000089";
         MqProductFactory.get(jstockCode);

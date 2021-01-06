@@ -4,6 +4,10 @@ import com.lisdoo.jstock.service.exchange.exception.NotInRangeException;
 import com.lisdoo.jstock.service.exchange.exception.NotInTheTradingCycle;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.text.DecimalFormat;
 import java.util.*;
 
@@ -47,6 +51,33 @@ public class Calculation {
             entry.setValue(Float.valueOf(decimalFormat.format(basePrice*(1+entry.getValue()))));
         }
 //        System.out.println(sb.toString());
+
+        return prices;
+    }
+    public static Map<Integer, Float> createRangeValue2(Float basePrice, Float priceRange, Integer count, Float offset) {
+
+        System.out.println(String.format("currentPrice:%.2f priceRange:%.2f%% count:%d offset:%.2f", basePrice, priceRange*100, count, offset));
+
+        Map<Integer, Float> prices = new TreeMap<>();
+
+        float j = 0f;
+        for (Integer i = 1; i<=count; i++) {
+            j += Math.pow( i , offset);
+            prices.put(i, Double.valueOf(Math.pow( i , offset)).floatValue());
+        }
+        Float magnification = prices.get(count)/j/priceRange;
+        for (Integer i = 1; i<=count; i++) {
+            Float proportion = Double.valueOf(Math.pow( i , offset) / j / magnification).floatValue();
+            prices.put(i, proportion);
+            prices.put(-i, -proportion);
+        }
+
+        StringBuffer sb = new StringBuffer();
+        for (Map.Entry<Integer, Float> entry: prices.entrySet()) {
+            sb.insert(0, String.format("% 2d | % 6.2f%% | % 6.2f \r\n", entry.getKey(), entry.getValue()*100, basePrice*(1+entry.getValue())));
+            entry.setValue(Float.valueOf(decimalFormat.format(basePrice*(1+entry.getValue()))));
+        }
+        System.out.println(sb.toString());
 
         return prices;
     }
@@ -238,11 +269,12 @@ public class Calculation {
 
     }
 
-    public static void main(String[] args) throws NotInRangeException, IOException, NotInTheTradingCycle {
+    public static void main(String[] args) throws NotInRangeException, Exception, NotInTheTradingCycle {
 
 //        createRangeValueTest();
+        createRangeValueFromDBTest();
 //        getRangeStrategyTest();
-        getRangeStrategyTest2();
+//        getRangeStrategyTest2();
     }
 
     public static void createRangeValueTest() throws IOException {
@@ -251,6 +283,39 @@ public class Calculation {
         createRangeValue(10f, 0.1f,5, 1f);
         createRangeValue(10f, 0.1f,5, 1.5f);
         createRangeValue(10f, 0.1f,5, 2f);
+    }
+
+    public static void createRangeValueFromDBTest() throws Exception {
+
+
+        //1、导入驱动jar包
+        //2、注册驱动
+        Class.forName("com.mysql.jdbc.Driver");
+
+        //3、获取数据库的连接对象
+        Connection con = DriverManager.getConnection("jdbc:mysql://ali47:3306/jstock", "root", "lenovo.112");
+
+        //4、定义sql语句
+        String sql = "select jr.id , jr.base_prise , js.count, js.offset , js.price_range , js.ratio from jstock_range jr left join jstock_strategy js on jr.jstock_strategy_id = js.id where jr.jstock_id is not null;";
+
+        //5、获取执行sql语句的对象
+        Statement stat = con.createStatement();
+
+        //6、执行sql并接收返回结果
+        ResultSet rs = stat.executeQuery(sql);
+
+        //7、处理结果
+        while (rs.next()) {
+
+            if (rs.getInt("jr.id") == 4) {
+                createRangeValue2(rs.getFloat("jr.base_prise"), rs.getFloat("js.price_range"), rs.getInt("js.count"), rs.getFloat("js.offset"));
+            }
+        }
+
+
+        //8、释放资源
+        stat.close();
+        con.close();
     }
 
     public static void getRangeStrategyTest() throws NotInRangeException, NotInTheTradingCycle {

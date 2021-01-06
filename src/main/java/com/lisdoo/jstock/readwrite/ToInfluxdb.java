@@ -1,6 +1,7 @@
 package com.lisdoo.jstock.readwrite;
 
 import com.alibaba.fastjson.JSONArray;
+import com.lisdoo.jstock.service.exchange.exception.NotInTheTradingCycle;
 import org.influxdb.BatchOptions;
 import org.influxdb.InfluxDB;
 import org.influxdb.InfluxDBFactory;
@@ -15,7 +16,7 @@ import java.util.function.Predicate;
 
 public class ToInfluxdb {
 
-    public static void main(String args[]) throws Exception {
+    public static void main(String args[]) throws Exception, NotInTheTradingCycle {
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddhhmmss");
 

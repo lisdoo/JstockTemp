@@ -32,7 +32,7 @@ public class DbToInfluxdb {
 
         String jstockName = "深圳";
         String jstockCode = "000089";
-        String tag = "MY01";
+        String tag = "MY02";
 
 
 

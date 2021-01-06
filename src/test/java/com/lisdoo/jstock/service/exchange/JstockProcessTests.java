@@ -90,12 +90,14 @@ public class JstockProcessTests {
     }
 
     @Test
-    public void test02() throws Exception {
+    public void test02() throws Exception, NotInTheTradingCycle {
 
         Optional<Jstock> j = jr.findByCode(jstockCode);
         System.out.println(om.writeValueAsString(j.get()));
 
         for (JstockRange jr: j.get().getJstockRanges()) {
+
+            if (!jr.getStatus().equalsIgnoreCase("on")) continue;
 
             Predicate p = new Predicate<JSONArray>() {
 

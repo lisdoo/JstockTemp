@@ -5,6 +5,7 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
 import com.lisdoo.jstock.factory.MqProductFactory;
+import com.lisdoo.jstock.service.exchange.exception.NotInTheTradingCycle;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -21,7 +22,7 @@ public class Read {
 
     static SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddhhmmss");
 
-    public static void main(String args[]) throws Exception {
+    public static void main(String args[]) throws Exception, NotInTheTradingCycle {
 
         String jstockCode = "000089";
         MqProductFactory.get(jstockCode);
@@ -57,7 +58,7 @@ public class Read {
         }
     }
 
-    public static void testRead(String filePath, Predicate p) throws Exception {
+    public static void testRead(String filePath, Predicate p) throws Exception, NotInTheTradingCycle {
 
         int countRows = 0;
         int countRecords = 0;
@@ -132,6 +133,12 @@ public class Read {
                             continue;
                         } else {
                             exit(line, 1, countRows, countRecords, countCorrect, countError, startDateTime);
+                        }
+                    } catch (Throwable e) {
+                        if (e instanceof NotInTheTradingCycle) {
+//                            e.printStackTrace();
+                        } else {
+                            throw e;
                         }
                     }
                 }

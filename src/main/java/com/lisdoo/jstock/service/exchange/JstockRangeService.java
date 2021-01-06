@@ -46,7 +46,7 @@ public class JstockRangeService {
 
         JstockRange pjr = jr.getParent();
         pjr.setLastPosition(position);
-        pjr.setLastTradeDate(new Date());
+        pjr.setLastTradeDate(data.getDateTime());
         jrp.save(pjr);
 
         Calculation.Status status = Calculation.Status.valueOf(state);
