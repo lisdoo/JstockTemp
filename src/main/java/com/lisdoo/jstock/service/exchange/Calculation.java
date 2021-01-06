@@ -25,7 +25,7 @@ public class Calculation {
      */
     public static Map<Integer, Float> createRangeValue(Float basePrice, Float priceRange, Integer count, Float offset) {
 
-        System.out.println(String.format("currentPrice:%.2f priceRange:%.2f%% count:%d offset:%.2f", basePrice, priceRange*100, count, offset));
+//        System.out.println(String.format("currentPrice:%.2f priceRange:%.2f%% count:%d offset:%.2f", basePrice, priceRange*100, count, offset));
 
         Map<Integer, Float> prices = new TreeMap<>();
 
@@ -46,7 +46,7 @@ public class Calculation {
             sb.insert(0, String.format("% 2d | % 6.2f%% | % 6.2f \r\n", entry.getKey(), entry.getValue()*100, basePrice*(1+entry.getValue())));
             entry.setValue(Float.valueOf(decimalFormat.format(basePrice*(1+entry.getValue()))));
         }
-        System.out.println(sb.toString());
+//        System.out.println(sb.toString());
 
         return prices;
     }
@@ -132,7 +132,7 @@ public class Calculation {
             }
         }
 
-        System.out.println("need trigger " + is);
+//        System.out.println("need trigger " + is);
 
         if (is) {
 

@@ -58,9 +58,10 @@ public class ToMq {
         }
 
         for (String folder: foldersInStr) {
-            for (String fullFolder : new File(folder).list()) {
+            File f = new File(folderInStr, folder);
+            for (String fullFolder : f.list()) {
                 System.out.println(fullFolder);
-                Read.testRead(fullFolder, p);
+                Read.testRead(new File(f, fullFolder).getAbsolutePath(), p);
             }
         }
     }

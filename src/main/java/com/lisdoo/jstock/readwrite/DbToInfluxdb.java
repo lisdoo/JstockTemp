@@ -32,6 +32,7 @@ public class DbToInfluxdb {
 
         String jstockName = "深圳";
         String jstockCode = "000089";
+        String tag = "MY01";
 
 
 
@@ -60,7 +61,7 @@ public class DbToInfluxdb {
                     influxDB.write(Point.measurement("getBuyPrice")
                             .time(rs.getTimestamp("quote_time").getTime(), TimeUnit.MILLISECONDS)
                             .tag("name", jstockName)
-                            .tag("code", jstockCode+"MY")
+                            .tag("code", jstockCode+tag)
                             .addField("value", ((Float)(rs.getFloat("price")*100)).longValue())
                             .build());
                 } break;
@@ -68,7 +69,7 @@ public class DbToInfluxdb {
                     influxDB.write(Point.measurement("getSellPrice")
                             .time(rs.getTimestamp("quote_time").getTime(), TimeUnit.MILLISECONDS)
                             .tag("name", jstockName)
-                            .tag("code", jstockCode+"MY")
+                            .tag("code", jstockCode+tag)
                             .addField("value", ((Float)(rs.getFloat("price")*100)).longValue())
                             .build());
                 } break;

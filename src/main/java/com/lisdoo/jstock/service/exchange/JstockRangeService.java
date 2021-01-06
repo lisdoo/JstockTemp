@@ -21,13 +21,13 @@ public class JstockRangeService {
     public JstockRange createJstockRange(JstockRange jr) throws EntityExistException {
         // 为空时，判断是否有重复
         if (StringUtils.isEmpty(jr.getPosition())) {
-            Optional<JstockRange> optional = jrp.findByJstockAndPosition(jr.getJstock(), null);
+            Optional<JstockRange> optional = jrp.findByJstockAndParentAndPosition(jr.getJstock(), jr.getParent(), null);
             if (optional.isPresent()) {
                 throw new EntityExistException();
             }
             return jrp.save(jr);
         } else {
-            Optional<JstockRange> optional = jrp.findByJstockAndPosition(jr.getJstock(), jr.getPosition());
+            Optional<JstockRange> optional = jrp.findByJstockAndParentAndPosition(jr.getJstock(), jr.getParent(), jr.getPosition());
             if (optional.isPresent()) {
                 throw new EntityExistException();
             }

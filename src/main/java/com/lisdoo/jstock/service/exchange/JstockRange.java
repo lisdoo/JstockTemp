@@ -89,7 +89,6 @@ public class JstockRange {
 	/*
 	 * 最后交易档位
 	 */
-	@Column(nullable=false, columnDefinition="INT default 0")
 	private Integer lastPosition;
 
 	/*

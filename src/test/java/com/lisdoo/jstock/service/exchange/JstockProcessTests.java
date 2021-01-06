@@ -2,6 +2,7 @@ package com.lisdoo.jstock.service.exchange;
 
 import com.alibaba.fastjson.JSONArray;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.lisdoo.jstock.readwrite.Read;
 import com.lisdoo.jstock.service.exchange.exception.db.EntityExistException;
 import com.lisdoo.jstock.service.exchange.exception.db.EntityNoneException;
 import com.lisdoo.jstock.service.mqhandler.JstockConsumeHandler;
@@ -9,6 +10,7 @@ import com.lisdoo.jstock.factory.MqProductFactory;
 import com.lisdoo.jstock.service.exchange.exception.NotInRangeException;
 import com.lisdoo.jstock.service.exchange.exception.NotInTheTradingCycle;
 import com.lisdoo.jstock.readwrite.Data;
+import lombok.SneakyThrows;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.hibernate.SessionFactory;
@@ -18,16 +20,19 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
+import java.io.File;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Map;
 import java.util.Optional;
+import java.util.function.Predicate;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -62,41 +67,46 @@ public class JstockProcessTests {
         MqProductFactory.get(jstockCode);
     }
 
-    public boolean makeRange(JstockRange jr) throws Exception, NotInTheTradingCycle, NotInRangeException, EntityExistException, EntityNoneException {
+    public void tradingStrategy(Map.Entry<Integer, Float> rangePosition, JstockRange jr, Data data) throws EntityNoneException {
+
+        Integer lastPosition = jr.getParent().getLastPosition() == null? 0: jr.getParent().getLastPosition();
+
+        if (rangePosition.getKey() < 0) {
+            if (lastPosition +1 < rangePosition.getKey()) {
+                jrs.updateJstockRangeStatus(jr, rangePosition.getKey(), Calculation.Status.SELL.name(), data.getDateTime());
+            } else if (lastPosition > rangePosition.getKey()) {
+                jrs.updateJstockRangeStatus(jr, rangePosition.getKey(), Calculation.Status.BUY.name(), data.getDateTime());
+            }
+        } else {
+            if (lastPosition > rangePosition.getKey()) {
+                jrs.updateJstockRangeStatus(jr, rangePosition.getKey(), Calculation.Status.SELL.name(), data.getDateTime());
+            }
+        }
+    }
+
+    @Transactional(propagation = Propagation.REQUIRES_NEW)
+    public boolean makeRange(JstockRange jr, JSONArray ja) throws Exception, NotInTheTradingCycle, NotInRangeException, EntityExistException, EntityNoneException {
 
         Map<Integer, Float> range = Calculation.createRangeValue(jr.getBasePrise(), jr.getJstockStrategy().getPriceRange(), jr.getJstockStrategy().getCount(), jr.getJstockStrategy().getOffset());
 
-        System.out.println(om.writeValueAsString(range));
+//        System.out.println(om.writeValueAsString(range));
 
-            JSONArray ja = (JSONArray) MqProductFactory.get(jstockCode).receiveAndConvert();
-            JstockConsumeHandler.show(ja);
+//            JstockConsumeHandler.show(ja);
             Data data = new Data(ja);
-            System.out.println(data.getBuyPrice() / 100);
+//            System.out.println(data.getBuyPrice() / 100);
             Map.Entry<Integer, Float> rangePosition = Calculation.getRangePosition(data.getBuyPrice() / 100, range, Calculation.Frequency.valueOf(jr.getJstockStrategy().getFre()), jr.getChildrens().isEmpty() ? null : null, data.getDateTime());
-            System.out.println(om.writeValueAsString(rangePosition));
 
             if (rangePosition.getKey() == 0) {
-                System.out.println("0档位无需处理");
                 log.info(String.format("0档位无需处理"));
                 return false;
             } else {
                 if (jr.getChildrens().isEmpty()) {
 
-                    System.out.println("Range不为0，但是其子集合为空，新建档位");
                     log.info(String.format("Range不为0，但是其子集合为空，新建档位"));
                     JstockRange jrTemp = new JstockRange(null, rangePosition.getValue(), jr.getJstockStrategy(), 0, 0f, 0f, null, jr, rangePosition.getKey(), null, null, null, new Date(), null);
+
                     jrs.createJstockRange(jrTemp);
-                    if (rangePosition.getKey() < 0) {
-                        if (jr.getLastPosition() < rangePosition.getKey()) {
-                            jrs.updateJstockRangeStatus(jrTemp, rangePosition.getKey(), Calculation.Status.SELL.name(), data.getDateTime());
-                        } else {
-                            jrs.updateJstockRangeStatus(jrTemp, rangePosition.getKey(), Calculation.Status.BUY.name(), data.getDateTime());
-                        }
-                    } else {
-                        if (jr.getLastPosition() > rangePosition.getKey()) {
-                            jrs.updateJstockRangeStatus(jrTemp, rangePosition.getKey(), Calculation.Status.SELL.name(), data.getDateTime());
-                        }
-                    }
+                    tradingStrategy(rangePosition, jrTemp, data);
                     return true;
                 } else {
                     boolean isPresent = false;
@@ -105,7 +115,6 @@ public class JstockProcessTests {
                         if (rangePosition.getKey().equals(jrChildTemp.getPosition())) {
                             isPresent = true;
                             jrChild = jrChildTemp;
-                            System.out.println("重复档位");
                             log.info("重复档位");
                         }
                     }
@@ -114,35 +123,15 @@ public class JstockProcessTests {
                         if (rangePosition.getKey().equals(jr.getLastPosition())) {
                             return false;
                         } else {
-                            if (rangePosition.getKey() < 0) {
-                                if (jr.getLastPosition() < rangePosition.getKey()) {
-                                    jrs.updateJstockRangeStatus(jrChild, rangePosition.getKey(), Calculation.Status.SELL.name(), data.getDateTime());
-                                } else {
-                                    jrs.updateJstockRangeStatus(jrChild, rangePosition.getKey(), Calculation.Status.BUY.name(), data.getDateTime());
-                                }
-                            } else {
-                                if (jr.getLastPosition() > rangePosition.getKey()) {
-                                    jrs.updateJstockRangeStatus(jrChild, rangePosition.getKey(), Calculation.Status.SELL.name(), data.getDateTime());
-                                }
-                            }
+                            tradingStrategy(rangePosition, jrChild, data);
                             return false;
                         }
                     } else {
-                        System.out.println("Range不为0，但是其子集合中无此档位，新建档位");
                         log.info("Range不为0，但是其子集合中无此档位，新建档位");
                         JstockRange jrTemp = new JstockRange(null, rangePosition.getValue(), jr.getJstockStrategy(), 0, 0f, 0f, null, jr, rangePosition.getKey(), null, null, null, new Date(), null);
+
                         jrs.createJstockRange(jrTemp);
-                        if (rangePosition.getKey() < 0) {
-                            if (jr.getLastPosition() < rangePosition.getKey()) {
-                                jrs.updateJstockRangeStatus(jrTemp, rangePosition.getKey(), Calculation.Status.SELL.name(), data.getDateTime());
-                            } else {
-                                jrs.updateJstockRangeStatus(jrTemp, rangePosition.getKey(), Calculation.Status.BUY.name(), data.getDateTime());
-                            }
-                        } else {
-                            if (jr.getLastPosition() > rangePosition.getKey()) {
-                                jrs.updateJstockRangeStatus(jrTemp, rangePosition.getKey(), Calculation.Status.SELL.name(), data.getDateTime());
-                            }
-                        }
+                        tradingStrategy(rangePosition, jrTemp, data);
                         return true;
                     }
                 }
@@ -156,8 +145,9 @@ public class JstockProcessTests {
         System.out.println(om.writeValueAsString(j.get()));
 
         for (JstockRange jr: j.get().getJstockRanges()) {
-            for (int i=0; i<1000; i++) {
-                if (makeRange(jr)) {
+            JSONArray ja = (JSONArray) MqProductFactory.get(jstockCode).receiveAndConvert();
+            for (int i=0; i<30000; i++) {
+                if (makeRange(jr, ja)) {
                     em.clear();
                     jr = jrr.findByJstock(j.get()).get();
                 }
@@ -168,6 +158,56 @@ public class JstockProcessTests {
     @Test
     public void test02() throws Exception {
 
+        Optional<Jstock> j = jr.findByCode(jstockCode);
+        System.out.println(om.writeValueAsString(j.get()));
+
+        for (JstockRange jr: j.get().getJstockRanges()) {
+
+            Predicate p = new Predicate<JSONArray>() {
+
+                JstockRange jr;
+
+                @Override
+                public boolean equals(Object obj) {
+                    jr = (JstockRange) obj;
+                    return false;
+                }
+
+                @SneakyThrows
+                @Override
+                public boolean test(JSONArray ja) {
+
+                    if (makeRange(jr, ja)) {
+                        em.clear();
+                        jr = jrr.findById(jr.getId()).get();
+                    }
+                    return true;
+                }
+            };
+            p.equals(jr);
+
+
+            String folderInStr = "I:\\jstock\\";
+            String[] foldersInStr = new File(folderInStr).list((f1, f2) -> {
+                if (f2.contains("out")) return true;
+                return false;
+            });
+
+            Arrays.sort(foldersInStr);
+            for (String str:foldersInStr) {
+                System.out.println(str);
+            }
+
+            for (String folder: foldersInStr) {
+                File f = new File(folderInStr, folder);
+                for (String fullFolder : f.list()) {
+                    System.out.println(fullFolder);
+                    Read.testRead(new File(f, fullFolder).getAbsolutePath(), p);
+                }
+            }
+
+            break;
+        }
     }
 
     @After

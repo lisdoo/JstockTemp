@@ -24,4 +24,6 @@ public interface JstockRangeRepository extends CrudRepository<JstockRange, Long>
     public Optional<JstockRange> findByJstock(Jstock js);
 
     public Optional<JstockRange> findByJstockAndPosition(Jstock js, Integer position);
+
+    public Optional<JstockRange> findByJstockAndParentAndPosition(Jstock js, JstockRange jr, Integer position);
 }
