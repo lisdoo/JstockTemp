@@ -1,10 +1,12 @@
 package com.lisdoo.jstock.factory;
 
+import com.lisdoo.jstock.SpringContextHolder;
 import com.lisdoo.jstock.service.mqhandler.JstockConsumeHandler;
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer;
 import org.springframework.amqp.rabbit.listener.adapter.MessageListenerAdapter;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -31,10 +33,13 @@ public class MqConsumeFactory {
 
             Queue queue = new Queue(code);
 
+            JstockConsumeHandler jch = (JstockConsumeHandler) SpringContextHolder.getBean("jstockConsumeHandler");
+            jch.setJstockCode(queue.getName());
+
             SimpleMessageListenerContainer container = new SimpleMessageListenerContainer();
             container.setConnectionFactory(connectionFactory);
             container.setQueueNames(queue.getName());
-            container.setMessageListener(new MessageListenerAdapter(new JstockConsumeHandler()));
+            container.setMessageListener(new MessageListenerAdapter(jch));
 
             containers.put(queue.getName(), container);
 
@@ -46,7 +51,7 @@ public class MqConsumeFactory {
 
     public static synchronized void release() {
 
-        for (SimpleMessageListenerContainer container: containers.values()) {
+        for (SimpleMessageListenerContainer container : containers.values()) {
             container.stop();
         }
         connectionFactory.destroy();
@@ -56,14 +61,14 @@ public class MqConsumeFactory {
 
     public static void startAll() {
 
-        for (SimpleMessageListenerContainer container: MqConsumeFactory.containers.values()) {
+        for (SimpleMessageListenerContainer container : MqConsumeFactory.containers.values()) {
             container.start();
         }
     }
 
     public static void stopAll() {
 
-        for (SimpleMessageListenerContainer container: MqConsumeFactory.containers.values()) {
+        for (SimpleMessageListenerContainer container : MqConsumeFactory.containers.values()) {
             container.stop();
         }
     }

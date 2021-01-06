@@ -75,7 +75,7 @@ public class JstockProcessService {
 //            JstockConsumeHandler.show(ja);
         Data data = new Data(ja);
 //            System.out.println(data.getBuyPrice() / 100);
-        Map.Entry<Integer, Float> rangePosition = Calculation.getRangePosition(data.getBuyPrice() / 100, range, Calculation.Frequency.valueOf(jr.getJstockStrategy().getFre()), jr.getChildrens().isEmpty() ? null : null, data.getDateTime());
+        Map.Entry<Integer, Float> rangePosition = Calculation.getRangePosition(data.getBuyPrice() / 100, range, Calculation.Frequency.valueOf(jr.getJstockStrategy().getFre()), jr.getLastTradeDate(), data.getDateTime());
 
         if (rangePosition.getKey() == 0) {
 //            log.info(String.format("0档位无需处理"));

@@ -5,7 +5,7 @@ import java.sql.*;
 public class JdbcFactory {
 
     static Connection con;
-    static String sql = "select code from jstock;";
+    static String sql = "select code from jstock where status = 'on';";
     static Statement stat;
     public static String stockList;
 
@@ -66,7 +66,7 @@ public class JdbcFactory {
         Connection con = DriverManager.getConnection("jdbc:mysql://ali47:3306/jstock", "root", "lenovo.112");
 
         //4、定义sql语句
-        String sql = "select code from jstock;";
+        String sql = "select code from jstock where status = 'on';";
 
         //5、获取执行sql语句的对象
         Statement stat = con.createStatement();

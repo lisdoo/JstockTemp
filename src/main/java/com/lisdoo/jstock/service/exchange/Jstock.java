@@ -36,6 +36,7 @@ public class Jstock {
 	private String code;
 	private String name;
 	private String notes;
+	private String status;
 	private @OneToMany(mappedBy = "jstock") @JsonManagedReference
 	List<JstockRange> jstockRanges;
 	private Date createDate;

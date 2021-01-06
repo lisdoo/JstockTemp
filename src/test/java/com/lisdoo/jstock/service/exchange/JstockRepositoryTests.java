@@ -29,12 +29,12 @@ public class JstockRepositoryTests {
     @Before
     public void setUp() {
 
-        repository.save(new Jstock("01", "一", "", null, new Date(), new Date()));
-        repository.save(new Jstock("02", "一", "", null, new Date(), new Date()));
-        repository.save(new Jstock("03", "一", "", null, new Date(), new Date()));
-        repository.save(new Jstock("04", "一", "", null, new Date(), new Date()));
-        repository.save(new Jstock("05", "一", "", null, new Date(), new Date()));
-        repository.save(new Jstock("06", "一", "", null, new Date(), new Date()));
+        repository.save(new Jstock("01", "一", "", "on", null, new Date(), new Date()));
+        repository.save(new Jstock("02", "一", "", "on", null, new Date(), new Date()));
+        repository.save(new Jstock("03", "一", "", "on", null, new Date(), new Date()));
+        repository.save(new Jstock("04", "一", "", "on", null, new Date(), new Date()));
+        repository.save(new Jstock("05", "一", "", "on", null, new Date(), new Date()));
+        repository.save(new Jstock("06", "一", "", "on", null, new Date(), new Date()));
     }
 
     @Test
