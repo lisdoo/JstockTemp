@@ -56,17 +56,13 @@ public class JstockConsumeHandler {
             try {
                 jps.makeRange(jr, ja);
             } catch (NotInTheTradingCycle notInTheTradingCycle) {
-                notInTheTradingCycle.printStackTrace();
-                log.info("notInTheTradingCycle");
+                log.trace("notInTheTradingCycle");
             } catch (NotInRangeException e) {
-                // TODO
-                e.printStackTrace();
+                log.error(String.format("JstockCode: %s %s %s", jr.getParent().getJstock().getCode(), e.getCode(), "NotInRangeException"));
             } catch (EntityExistException e) {
                 log.error("EntityExistException");
-                e.printStackTrace();
             } catch (EntityNoneException e) {
                 log.error("EntityExistException");
-                e.printStackTrace();
             }
         }
     }
