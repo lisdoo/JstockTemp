@@ -1,5 +1,6 @@
 package com.lisdoo.jstock.cli;
 
+import com.lisdoo.jstock.SpringContextHolder;
 import com.lisdoo.jstock.service.exchange.process.JstockMqService;
 import lombok.SneakyThrows;
 import org.quartz.Job;
@@ -11,14 +12,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-@Component
-@Scope("prototype")
 public class StartThreads implements Job {
 
     Logger log = LoggerFactory.getLogger(StartThreads.class);
-
-    @Autowired
-    JstockMqService jms;
 
     public StartThreads() {
     }
@@ -27,6 +23,7 @@ public class StartThreads implements Job {
     @Override
     public void execute(JobExecutionContext jobExecutionContext) throws JobExecutionException {
 
+        JstockMqService jms = (JstockMqService) SpringContextHolder.getBean("jstockMqService");
         jms.start();
         log.info("start mq consumer");
     }
