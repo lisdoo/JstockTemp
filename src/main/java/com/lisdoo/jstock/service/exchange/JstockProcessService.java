@@ -48,17 +48,17 @@ public class JstockProcessService {
 
         if (rangePosition.getKey() < 0) {
             if (lastPosition +1 < rangePosition.getKey()) {
-                log.info(String.format("最后一次交易档位为：%d，加1后仍然小于当前档位：%d，执行SELL", lastPosition, rangePosition.getKey()));
+                log.info(String.format("%s 最后一次交易档位为：%d，加1后仍然小于当前档位：%d，执行SELL", jr.getParent().getJstock().getCode(), lastPosition, rangePosition.getKey()));
                 jrs.updateJstockRangeStatus(jr, rangePosition.getKey(), Calculation.Status.SELL.name(), data);
                 return true;
             } else if (lastPosition -1> rangePosition.getKey()) {
-                log.info(String.format("最后一次交易档位为：%d，减1后仍然大于当前档位：%d，执行BUY", lastPosition, rangePosition.getKey()));
+                log.info(String.format("%s 最后一次交易档位为：%d，减1后仍然大于当前档位：%d，执行BUY", jr.getParent().getJstock().getCode(), lastPosition, rangePosition.getKey()));
                 jrs.updateJstockRangeStatus(jr, rangePosition.getKey(), Calculation.Status.BUY.name(), data);
                 return true;
             }
         } else {
             if (lastPosition > rangePosition.getKey()) {
-                log.info(String.format("最后一次交易档位为：%d，小于当前档位：%d，执行SELL", lastPosition, rangePosition.getKey()));
+                log.info(String.format("%s 最后一次交易档位为：%d，小于当前档位：%d，执行SELL", jr.getParent().getJstock().getCode(), lastPosition, rangePosition.getKey()));
                 jrs.updateJstockRangeStatus(jr, rangePosition.getKey(), Calculation.Status.SELL.name(), data);
                 return true;
             }

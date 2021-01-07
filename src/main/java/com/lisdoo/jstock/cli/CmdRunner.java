@@ -10,12 +10,15 @@ import lombok.SneakyThrows;
 import org.apache.commons.cli.*;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.quartz.*;
+import org.quartz.impl.StdSchedulerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Date;
 
 @Component
 public class CmdRunner implements CommandLineRunner {
@@ -27,6 +30,18 @@ public class CmdRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+
+
+        this.log.info("------- Initializing -------------------");
+        SchedulerFactory sf = new StdSchedulerFactory();
+        Scheduler sched = sf.getScheduler();
+        this.log.info("------- Initialization Complete --------");
+
+        this.schedulingJobs(sched, StartThreads.class, "0 20 9 ? * MON-FRI", ShutdownThreads.class, "0 1 15 ? * MON-FRI");
+
+        this.log.info("------- Starting Scheduler ----------------");
+        sched.start();
+        this.log.info("------- Started Scheduler -----------------");
 
         Runnable r = new Runnable() {
             @SneakyThrows
@@ -72,5 +87,19 @@ public class CmdRunner implements CommandLineRunner {
             }
         };
         new Thread(r).start();
+    }
+
+    void schedulingJobs(Scheduler sched, Class startClass, String startCommand, Class endClass, String endCommand) throws SchedulerException {
+        this.log.info("------- Scheduling Jobs ----------------");
+        JobDetail job = null;
+        CronTrigger trigger = null;
+        job = JobBuilder.newJob(startClass).build();
+        trigger = (CronTrigger)TriggerBuilder.newTrigger().withSchedule(CronScheduleBuilder.cronSchedule(startCommand)).build();
+        Date ft = sched.scheduleJob(job, trigger);
+        this.log.info(job.getKey() + " has been scheduled to run at: " + ft + " and repeat based on expression: " + trigger.getCronExpression());
+        job = JobBuilder.newJob(endClass).build();
+        trigger = (CronTrigger)TriggerBuilder.newTrigger().withSchedule(CronScheduleBuilder.cronSchedule(endCommand)).build();
+        ft = sched.scheduleJob(job, trigger);
+        this.log.info(job.getKey() + " has been scheduled to run at: " + ft + " and repeat based on expression: " + trigger.getCronExpression());
     }
 }

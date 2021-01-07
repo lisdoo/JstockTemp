@@ -53,7 +53,7 @@ public class JstockConsumeHandler {
 //        show(ja);
         Optional<Jstock> j = jr.findByCode(jstockCode);
         for (JstockRange jr: j.get().getJstockRanges()) {
-            if (!jr.getStatus().equalsIgnoreCase("on")) continue;
+            if ((jr.getStatus()) == null || (!jr.getStatus().equalsIgnoreCase("on"))) continue;
             try {
                 jps.makeRange(jr, ja);
             } catch (NotInTheTradingCycle notInTheTradingCycle) {
