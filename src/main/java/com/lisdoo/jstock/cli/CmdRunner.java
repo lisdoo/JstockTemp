@@ -1,10 +1,5 @@
 package com.lisdoo.jstock.cli;
 
-import antlr.InputBuffer;
-import com.lisdoo.jstock.service.exchange.JstockRangeRecordRepository;
-import com.lisdoo.jstock.service.exchange.JstockRangeRepository;
-import com.lisdoo.jstock.service.exchange.JstockRepository;
-import com.lisdoo.jstock.service.exchange.JstockStrategy;
 import com.lisdoo.jstock.service.exchange.process.JstockMqService;
 import lombok.SneakyThrows;
 import org.apache.commons.cli.*;
@@ -54,7 +49,9 @@ public class CmdRunner implements CommandLineRunner {
                 // create the Options
                 Options options = new Options();
                 options.addOption( "a", "start", false, "Start." );
-                options.addOption( "b", "stop", false, "Start." );
+                options.addOption( "b", "stop", false, "Stop." );
+                options.addOption( "c", "bypy", true, "bypy." );
+                options.addOption( "d", "tar", false, "tar." );
 
                 String lineStr = null;
                 InputStreamReader isr = new InputStreamReader(System.in);
@@ -72,6 +69,14 @@ public class CmdRunner implements CommandLineRunner {
                         if( line.hasOption( "b" ) ) {
                             jms.stop();
                             log.info("stop mq consumer");
+                        }
+                        if( line.hasOption( "c" ) ) {
+                            DownloadShell.bypy(line.getOptionValue("c"));
+                            log.info("bypy");
+                        }
+                        if( line.hasOption( "d" ) ) {
+                            DownloadShell.tar(line.getOptionValue("c"));
+                            log.info("tar");
                         }
                     }
                     catch( ParseException exp ) {
