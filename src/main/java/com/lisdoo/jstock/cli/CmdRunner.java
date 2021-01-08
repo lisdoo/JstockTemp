@@ -50,8 +50,9 @@ public class CmdRunner implements CommandLineRunner {
                 Options options = new Options();
                 options.addOption( "a", "start", false, "Start." );
                 options.addOption( "b", "stop", false, "Stop." );
-                options.addOption( "c", "bypy", true, "bypy." );
-                options.addOption( "d", "tar", false, "tar." );
+                options.addOption( "d", "download", true, "download." );
+                options.addOption( "t", "to file", true, "to file." );
+                options.addOption( "r", "rm", true, "rm." );
 
                 String lineStr = null;
                 InputStreamReader isr = new InputStreamReader(System.in);
@@ -70,13 +71,17 @@ public class CmdRunner implements CommandLineRunner {
                             jms.stop();
                             log.info("stop mq consumer");
                         }
-                        if( line.hasOption( "c" ) ) {
-                            DownloadShell.bypy(line.getOptionValue("c"));
-                            log.info("bypy");
-                        }
                         if( line.hasOption( "d" ) ) {
-                            DownloadShell.tar(line.getOptionValue("c"));
-                            log.info("tar");
+                            DownloadShell.sh(line.getOptionValue("d"));
+                            log.info("download");
+                        }
+                        if( line.hasOption( "t" ) ) {
+                            DownloadShell.toFile(line.getOptionValue("t"));
+                            log.info("to file");
+                        }
+                        if( line.hasOption( "r" ) ) {
+                            DownloadShell.rm(line.getOptionValue("r"));
+                            log.info("rm");
                         }
                     }
                     catch( ParseException exp ) {
