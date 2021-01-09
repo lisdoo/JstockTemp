@@ -53,6 +53,7 @@ public class CmdRunner implements CommandLineRunner {
                 options.addOption( "d", "download", true, "download." );
                 options.addOption( "t", "to file", true, "to file." );
                 options.addOption( "r", "rm", true, "rm." );
+                options.addOption( "e", "exec", true, "exec." );
 
                 String lineStr = null;
                 InputStreamReader isr = new InputStreamReader(System.in);
@@ -82,6 +83,10 @@ public class CmdRunner implements CommandLineRunner {
                         if( line.hasOption( "r" ) ) {
                             DownloadShell.rm(line.getOptionValue("r"));
                             log.info("rm");
+                        }
+                        if( line.hasOption( "e" ) ) {
+                            DownloadShell.exec(line.getOptionValue("e"));
+                            log.info("exec");
                         }
                     }
                     catch( ParseException exp ) {

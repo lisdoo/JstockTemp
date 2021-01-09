@@ -174,4 +174,71 @@ public class DownloadShell {
         }
     }
 
+    public static void exec(String cmd) {
+
+        File path = new File("./temp");
+
+        cmd = cmd.replace('-', ' ');
+
+        Process process;
+        try {
+            log.info(String.format("cmd: %s", cmd));
+            String[] envp = new String[] {
+                    "LANG=en_US.utf8",
+                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin:/opt/jdk/jdk1.8.0_221/bin",
+                    "LC_CTYPE=en_US.utf8",
+                    "LC_NUMERIC=en_US.utf8",
+                    "LC_TIME=en_US.utf8",
+                    "LC_COLLATE=en_US.utf8",
+                    "LC_MONETARY=en_US.utf8",
+                    "LC_MESSAGES=en_US.utf8",
+                    "LC_PAPER=en_US.utf8",
+                    "LC_NAME=en_US.utf8",
+                    "LC_ADDRESS=en_US.utf8",
+                    "LC_TELEPHONE=en_US.utf8",
+                    "LC_MEASUREMENT=en_US.utf8",
+                    "LC_IDENTIFICATION=en_US.utf8"
+            };
+
+            process = Runtime.getRuntime().exec(cmd, envp, path);
+            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+            BufferedReader errReader = new BufferedReader(new InputStreamReader(process.getErrorStream()));
+            int exitValue = process.waitFor();
+
+            Runnable runReader = new Runnable() {
+
+                @SneakyThrows
+                @Override
+                public void run() {
+                    String line;
+                    while((line = reader.readLine())!= null){
+                        log.info(line);
+                    }
+                    if (exitValue == 0){
+                        log.info("successfully executed the linux command");
+                    } else {
+                        log.info(String.format("exit with error code: %d", exitValue));
+                    }
+                }
+            };
+
+            Runnable runErrReader = new Runnable() {
+
+                @SneakyThrows
+                @Override
+                public void run() {
+                    String line;
+                    while((line = errReader.readLine())!= null){
+                        log.error(line);
+                    }
+                }
+            };
+
+            new Thread(runReader).start();
+            new Thread(runErrReader).start();
+
+        } catch (InterruptedException | IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
