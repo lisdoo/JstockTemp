@@ -108,7 +108,7 @@ public class DownloadShell {
 
         File path = new File("./temp");
 
-        Write w = new Write(path.getParentFile().getAbsolutePath(), jstockCode);
+        Write w = new Write(path.getParentFile().getAbsolutePath(), jstockCode, true);
 
         Predicate p = new Predicate<JSONArray>() {
 

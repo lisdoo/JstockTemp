@@ -17,6 +17,15 @@ public class Write {
         bos = new BufferedOutputStream(new FileOutputStream(file));
     }
 
+    public Write(String path, String fileName, boolean append) throws FileNotFoundException {
+        File file = new File(path, fileName);
+        if (append) {
+        } else {
+            if (file.exists()) file.delete();
+        }
+        bos = new BufferedOutputStream(new FileOutputStream(file, append));
+    }
+
     public void put(String s) throws IOException {
         bos.write("callback({\"Data\":[[".getBytes(StandardCharsets.UTF_8));
         bos.write(s.getBytes(StandardCharsets.UTF_8));
