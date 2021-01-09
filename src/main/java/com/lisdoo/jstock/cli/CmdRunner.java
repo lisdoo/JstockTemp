@@ -57,7 +57,7 @@ public class CmdRunner implements CommandLineRunner {
                 String lineStr = null;
                 InputStreamReader isr = new InputStreamReader(System.in);
                 BufferedReader br = new BufferedReader(isr);
-                while (!(lineStr = br.readLine()).isEmpty()) {
+                while (!((lineStr = br.readLine()) == null)) {
 
                     try {
 
