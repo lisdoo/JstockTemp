@@ -1,0 +1,1000 @@
+D stocksinfo-2019-02-01_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-08-15_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-08-16_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-09-05_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-10-10_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-10-11_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-10-12_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-10-13_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-10-16_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-10-17_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-10-18_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-10-19_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-10-20_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-10-23_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-10-24_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-10-25_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-10-26_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-10-27_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-10-30_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-10-31_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-11-01_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-11-02_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-11-03_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-11-06_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-11-07_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-11-08_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-11-10_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-11-13_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-11-14_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-11-15_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-11-16_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-11-17_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-11-20_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-11-21_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-11-22_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-11-23.debugfs_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-11-23_folder.ok 0 2021-01-07, 21:13:59
+D stocksinfo.2017-11-24_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-11-27_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-11-30_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-12-04_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-12-05_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-12-06_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-12-07_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-12-08_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-12-11_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-12-12_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-12-13_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-12-14_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-12-15_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-12-18_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-12-19_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-12-20_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-12-21_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-12-22_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-12-25_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-12-26_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-12-27_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-12-28_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2017-12-29_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-01-02_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-01-03_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-01-04_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-01-05_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-01-08_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-01-09_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-01-10_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-01-11_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-01-12_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-01-15_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-01-16_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-01-18_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-01-19_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-01-22_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-01-23_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-01-24_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-01-25_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-01-26_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-01-29_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-01-30_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-01-31_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-02-01_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-02-02_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-02-05_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-02-06_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-02-07_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-02-08_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-02-09_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-02-12_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-02-13_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-02-14_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-02-22_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-02-23_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-02-26_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-02-27_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-02-28_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-03-01_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-03-02_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-03-05_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-03-06_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-03-07_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-03-08_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-03-09_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-03-12_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-03-13_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-03-14_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-03-15_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-03-16_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-03-19_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-03-20_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-03-21_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-03-22_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-03-23_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-03-26_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-03-27_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-03-28_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-03-29_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-03-30_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-04-02_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-04-03_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-04-09_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-04-12_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-04-13_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-04-16_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-04-17_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-04-18_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-04-19_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-04-20_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-04-23_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-04-24_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-04-25_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-04-26_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-04-27_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-05-02_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-05-03_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-05-04_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-05-07_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-05-08_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-05-09_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-05-10_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-05-11_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-05-14_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-05-15_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-05-16_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-05-17_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-05-18_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-05-21_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-05-22_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-05-23_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-05-24_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-05-25_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-05-28_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-05-29_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-05-30_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-05-31_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-06-01_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-06-04_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-06-05_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-06-06_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-06-07_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-06-08_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-06-11_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-06-12_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-06-13_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-06-14_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-06-15_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-06-18_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-06-19_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-06-20_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-06-21_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-06-22_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-06-25_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-06-26_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-06-27_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-06-28_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-06-29_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-07-02_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-07-03_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-07-04_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-07-05_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-07-06_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-07-09_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-07-10_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-07-11_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-07-12_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-07-13_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-07-16_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-07-19_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-07-20_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-07-23_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-07-24_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-07-25_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-07-26_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-07-27_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-07-30_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-07-31_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-08-01_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-08-02_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-08-03_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-08-06_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-08-07_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-08-08_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-08-09_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-08-10_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-08-13_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-08-14_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-08-15_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-08-16_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-08-17_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-08-20_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-08-21_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-08-22_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-08-23_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-08-24_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-08-27_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-08-28_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-08-29_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-08-30_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-08-31_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-09-03_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-09-04_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-09-05_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-09-06_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-09-07_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-09-10_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-09-11_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-09-12_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-09-13_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-09-14_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-09-17_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-09-18_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-09-19_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-09-20_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-09-21_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-09-25_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-09-26_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-09-27_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-09-28_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-10-08_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-10-09_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-10-10_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-10-11_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-10-12_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-10-15_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-10-16_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-10-17_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-10-18_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-10-19_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-10-22_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-10-23_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-10-24_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-10-25_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-10-26_folder 0 2021-01-07, 21:23:04
+D stocksinfo.2018-10-29_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-10-30_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-10-31_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-11-01_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-11-05_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-11-06_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-11-07_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-11-08_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-11-09_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-11-12_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-11-13_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-11-14_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-11-15_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-11-16_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-11-19_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-11-20_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-11-21_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-11-22_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-11-23_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-11-26_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-11-27_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-11-28_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-11-29_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-11-30_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-12-03_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-12-04_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-12-05_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-12-06_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-12-07_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-12-10_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-12-11_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-12-12_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-12-13_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-12-14_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-12-17_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-12-18_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-12-19_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-12-20_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-12-21_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-12-24_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-12-25_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-12-26_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-12-27_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2018-12-28_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-01-02_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-01-03_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-01-04_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-01-07_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-01-08_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-01-09_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-01-10_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-01-11_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-01-14_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-01-15_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-01-16_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-01-17_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-01-18_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-01-21_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-01-22_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-01-23_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-01-24_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-01-25_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-01-28_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-01-29_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-01-30_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-01-31_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-02-11_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-02-12_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-02-13_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-02-14_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-02-15_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-02-18_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-02-19_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-02-20_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-02-21_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-02-22_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-02-25_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-02-26_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-02-27_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-02-28_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-03-01_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-03-04_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-03-05_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-03-06_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-03-07_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-03-08_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-03-11_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-03-12_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-03-13_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-03-14_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-03-15_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-03-18_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-03-19_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-03-20_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-03-21_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-03-22_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-03-25_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-03-26_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-03-27_folder 0 2021-01-07, 21:22:20
+D stocksinfo.2019-03-28_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-03-29_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-04-01_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-04-02_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-04-03_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-04-04_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-04-05_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-04-08_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-04-09_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-04-10_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-04-11_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-04-12_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-04-15_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-04-16_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-04-17_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-04-18_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-04-19_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-04-22_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-04-23_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-04-24_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-04-25_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-04-26_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-04-29_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-04-30_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-05-06_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-05-07_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-05-08_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-05-09_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-05-10_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-05-13_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-05-14_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-05-15_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-05-16_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-05-17_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-05-20_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-05-21_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-05-22_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-05-23_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-05-24_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-05-27_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-05-28_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-05-29_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-05-30_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-05-31_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-06-03_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-06-04_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-06-05_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-06-06_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-06-07_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-06-10_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-06-11_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-06-12_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-06-13_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-06-14_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-06-17_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-06-18_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-06-19_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-06-20_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-06-21_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-06-24_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-06-25_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-06-26_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-06-27_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-06-28_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-07-01_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-07-02_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-07-03_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-07-09_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-07-10_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-07-11_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-07-12_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-07-15_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-07-16_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-07-17_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-07-18_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-07-22_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-07-23_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-07-24_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-07-25_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-07-26_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-07-29_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-07-30_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-07-31_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-08-01_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-08-02_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-08-05_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-08-06_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-08-07_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-08-08_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-08-09_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-08-12_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-08-13_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-08-14_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-08-15_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-08-16_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-08-19_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-08-20_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-08-21_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-08-22_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-08-23_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-08-26_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-08-27_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-08-28_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-08-29_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-08-30_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-09-02_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-09-03_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-09-04_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-09-05_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-09-06_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-09-09_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-09-10_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-09-11_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-09-12_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-09-13_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-09-16_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-09-17_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-09-18_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-09-19_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-09-20_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-09-23_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-09-24_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-09-25_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-09-26_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-09-27_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-09-30_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-10-01_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-10-02_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-10-03_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-10-04_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-10-07_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-10-08_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-10-09_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-10-10_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-10-11_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-10-14_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-10-15_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-10-16_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-10-17_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-10-18_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-10-21_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-10-22_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-10-23_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-10-24_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-10-25_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-10-28_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-10-29_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-10-30_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-10-31_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-11-01_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-11-04_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-11-05_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-11-06_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-11-07_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-11-08_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-11-11_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-11-12_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-11-13_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-11-14_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-11-15_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-11-18_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-11-19_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-11-20_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-11-21_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-11-22_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-11-25_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-11-26_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-11-27_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-11-28_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-11-29_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-12-02_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-12-03_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-12-04_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-12-05_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-12-06_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-12-09_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-12-10_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-12-11_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-12-12_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-12-13_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-12-16_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-12-17_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-12-18_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-12-19_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2019-12-20_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-01-06_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-01-07_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-01-08_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-01-09_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-01-10_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-01-13_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-01-14_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-01-15_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-01-16_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-01-17_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-01-20_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-01-21_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-01-22_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-01-23_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-02-03_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-02-04_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-02-05_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-02-06_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-02-07_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-02-10_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-02-11_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-02-12_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-02-13_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-02-14_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-02-17_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-02-18_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-02-19_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-02-20_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-02-21_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-02-24_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-02-25_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-02-26_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-02-27_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-02-28_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-03-02_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-03-03_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-03-04_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-03-05_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-03-06_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-03-09_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-03-10_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-03-11_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-03-12_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-03-13_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-03-16_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-03-17_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-03-18_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-03-19_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-03-20_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-03-23_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-03-24_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-03-25_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-03-26_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-03-27_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-03-30_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-03-31_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-04-01_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-04-02_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-04-03_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-04-07_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-04-08_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-04-09_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-04-13_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-04-14_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-04-15_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-04-16_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-04-17_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-04-20_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-04-21_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-04-22_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-04-23_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-04-24_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-04-27_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-04-28_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-04-29_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-04-30_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-05-01_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-05-04_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-05-05_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-05-06_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-05-07_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-05-08_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-05-11_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-05-12_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-05-13_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-05-14_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-05-15_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-05-18_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-05-19_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-05-20_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-05-21_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-05-22_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-05-25_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-05-26_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-05-27_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-05-29_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-06-01_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-06-02_folder 0 2021-01-07, 21:13:59
+D stocksinfo.2020-06-03_folder 0 2021-01-07, 21:19:42
+D stocksinfo.2020-06-04_folder 0 2021-01-07, 21:19:43
+D stocksinfo.2020-06-05_folder 0 2021-01-07, 21:19:43
+D stocksinfo.2020-06-08_folder 0 2021-01-07, 21:19:43
+D stocksinfo.2020-06-09_folder 0 2021-01-07, 21:19:43
+D stocksinfo.2020-06-10_folder 0 2021-01-07, 21:19:43
+D stocksinfo.2020-06-11_folder 0 2021-01-07, 21:19:43
+D stocksinfo.2020-06-12_folder 0 2021-01-07, 21:19:43
+D stocksinfo.2020-06-15_folder 0 2021-01-07, 21:19:43
+D stocksinfo.2020-06-16_folder 0 2021-01-07, 21:19:43
+D stocksinfo.2020-06-17_folder 0 2021-01-07, 21:19:44
+D stocksinfo.2020-06-18_folder 0 2021-01-07, 21:19:44
+D stocksinfo.2020-06-19_folder 0 2021-01-07, 21:19:44
+D stocksinfo.2020-06-22_folder 0 2021-01-07, 21:19:44
+D stocksinfo.2020-06-23_folder 0 2021-01-07, 21:19:44
+D stocksinfo.2020-06-24_folder 0 2021-01-07, 21:19:44
+D stocksinfo.2020-06-25_folder 0 2021-01-07, 21:19:44
+D stocksinfo.2020-06-26_folder 0 2021-01-07, 21:19:44
+D stocksinfo.2020-06-29_folder 0 2021-01-07, 21:19:44
+D stocksinfo.2020-06-30_folder 0 2021-01-07, 21:19:45
+D stocksinfo.2020-07-01_folder 0 2021-01-07, 21:19:45
+D stocksinfo.2020-07-02_folder 0 2021-01-07, 21:19:45
+D stocksinfo.2020-07-03_folder 0 2021-01-07, 21:19:45
+D stocksinfo.2020-07-06_folder 0 2021-01-07, 21:19:45
+D stocksinfo.2020-07-07_folder 0 2021-01-07, 21:19:45
+D stocksinfo.2020-07-10_folder 0 2021-01-07, 21:19:45
+D stocksinfo.2020-07-17_folder 0 2021-01-07, 21:19:46
+D stocksinfo.2020-07-20_folder 0 2021-01-07, 21:19:46
+D stocksinfo.2020-07-21_folder 0 2021-01-07, 21:19:46
+D stocksinfo.2020-07-22_folder 0 2021-01-07, 21:19:46
+D stocksinfo.2020-07-23_folder 0 2021-01-07, 21:19:46
+D stocksinfo.2020-07-24_folder 0 2021-01-07, 21:19:46
+D stocksinfo.2020-07-27_folder 0 2021-01-07, 21:19:46
+D stocksinfo.2020-07-28_folder 0 2021-01-07, 21:19:47
+D stocksinfo.2020-07-29_folder 0 2021-01-07, 21:19:47
+D stocksinfo.2020-07-30_folder 0 2021-01-07, 21:19:47
+D stocksinfo.2020-07-31_folder 0 2021-01-07, 21:19:47
+D stocksinfo.2020-08-03_folder 0 2021-01-07, 21:19:47
+D stocksinfo.2020-08-04_folder 0 2021-01-07, 21:19:47
+D stocksinfo.2020-08-05_folder 0 2021-01-07, 21:19:47
+D stocksinfo.2020-08-06_folder 0 2021-01-07, 21:19:47
+D stocksinfo.2020-08-07_folder 0 2021-01-07, 21:19:48
+D stocksinfo.2020-08-10_folder 0 2021-01-07, 21:19:48
+D stocksinfo.2020-08-11_folder 0 2021-01-07, 21:19:48
+D stocksinfo.2020-08-12_folder 0 2021-01-07, 21:19:48
+D stocksinfo.2020-08-14_folder 0 2021-01-07, 21:19:48
+D stocksinfo.2020-08-17_folder 0 2021-01-07, 21:19:48
+D stocksinfo.2020-08-18_folder 0 2021-01-07, 21:19:48
+D stocksinfo.2020-08-19_folder 0 2021-01-07, 21:19:48
+D stocksinfo.2020-08-20_folder 0 2021-01-07, 21:19:49
+D stocksinfo.2020-08-21_folder 0 2021-01-07, 21:19:42
+D stocksinfo.2020-08-24_folder 0 2021-01-07, 21:19:42
+D stocksinfo.2020-08-25_folder 0 2021-01-07, 21:19:42
+D stocksinfo.2020-08-26_folder 0 2021-01-07, 21:19:42
+D stocksinfo.2020-08-27_folder 0 2021-01-07, 21:19:43
+D stocksinfo.2020-08-28_folder 0 2021-01-07, 21:19:43
+D stocksinfo.2020-08-31_folder 0 2021-01-07, 21:19:43
+D stocksinfo.2020-09-01_folder 0 2021-01-07, 21:19:43
+D stocksinfo.2020-09-02_folder 0 2021-01-07, 21:19:43
+D stocksinfo.2020-09-04_folder 0 2021-01-07, 21:19:43
+D stocksinfo.2020-09-07_folder 0 2021-01-07, 21:19:43
+D stocksinfo.2020-09-08_folder 0 2021-01-07, 21:19:43
+D stocksinfo.2020-09-09_folder 0 2021-01-07, 21:19:44
+D stocksinfo.2020-09-10_folder 0 2021-01-07, 21:19:44
+D stocksinfo.2020-09-11_folder 0 2021-01-07, 21:19:44
+D stocksinfo.2020-09-14_folder 0 2021-01-07, 21:19:44
+D stocksinfo.2020-09-15_folder 0 2021-01-07, 21:19:44
+D stocksinfo.2020-09-16_folder 0 2021-01-07, 21:19:44
+D stocksinfo.2020-09-17_folder 0 2021-01-07, 21:19:44
+D stocksinfo.2020-09-18_folder 0 2021-01-07, 21:19:44
+D stocksinfo.2020-09-21_folder 0 2021-01-07, 21:19:45
+D stocksinfo.2020-09-22_folder 0 2021-01-07, 21:19:45
+D stocksinfo.2020-09-23_folder 0 2021-01-07, 21:19:45
+D stocksinfo.2020-09-24_folder 0 2021-01-07, 21:19:45
+D stocksinfo.2020-09-25_folder 0 2021-01-07, 21:19:45
+D stocksinfo.2020-09-28_folder 0 2021-01-07, 21:19:45
+D stocksinfo.2020-09-29_folder 0 2021-01-07, 21:19:46
+D stocksinfo.2020-09-30_folder 0 2021-01-07, 21:19:46
+D stocksinfo.2020-10-09_folder 0 2021-01-07, 21:19:46
+D stocksinfo.2020-10-12_folder 0 2021-01-07, 21:19:46
+D stocksinfo.2020-10-13_folder 0 2021-01-07, 21:19:46
+D stocksinfo.2020-10-14_folder 0 2021-01-07, 21:19:47
+D stocksinfo.2020-10-15_folder 0 2021-01-07, 21:19:47
+D stocksinfo.2020-10-16_folder 0 2021-01-07, 21:19:47
+D stocksinfo.2020-10-19_folder 0 2021-01-07, 21:19:47
+D stocksinfo.2020-10-20_folder 0 2021-01-07, 21:19:48
+D stocksinfo.2020-10-21_folder 0 2021-01-07, 21:19:48
+D stocksinfo.2020-10-22_folder 0 2021-01-07, 21:19:48
+D stocksinfo.2020-10-23_folder 0 2021-01-07, 21:19:48
+D stocksinfo.2020-10-26_folder 0 2021-01-07, 21:19:48
+D stocksinfo.2020-10-27_folder 0 2021-01-07, 21:19:48
+D stocksinfo.2020-10-28_folder 0 2021-01-07, 21:19:48
+D stocksinfo.2020-10-29_folder 0 2021-01-07, 21:19:49
+D stocksinfo.2020-10-30_folder 0 2021-01-07, 21:19:49
+D stocksinfo.2020-11-02_folder 0 2021-01-07, 21:19:49
+D stocksinfo.2020-11-03_folder 0 2021-01-07, 21:19:49
+D stocksinfo.2020-11-04_folder 0 2021-01-07, 21:19:49
+D stocksinfo.2020-11-05_folder 0 2021-01-07, 21:19:49
+D stocksinfo.2020-11-06_folder 0 2021-01-07, 21:19:49
+D stocksinfo.2020-11-09_folder 0 2021-01-07, 21:19:50
+D stocksinfo.2020-11-10_folder 0 2021-01-07, 21:19:42
+D stocksinfo.2020-11-11_folder 0 2021-01-07, 21:19:42
+D stocksinfo.2020-11-12_folder 0 2021-01-07, 21:19:42
+D stocksinfo.2020-11-13_folder 0 2021-01-07, 21:19:42
+D stocksinfo.2020-11-16_folder 0 2021-01-07, 21:19:43
+D stocksinfo.2020-11-17_folder 0 2021-01-07, 21:19:43
+D stocksinfo.2020-11-18_folder 0 2021-01-07, 21:19:43
+D stocksinfo.2020-11-19_folder 0 2021-01-07, 21:19:43
+D stocksinfo.2020-11-20_folder 0 2021-01-07, 21:19:43
+D stocksinfo.2020-11-23_folder 0 2021-01-07, 21:19:43
+D stocksinfo.2020-11-24_folder 0 2021-01-07, 21:19:43
+D stocksinfo.2020-11-25_folder 0 2021-01-07, 21:19:43
+D stocksinfo.2020-11-26_folder 0 2021-01-07, 21:19:44
+D stocksinfo.2020-11-27_folder 0 2021-01-07, 21:19:44
+D stocksinfo.2020-11-30_folder 0 2021-01-07, 21:19:44
+D stocksinfo.2020-12-01_folder 0 2021-01-07, 21:19:44
+D stocksinfo.2020-12-02_folder 0 2021-01-07, 21:19:44
+D stocksinfo.2020-12-03_folder 0 2021-01-07, 21:19:44
+D stocksinfo.2020-12-04_folder 0 2021-01-07, 21:19:44
+D stocksinfo.2020-12-07_folder 0 2021-01-07, 21:19:44
+D stocksinfo.2020-12-08_folder 0 2021-01-07, 21:19:44
+D stocksinfo.2020-12-09_folder 0 2021-01-07, 21:19:45
+D stocksinfo.2020-12-10_folder 0 2021-01-07, 21:19:45
+D stocksinfo.2020-12-11_folder 0 2021-01-07, 21:19:45
+D stocksinfo.2020-12-14_folder 0 2021-01-07, 21:19:45
+D stocksinfo.2020-12-15_folder 0 2021-01-07, 21:19:45
+D stocksinfo.2020-12-16_folder 0 2021-01-07, 21:19:45
+D stocksinfo.2020-12-17_folder 0 2021-01-07, 21:19:45
+D stocksinfo.2020-12-18_folder 0 2021-01-07, 21:19:46
+D stocksinfo.2020-12-21_folder 0 2021-01-07, 21:19:46
+D stocksinfo.2020-12-22_folder 0 2021-01-07, 21:19:46
+D stocksinfo.2020-12-23_folder 0 2021-01-07, 21:19:46
+D stocksinfo.2020-12-24_folder 0 2021-01-07, 21:19:46
+D stocksinfo.2020-12-25_folder 0 2021-01-07, 21:19:46
+D stocksinfo.2020-12-28_folder 0 2021-01-07, 21:19:46
+D stocksinfo.2020-12-29_folder 0 2021-01-07, 21:19:46
+D stocksinfo.2020-12-30_folder 0 2021-01-07, 21:19:47
+D stocksinfo.2020-12-31_folder 0 2021-01-07, 21:19:47
+D stocksinfo.2021-01-01_folder 0 2021-01-07, 21:19:47
+D stocksinfo.2021-01-04_folder 0 2021-01-07, 21:19:47
+F stocksinfo.2015-09-07.xz 558505933 2021-01-07, 21:13:59 5180d649673f6e5d6248cceded7f6886
+F stocksinfo.2015-09-08.xz 469479356 2021-01-07, 21:13:59 1011f721be63935048938d7f161bf5ad
+F stocksinfo.2015-09-09.xz 573673133 2021-01-07, 21:13:59 ea7746c67072c8c0c5f13a870e9b20a3
+F stocksinfo.2015-09-10.xz 566827331 2021-01-07, 21:13:59 e0a0d86800e376df92c2cd52f28b3f93
+F stocksinfo.2015-09-11.xz 561726149 2021-01-07, 21:13:59 817958a5d533952ec1bd171e0efe47c2
+F stocksinfo.2015-09-14.xz 549425356 2021-01-07, 21:13:59 017a4e53829a0866256a6abb2860e075
+F stocksinfo.2015-09-15.xz 556891819 2021-01-07, 21:13:59 b86af05abe3f6f994cae1d517d9f0703
+F stocksinfo.2015-09-17.xz 574195254 2021-01-07, 21:13:59 58f57b3c4e0ec3ca4727059ff51362fe
+F stocksinfo.2015-09-18.xz 562858572 2021-01-07, 21:13:59 19a8c6c16582736b955c6feefeff4100
+F stocksinfo.2015-09-21.xz 571594857 2021-01-07, 21:13:59 108634fb4db0345edd8966d146d0aba6
+F stocksinfo.2015-09-22.xz 574618859 2021-01-07, 21:13:59 7d112925e6598d25d2feb4beb47869d2
+F stocksinfo.2015-09-23.xz 575318398 2021-01-07, 21:13:59 d7a64dff1bbe4fdb7c0afaafecf84a70
+F stocksinfo.2015-09-24.xz 576877706 2021-01-07, 21:13:59 c0d78e38234cd4aaf64595b1ca5622ca
+F stocksinfo.2015-09-25.xz 573768984 2021-01-07, 21:13:59 be121160f59c40291595cd9ad9cd9b17
+F stocksinfo.2015-09-28.xz 564671599 2021-01-07, 21:13:59 3c4dea97caf6a4563e61a77beeb66d53
+F stocksinfo.2015-09-29.xz 575663347 2021-01-07, 21:13:59 e9c0f5666984e806569af76e5e9ceeaa
+F stocksinfo.2015-09-30.xz 569481901 2021-01-07, 21:13:59 801746df2f2d670a9b7895772905e2e9
+F stocksinfo.2015-10-08.xz 347762602 2021-01-07, 21:13:59 fcfd18ea4a4817ba8021f173c0de7c3f
+F stocksinfo.2015-10-12.xz 587749468 2021-01-07, 21:13:59 3ae13899d2b2cd98b34c856076ba1ce0
+F stocksinfo.2015-10-13.xz 587963159 2021-01-07, 21:13:59 d9baae5e10709533ddae35ca953dab2d
+F stocksinfo.2015-10-14.xz 595838925 2021-01-07, 21:13:59 53de6219fe43726104853217d202be11
+F stocksinfo.2015-10-15.xz 571423790 2021-01-07, 21:13:59 c32186fa9bd694a340f8759eefd4afb0
+F stocksinfo.2015-10-16.xz 594969214 2021-01-07, 21:13:59 6e3f70ed52ab6629a5c6d3d4d80262c6
+F stocksinfo.2015-10-19.xz 564385812 2021-01-07, 21:13:59 8bdf56510bdcfb218f1b9003df971ee5
+F stocksinfo.2015-10-20.xz 588886750 2021-01-07, 21:13:59 8904d43626b9d6ee6bedb3e4360798a5
+F stocksinfo.2015-10-21.xz 583131867 2021-01-07, 21:13:59 4069dd3f1d6649c3541c810b66f81df8
+F stocksinfo.2015-10-22.xz 572491806 2021-01-07, 21:13:59 50380c5e7dce8b32e6800de3cc235953
+F stocksinfo.2015-10-26.xz 609484728 2021-01-07, 21:13:59 170ac71ebdb0d26a018a2365740c06ce
+F stocksinfo.2015-10-27.xz 598425906 2021-01-07, 21:13:59 81c9ad0d76b2f263ab7fb323229d906d
+F stocksinfo.2015-10-28.xz 601440987 2021-01-07, 21:13:59 f58fb98a4fe6485e9cf1661f656588ff
+F stocksinfo.2015-10-29.xz 596945884 2021-01-07, 21:13:59 ec0dd75a68fefda971d09c43606fde91
+F stocksinfo.2015-10-30.xz 444596224 2021-01-07, 21:13:59 826535fe115f937e31bf2262eb2f9c51
+F stocksinfo.2015-11-02.xz 587395424 2021-01-07, 21:13:59 2867ce11bea519c1d6c0f548e8f0d668
+F stocksinfo.2015-11-03.xz 599487129 2021-01-07, 21:13:59 f53b47b8f80bc4b8bf0903928de20761
+F stocksinfo.2015-11-04.xz 610003530 2021-01-07, 21:13:59 60b825c9ed45d050cf8f0639ddc31652
+F stocksinfo.2015-11-05.xz 618754673 2021-01-07, 21:13:59 70626c80a62fc94d2418f38139b53475
+F stocksinfo.2015-11-06.xz 232581694 2021-01-07, 21:13:59 d24a419ad3e64ae942635cb13e09c1ca
+F stocksinfo.2015-11-09.xz 311886136 2021-01-07, 21:13:59 3694c221446bd6ae2c1ea12db9ad47e5
+F stocksinfo.2015-11-10.xz 617098409 2021-01-07, 21:13:59 583b07588b0b2c51c430c7bc35ac7415
+F stocksinfo.2015-11-11.xz 614099362 2021-01-07, 21:13:59 84fcada628bf48dbbdc4f23aac644db2
+F stocksinfo.2015-11-12.xz 616016306 2021-01-07, 21:13:59 0b3d2b4ee3c251273365b45582c99440
+F stocksinfo.2015-11-13.xz 624816276 2021-01-07, 21:13:59 bf33cd1c1103e206fa69a17431e22b04
+F stocksinfo.2015-11-16.xz 613339033 2021-01-07, 21:13:59 62aab9f9fc44adcf7fc5748159a0740e
+F stocksinfo.2015-11-17.xz 625118903 2021-01-07, 21:13:59 af29934b0b6fbaa3e2d784fb132639df
+F stocksinfo.2015-11-18.xz 616541955 2021-01-07, 21:13:59 2ca7e0a70d3cb41ce88856f4c6f94304
+F stocksinfo.2015-11-19.xz 610135199 2021-01-07, 21:13:59 f2c64cc612e038ff2e70c3f212dfe889
+F stocksinfo.2015-11-20.xz 620737926 2021-01-07, 21:13:59 45e9c3a47bdd78e81118ae86c3f48cbf
+F stocksinfo.2015-11-23.xz 621016071 2021-01-07, 21:13:59 2cd0eb2d3a3f4bf3509c7c515ae7b292
+F stocksinfo.2015-11-24.xz 619010019 2021-01-07, 21:13:59 f39ec4f22c2ea00d50478625a61f277c
+F stocksinfo.2015-11-25.xz 625309871 2021-01-07, 21:13:59 da41c28617a0d54cf3adb4c16c1a2ca1
+F stocksinfo.2015-11-26.xz 626353625 2021-01-07, 21:13:59 81a424d4a09d73c66dad482102a239b4
+F stocksinfo.2015-11-27.xz 599355293 2021-01-07, 21:13:59 9d8c6d61e88455bf79bc9345e44aaad8
+F stocksinfo.2015-11-30.xz 603982942 2021-01-07, 21:13:59 6d07e2c467281e03a90c0c90b6782c7f
+F stocksinfo.2015-12-01.xz 600990147 2021-01-07, 21:13:59 26d8ffdb60fae5fa328f864ab38514ec
+F stocksinfo.2015-12-02.xz 489909923 2021-01-07, 21:13:59 89bcfabeeeca4971108c065f4e7e8173
+F stocksinfo.2015-12-03.xz 437450850 2021-01-07, 21:13:59 16ff99d5a4464036eef5315caab74a6b
+F stocksinfo.2015-12-11.xz 591317648 2021-01-07, 21:13:59 25d70a85f0c59a0518cd08a64ef93d53
+F stocksinfo.2015-12-14.xz 311042492 2021-01-07, 21:13:59 d005cd61669951200dc4e0b276169629
+F stocksinfo.2015-12-15.xz 625426854 2021-01-07, 21:13:59 39d66e1f17c6a4803eec782a2ef3509a
+F stocksinfo.2015-12-16.xz 626822933 2021-01-07, 21:13:59 0cbfd15c46839ab131fe0ce6fa8ddb66
+F stocksinfo.2015-12-17.xz 636902863 2021-01-07, 21:13:59 2ddd43ce7e79f4cf30f57cdf029bd4d1
+F stocksinfo.2015-12-18.xz 630449663 2021-01-07, 21:13:59 cf805155aed36c44ba854f63516d1a92
+F stocksinfo.2015-12-21.xz 630834076 2021-01-07, 21:13:59 cc1e598d33ea89403b129a659278c53f
+F stocksinfo.2015-12-22.xz 630317028 2021-01-07, 21:13:59 02367de2bdd0b4ab29909b419ca5e358
+F stocksinfo.2015-12-23.xz 629439593 2021-01-07, 21:13:59 41dda32b7b8f5ce066aa2eaef705c76a
+F stocksinfo.2015-12-24.xz 604836899 2021-01-07, 21:13:59 fe3846c365ad199ab929be93e778b891
+F stocksinfo.2015-12-25.xz 619819895 2021-01-07, 21:13:59 931c767fe9b31c8b829043c64dfe8e7b
+F stocksinfo.2015-12-28.xz 625759658 2021-01-07, 21:13:59 ae0979365376642d4b285ce173b3e392
+F stocksinfo.2015-12-29.xz 624717253 2021-01-07, 21:13:59 cf297eb7d97db53598c5af66b22fadd7
+F stocksinfo.2015-12-30.xz 621651626 2021-01-07, 21:13:59 7b119efd62005e924b13b340bb3c2415
+F stocksinfo.2015-12-31.xz 628061973 2021-01-07, 21:13:59 dcc05d174f015b559b0a674bccedb1e4
+F stocksinfo.2016-01-04.xz 281889638 2021-01-07, 21:13:59 ab591ae36490c9fe231bdbaf6c920f5a
+F stocksinfo.2016-01-05.xz 622209428 2021-01-07, 21:13:59 3758c1e9f3ae6c12d71547c0ca593657
+F stocksinfo.2016-01-06.xz 611626583 2021-01-07, 21:13:59 57c3b32034d0a7afd64520152bba92fc
+F stocksinfo.2016-01-07.xz 81674783 2021-01-07, 21:13:59 52a359b59d2ab10712aea47205fdd2eb
+F stocksinfo.2016-01-08.xz 621448883 2021-01-07, 21:13:59 fd4eb208f085f1a6a4409d3dd8539e0d
+F stocksinfo.2016-01-11.xz 611680124 2021-01-07, 21:13:59 8e80892464e5f98f3fafeb89e25ecfca
+F stocksinfo.2016-01-12.xz 612484378 2021-01-07, 21:13:59 b6b89fe7d167c6a07f6dd219050cd8fa
+F stocksinfo.2016-01-13.xz 605504918 2021-01-07, 21:13:59 1b5233825ac8017e6c5b947f814b2571
+F stocksinfo.2016-01-14.xz 613587356 2021-01-07, 21:13:59 032d037bb4cac9af729f4a5398369466
+F stocksinfo.2016-01-15.xz 612790432 2021-01-07, 21:13:59 ffd64eea25d437b56dff90cb16649220
+F stocksinfo.2016-01-18.xz 601526655 2021-01-07, 21:13:59 8ade55aa11812a5dc58de60b8284b836
+F stocksinfo.2016-01-19.xz 607363755 2021-01-07, 21:13:59 74401ed8bd7c8517bd5a315ff7c0fac0
+F stocksinfo.2016-01-20.xz 613498695 2021-01-07, 21:13:59 6531557127afa943d7f20636cbe3bf93
+F stocksinfo.2016-01-21.xz 607443250 2021-01-07, 21:13:59 0cb6a57d42b772f061ca8c3515d8d8f1
+F stocksinfo.2016-01-22.xz 599790535 2021-01-07, 21:13:59 79d9b54d4cc7f1b7f80e978aa639395b
+F stocksinfo.2016-01-25.xz 604769221 2021-01-07, 21:13:59 b8e1b34cb219fa8ba20485d8aeb713d2
+F stocksinfo.2016-01-26.xz 601860277 2021-01-07, 21:13:59 6568c0d75d36b854cb29d52d51c01bd7
+F stocksinfo.2016-01-27.xz 593823470 2021-01-07, 21:13:59 af4f3dac35884a42e36287dd0bc1d432
+F stocksinfo.2016-01-28.xz 298559206 2021-01-07, 21:13:59 2bd72f0dd32166a41b69bcd12e8da7be
+F stocksinfo.2016-01-29.xz 597881681 2021-01-07, 21:13:59 9816d2f7d76b77dd56228f7247724512
+F stocksinfo.2016-02-01.xz 599242769 2021-01-07, 21:13:59 847b8d74b0d5c5682da123aa6244d0a9
+F stocksinfo.2016-02-02.xz 606558447 2021-01-07, 21:13:59 b344ccea10da8cfad10a14816e493bfe
+F stocksinfo.2016-02-03.xz 601012282 2021-01-07, 21:13:59 82f582e648e61affa6544a53b07e0c02
+F stocksinfo.2016-02-04.xz 611332454 2021-01-07, 21:13:59 9a50a369191578c2a8c9ea733d4f0fa1
+F stocksinfo.2016-02-05.xz 608570433 2021-01-07, 21:13:59 62c40adde3f8865d67a98ab834a557a8
+F stocksinfo.2016-02-15.xz 610712897 2021-01-07, 21:13:59 cecefc2ff884a7ce55df4c81b48906d9
+F stocksinfo.2016-02-16.xz 619376475 2021-01-07, 21:13:59 2a3ceca76400772fec23239099e584f1
+F stocksinfo.2016-02-17.xz 623844917 2021-01-07, 21:13:59 b269612412b84d75ffa7364326a6f587
+F stocksinfo.2016-02-18.xz 621859817 2021-01-07, 21:13:59 460312626034cb13e73b7c9a26a86b08
+F stocksinfo.2016-02-19.xz 616035946 2021-01-07, 21:13:59 9418c282ed5fd1b300c289853b11b826
+F stocksinfo.2016-02-22.xz 464967460 2021-01-07, 21:13:59 47ca356df8fdc9072171c1f73c977a01
+F stocksinfo.2016-02-23.xz 617677871 2021-01-07, 21:13:59 7a312b2ede4d434de00e0c427b2a6211
+F stocksinfo.2016-02-24.xz 617787108 2021-01-07, 21:13:59 0dab7f8f88db610f3fbb5c1fb307ec5d
+F stocksinfo.2016-02-25.xz 604751203 2021-01-07, 21:13:59 9066e4d835a0af90eb5b28c310f5b62c
+F stocksinfo.2016-02-26.xz 602845837 2021-01-07, 21:13:59 2e09b78d93a3951f4a2ccf6c544e4245
+F stocksinfo.2016-02-29.xz 594337805 2021-01-07, 21:13:59 9ca20d91b85c0bf2800076c1b27e8d8a
+F stocksinfo.2016-03-01.xz 600382334 2021-01-07, 21:13:59 ba97f7a0164eeb62c508c275811bd6d6
+F stocksinfo.2016-03-02.xz 612252326 2021-01-07, 21:13:59 4eb4bd7de7cd2b004cfe4e9ecccfae97
+F stocksinfo.2016-03-03.xz 615526151 2021-01-07, 21:13:59 f866b4a0bbba6a71d9da4025201122d9
+F stocksinfo.2016-03-04.xz 611590613 2021-01-07, 21:13:59 ef64c6acca80ccbcfb129ac7d084db68
+F stocksinfo.2016-03-07.xz 607139668 2021-01-07, 21:13:59 feb01c655c279d25d484ee0a06c3e4df
+F stocksinfo.2016-03-08.xz 602893616 2021-01-07, 21:13:59 40576ca97eab4b68ac2c00254037b503
+F stocksinfo.2016-03-09.xz 605497185 2021-01-07, 21:13:59 da8d970260fe124d03f5584c04c3a192
+F stocksinfo.2016-03-10.xz 598207750 2021-01-07, 21:13:59 415edb5659834859cc187bf735b12ef5
+F stocksinfo.2016-03-11.xz 584328346 2021-01-07, 21:13:59 a096e4f51d8297fd04e1c0d9d8c9926a
+F stocksinfo.2016-03-14.xz 615017461 2021-01-07, 21:13:59 b3c517b899c558cbf951985b96ca32c2
+F stocksinfo.2016-03-15.xz 605822857 2021-01-07, 21:13:59 e32f4b6b7ddcdb85d05ed9580009bc1a
+F stocksinfo.2016-03-16.xz 591247777 2021-01-07, 21:13:59 74fae15c4898747a962463beaf377033
+F stocksinfo.2016-03-17.xz 608706038 2021-01-07, 21:13:59 3b207d2313944c6e33ff8f63c18a554f
+F stocksinfo.2016-03-18.xz 630764320 2021-01-07, 21:13:59 b7a118767f3e42577cacf223a6b45371
+F stocksinfo.2016-03-21.xz 625732130 2021-01-07, 21:13:59 2201659ce6cd76219f9fd520d7a2ed03
+F stocksinfo.2016-03-22.xz 620982949 2021-01-07, 21:13:59 c7e963c3f061e977d51fc103d977f015
+F stocksinfo.2016-03-23.xz 616447741 2021-01-07, 21:13:59 5ccc458bb269ef41e87b46dd98fc21fc
+F stocksinfo.2016-03-24.xz 619580977 2021-01-07, 21:13:59 606b62f715db906dc258fcdb4b8292b6
+F stocksinfo.2016-03-25.xz 588842769 2021-01-07, 21:13:59 55a23446affaea76811f1bfd0cc90a04
+F stocksinfo.2016-03-28.xz 613888386 2021-01-07, 21:13:59 55adbb569ae6baf414dfe2c1482ff498
+F stocksinfo.2016-03-29.xz 601950500 2021-01-07, 21:13:59 75381a3f097fef5f0f9853034f8c7b09
+F stocksinfo.2016-03-30.xz 612945517 2021-01-07, 21:13:59 465a16043245e15f597e4b9eff01325f
+F stocksinfo.2016-03-31.xz 616089962 2021-01-07, 21:13:59 76b24a9880bc3edf06286a1141caec42
+F stocksinfo.2016-04-01.xz 371065087 2021-01-07, 21:13:59 d598bb0da5b38def456785f02aae009a
+F stocksinfo.2016-04-07.xz 617923505 2021-01-07, 21:13:59 75b249b66bbd92297f42c7b3741f3a91
+F stocksinfo.2016-04-08.xz 587872158 2021-01-07, 21:13:59 a6924b6305ae0cde013799d446018ccc
+F stocksinfo.2016-04-11.xz 610442674 2021-01-07, 21:13:59 1b9f5bf2a1e99b820c273206fc184087
+F stocksinfo.2016-04-12.xz 602204980 2021-01-07, 21:13:59 e4aa1b6fa3cdf98c3c77529fef81fefa
+F stocksinfo.2016-04-13.xz 622527219 2021-01-07, 21:13:59 5c002b3dbe1760e3d1ffa6e2cb8923aa
+F stocksinfo.2016-04-14.xz 610315225 2021-01-07, 21:13:59 25f84c04c17c14fbb8e53ae7115c288f
+F stocksinfo.2016-04-15.xz 607378332 2021-01-07, 21:13:59 822128e0c35a8d4f483a858c17ed75e8
+F stocksinfo.2016-04-18.xz 608424225 2021-01-07, 21:13:59 fe1a33ab8d84eb3e35ce9ee4d4249796
+F stocksinfo.2016-04-19.xz 603454773 2021-01-07, 21:13:59 2ed0ee4d94d659d1cb3192c31bcb94d6
+F stocksinfo.2016-04-20.xz 608699151 2021-01-07, 21:13:59 d99b34ec6de6ae58b0f947148431fe2b
+F stocksinfo.2016-04-21.xz 603622701 2021-01-07, 21:13:59 61c9e50790ef5fad85d94dcddf4e29b5
+F stocksinfo.2016-04-22.xz 596463424 2021-01-07, 21:13:59 efbe4e3f6cc0c7d4e645390bd86de42b
+F stocksinfo.2016-04-25.xz 596725679 2021-01-07, 21:13:59 35813dca1a72af1f33dd97144aa8b390
+F stocksinfo.2016-04-26.xz 594758453 2021-01-07, 21:13:59 c218a2f6dc8b60dee94daf74eaf06baa
+F stocksinfo.2016-04-27.xz 600698091 2021-01-07, 21:13:59 2631a542839a9effd24d9c0e0636a661
+F stocksinfo.2016-04-28.xz 578228433 2021-01-07, 21:13:59 6be67f66735adafadc0ee08d00e75e7f
+F stocksinfo.2016-04-29.xz 600523634 2021-01-07, 21:13:59 2889d9fccdb1f214ad963fefc4620346
+F stocksinfo.2016-05-03.xz 612782551 2021-01-07, 21:13:59 20213dbf1a8ee08c654aba6c94cb222f
+F stocksinfo.2016-05-04.xz 616431797 2021-01-07, 21:13:59 e3ef7d6409a7b96466145f6c3c8ac018
+F stocksinfo.2016-05-05.xz 611252143 2021-01-07, 21:13:59 4017268c7c775a8ac47263efaf06e4d1
+F stocksinfo.2016-05-06.xz 609162011 2021-01-07, 21:13:59 95be571c8985d8c201c8d3c1529409db
+F stocksinfo.2016-05-09.xz 582033142 2021-01-07, 21:13:59 aec16bfe9a6c6d731744a3bdc28f6e54
+F stocksinfo.2016-05-10.xz 596901326 2021-01-07, 21:13:59 0a76553fed3539bcc414e3630bc7789e
+F stocksinfo.2016-05-11.xz 601967707 2021-01-07, 21:13:59 16a029c45353889444b9c80ecc197edd
+F stocksinfo.2016-05-12.xz 601586789 2021-01-07, 21:13:59 66e430382097a49a96a9e3f806493e6c
+F stocksinfo.2016-05-13.xz 593650082 2021-01-07, 21:13:59 34489551c828b1f7f2911094f307dc31
+F stocksinfo.2016-05-16.xz 596298801 2021-01-07, 21:13:59 354f31a847ee350072d4a5b167163eae
+F stocksinfo.2016-05-17.xz 597057694 2021-01-07, 21:13:59 5182fb618b0680242f55399005350cb7
+F stocksinfo.2016-05-18.xz 599316673 2021-01-07, 21:13:59 7834caf01b14094d4c9f58c5687a7cc4
+F stocksinfo.2016-05-19.xz 605596567 2021-01-07, 21:13:59 e3923c8b0b73446414df669a2e7b185f
+F stocksinfo.2016-05-20.xz 599872041 2021-01-07, 21:13:59 519c1e9b6517a998037f377109c2bb51
+F stocksinfo.2016-05-23.xz 603361027 2021-01-07, 21:13:59 6b1861d4f9c5fd78256a304c1358f99d
+F stocksinfo.2016-05-24.xz 599171717 2021-01-07, 21:13:59 30df2fa43343af665a8d7b92b4234336
+F stocksinfo.2016-05-25.xz 604599538 2021-01-07, 21:13:59 15d580bf1d7af050e76bc73047f5feaa
+F stocksinfo.2016-05-26.xz 598774017 2021-01-07, 21:13:59 dec629b93665309f1ff82dc1ef7b9788
+F stocksinfo.2016-05-27.xz 601797835 2021-01-07, 21:13:59 8752beff621236c84a02cfb597d59f07
+F stocksinfo.2016-05-30.xz 601102728 2021-01-07, 21:13:59 a5798b5e47330c3e25faffec27954ec9
+F stocksinfo.2016-05-31.xz 617541748 2021-01-07, 21:13:59 17a17b2eefb59b1324664ed7712cdf6d
+F stocksinfo.2016-06-01.xz 624057631 2021-01-07, 21:13:59 8e56dbc332bc961c30af0c88bd06188f
+F stocksinfo.2016-06-02.xz 607252654 2021-01-07, 21:13:59 cd8160744d30c2f5d3a89292f1601833
+F stocksinfo.2016-06-03.xz 622467723 2021-01-07, 21:13:59 b6b1faa9ce8c242f98d6a604011aeb8b
+F stocksinfo.2016-06-06.xz 585759091 2021-01-07, 21:13:59 793c9a2ac17e0abaf5d06d1bf7490a86
+F stocksinfo.2016-06-07.xz 605284650 2021-01-07, 21:13:59 2c260296d27484c30df95c4af1c98830
+F stocksinfo.2016-06-08.xz 596380587 2021-01-07, 21:13:59 43fd30927ecf93e46189673cd67f312e
+F stocksinfo.2016-06-13.xz 598340350 2021-01-07, 21:13:59 5169b9fbd6835882478d87bcb0a37060
+F stocksinfo.2016-06-14.xz 576598566 2021-01-07, 21:13:59 965d5f7a9d86f48acd0a0114bc7dca45
+F stocksinfo.2016-06-15.xz 592175000 2021-01-07, 21:13:59 fe078843e0bac66638a5d4b8379a19a1
+F stocksinfo.2016-06-17.xz 597617840 2021-01-07, 21:13:59 bd6f08be2f4364fd39f1b936a6e81737
+F stocksinfo.2016-06-20.xz 607419675 2021-01-07, 21:13:59 f7c0cf44f6e2126fed1526d517074058
+F stocksinfo.2016-06-21.xz 604165571 2021-01-07, 21:13:59 b5e9af6c08cbd4f4a1027724bb6a9017
+F stocksinfo.2016-06-22.xz 529391172 2021-01-07, 21:13:59 6ed53dbee3b36a9bd4023318ba8205c8
+F stocksinfo.2016-06-27.xz 623307259 2021-01-07, 21:13:59 75c556e99cc7028f26f1ce1f5c7eefe0
+F stocksinfo.2016-06-28.xz 622230296 2021-01-07, 21:13:59 940e7aed102d81de5240acfabf7bb3b0
+F stocksinfo.2016-06-29.xz 321434163 2021-01-07, 21:13:59 9aa7a8e20444268f75db0fe706d18398
+F stocksinfo.2016-06-30.xz 625558959 2021-01-07, 21:13:59 9e93e9e07fe56c404ddec4024e900582
+F stocksinfo.2016-07-01.xz 607283938 2021-01-07, 21:13:59 a9b0d2407e908f7a9d1fcae299be3c60
+F stocksinfo.2016-07-04.xz 612528537 2021-01-07, 21:13:59 027ca01f45e7be2857b678fa6e9a0b0a
+F stocksinfo.2016-07-05.xz 638603427 2021-01-07, 21:13:59 2a2f81886b00e9166c40f7b5bfcb485c
+F stocksinfo.2016-07-06.xz 630034433 2021-01-07, 21:13:59 abd83b37616bdfe9f09598359a351bdd
+F stocksinfo.2016-07-07.xz 634945809 2021-01-07, 21:13:59 a8fd863dda7d845a82c0fc3a7c9be471
+F stocksinfo.2016-07-08.xz 635110525 2021-01-07, 21:13:59 bf39ca87533fc03208844de7fb1314fc
+F stocksinfo.2016-07-11.xz 637356598 2021-01-07, 21:13:59 f8824b8b03e1a558d693f4c414459fc2
+F stocksinfo.2016-07-12.xz 631489226 2021-01-07, 21:13:59 ab2623dc5b19aa781fe9d5ad22b635e6
+F stocksinfo.2016-07-13.xz 637357658 2021-01-07, 21:13:59 be5703b6e16b83005948a96ee0983366
+F stocksinfo.2016-07-14.xz 633029472 2021-01-07, 21:13:59 729eaa424c97d09ccd6352aec9047477
+F stocksinfo.2016-07-15.xz 632018858 2021-01-07, 21:13:59 740d76b503254f01651ab86d65b92401
+F stocksinfo.2016-07-18.xz 627720511 2021-01-07, 21:13:59 08b0cc38054d1c0b5b2d5bc13c6ba290
+F stocksinfo.2016-07-19.xz 626524588 2021-01-07, 21:13:59 7f9128e91f7ef15d0d2e0d311ccf1ad1
+F stocksinfo.2016-07-20.xz 626564663 2021-01-07, 21:13:59 7e9751e675f0574d7971cc2976ebcaf2
+F stocksinfo.2016-07-21.xz 683670748 2021-01-07, 21:13:59 9dc9062de1f911884d483417824c84e8
+F stocksinfo.2016-07-22.xz 626881389 2021-01-07, 21:13:59 1d8d98b9157d1a1f8553f609c8d8dc34
+F stocksinfo.2016-07-25.xz 625178451 2021-01-07, 21:13:59 743a31d5f0b5f2dce7bf38f6c04e688e
+F stocksinfo.2016-07-26.xz 632690992 2021-01-07, 21:13:59 dfb30de48081ec1990c95f4d059750c8
+F stocksinfo.2016-07-27.xz 627954066 2021-01-07, 21:13:59 b3ab9be341cf5dd9dc57bd529d4b8c36
+F stocksinfo.2016-07-28.xz 627802422 2021-01-07, 21:13:59 c8814eb7cf7f9b599055288ba1ea7fa1
+F stocksinfo.2016-07-29.xz 618131460 2021-01-07, 21:13:59 e6b1352169afadaf78cb1181e636e9cf
+F stocksinfo.2016-08-01.xz 619047947 2021-01-07, 21:13:59 76f801878e8e6c269035041199ae87bc
+F stocksinfo.2016-08-02.xz 598951990 2021-01-07, 21:13:59 7705a6bcb2a2f8048970b702050b0485
+F stocksinfo.2016-08-03.xz 608414351 2021-01-07, 21:13:59 df84d8e0614b87406ced8415d8bbae0c
+F stocksinfo.2016-08-04.xz 609848225 2021-01-07, 21:13:59 a7e2bff41860f665fcb9ec9849c333cc
+F stocksinfo.2016-08-05.xz 605804014 2021-01-07, 21:13:59 f53dc153ef1a7a1fa93af305f23e1232
+F stocksinfo.2016-08-08.xz 623637094 2021-01-07, 21:13:59 acd879e746f8cd2b82814aa40db21233
+F stocksinfo.2016-08-09.xz 630238139 2021-01-07, 21:13:59 ccd9e77395ab454ca269ebfd32e95703
+F stocksinfo.2016-08-10.xz 362899163 2021-01-07, 21:13:59 8f12367c500493d8a964c35f4a2339bf
+F stocksinfo.2016-08-11.xz 623255737 2021-01-07, 21:13:59 7d573e577a9e9b8935301ae6850404d1
+F stocksinfo.2016-08-12.xz 618444525 2021-01-07, 21:13:59 b3447dfe70efc91530fc049c4f341dda
+F stocksinfo.2016-08-15.xz 639133149 2021-01-07, 21:13:59 280120a06031b0a2fb2b6efa0003aae1
+F stocksinfo.2016-08-16.xz 640082317 2021-01-07, 21:13:59 c26e4dc067a9054a103a5a4c6fdebdb5
+F stocksinfo.2016-08-17.xz 637963186 2021-01-07, 21:13:59 7427b8479bb8dccce61f9236b75ed2f2
+F stocksinfo.2016-08-18.xz 635609901 2021-01-07, 21:13:59 a0c3e48b3bb7b630cfef0824824c30f2
+F stocksinfo.2016-08-19.xz 486688969 2021-01-07, 21:13:59 060f8dc9951c682fceaa0ee351dbc63a
+F stocksinfo.2016-08-22.xz 627347637 2021-01-07, 21:13:59 e50368b24c0f4b2b19ff188d7e9fceb0
+F stocksinfo.2016-08-23.xz 621354007 2021-01-07, 21:13:59 aa98d8110bad28a31b1a15ca8083717f
+F stocksinfo.2016-08-24.xz 625444299 2021-01-07, 21:13:59 79c795fdd30f1439721489e3b4647833

@@ -1,5 +1,6 @@
 package com.lisdoo.jstock.cli;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.lisdoo.jstock.service.exchange.process.JstockMqService;
 import lombok.SneakyThrows;
 import org.apache.commons.cli.*;
@@ -13,12 +14,16 @@ import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 @Component
 public class CmdRunner implements CommandLineRunner {
 
     private static final Log log = LogFactory.getLog(CmdRunner.class);
+
+    private static SimpleDateFormat sdf2 = new SimpleDateFormat("yyyyMMdd");
 
     @Autowired
     JstockMqService jms;
@@ -43,6 +48,10 @@ public class CmdRunner implements CommandLineRunner {
             @Override
             public void run() {
 
+                List<StockList> stockLists = null;
+                List<String> codes = null;
+                ObjectMapper om = new ObjectMapper();
+
                 // create the command line parser
                 CommandLineParser parser = new DefaultParser();
 
@@ -50,10 +59,16 @@ public class CmdRunner implements CommandLineRunner {
                 Options options = new Options();
                 options.addOption( "a", "start", false, "Start." );
                 options.addOption( "b", "stop", false, "Stop." );
+                options.addOption( "x", "time", true, "get time list. parameters: yyyyMMdd-yyyyMMdd" );
+                options.addOption( "y", "codes", true, "get codes." );
                 options.addOption( "d", "download", true, "download." );
-                options.addOption( "t", "to file", true, "to file." );
-                options.addOption( "r", "rm", true, "rm." );
-                options.addOption( "e", "exec", true, "exec." );
+                options.addOption( "t", "to file", true, "to file. parameters: jstockCode-yyyyMMdd" );
+                options.addOption( "c", "check", true, "check file. parameters: jstockCode-yyyyMMdd" );
+                options.addOption( "u", "upload", true, "upload. parameters: jstockCode-yyyyMMdd" );
+                options.addOption( "r", "clean", true, "clean. parameter: code" );
+                options.addOption( "e", "exec", true, "exec. parameters: *-*-...." );
+                options.addOption( "h", "help", false, "help." );
+                options.addOption( "l", "list", false, "list." );
 
                 String lineStr = null;
                 InputStreamReader isr = new InputStreamReader(System.in);
@@ -72,21 +87,77 @@ public class CmdRunner implements CommandLineRunner {
                             jms.stop();
                             log.info("stop mq consumer");
                         }
+                        if( line.hasOption( "x" ) ) {
+                            stockLists =
+                                    Shell.getTimeList(line.getOptionValue("x").split("-")[0], line.getOptionValue("x").split("-")[1]);
+                            log.info("get time list");
+                        }
+                        if( line.hasOption( "y" ) ) {
+                            codes =
+                                    Shell.getJstockCodeList(line.getOptionValue("y"));
+                            log.info("get codes");
+                        }
                         if( line.hasOption( "d" ) ) {
-                            DownloadShell.sh(line.getOptionValue("d"));
+                            if (line.getOptionValue("d").equalsIgnoreCase("all")) {
+                                for(StockList sl: stockLists) {
+                                    Shell.download(sl.getFolderOrFile());
+                                }
+                            } else {
+                                Shell.download(line.getOptionValue("d"));
+                            }
                             log.info("download");
                         }
                         if( line.hasOption( "t" ) ) {
-                            DownloadShell.toFile(line.getOptionValue("t"));
+                            if (line.getOptionValue("t").equalsIgnoreCase("all")) {
+                                for (String code: codes) {
+                                    for(StockList sl: stockLists) {
+                                        Shell.toFile(code, sdf2.format(sl.getDate()));
+                                    }
+                                }
+                            } else {
+                                Shell.toFile(line.getOptionValue("t").split("-")[0], line.getOptionValue("t").split("-")[1]);
+                            }
                             log.info("to file");
                         }
+                        if( line.hasOption( "c" ) ) {
+                            Shell.exists(line.getOptionValue("c").split("-")[0], line.getOptionValue("c").split("-")[1]);
+                            log.info("check");
+                        }
+                        if( line.hasOption( "u" ) ) {
+                            if (line.getOptionValue("u").equalsIgnoreCase("all")) {
+                                for (String code: codes) {
+                                    for(StockList sl: stockLists) {
+                                        Shell.upload(code, sdf2.format(sl.getDate()));
+                                    }
+                                }
+                            } else {
+                                Shell.upload(line.getOptionValue("u").split("-")[0], line.getOptionValue("u").split("-")[1]);
+                            }
+                            log.info("upload");
+                        }
                         if( line.hasOption( "r" ) ) {
-                            DownloadShell.rm(line.getOptionValue("r"));
-                            log.info("rm");
+                            if (codes != null) {
+                                for (String code : codes) {
+                                    Shell.clean(code);
+                                }
+                            } else {
+                                Shell.clean(line.getOptionValue("r"));
+                            }
+                            log.info("clean");
                         }
                         if( line.hasOption( "e" ) ) {
-                            DownloadShell.exec(line.getOptionValue("e"));
+                            Shell.exec(line.getOptionValue("e"));
                             log.info("exec");
+                        }
+                        if (line.hasOption( "h")) {
+                            System.out.println(String.format("arg list"));
+                            for (Option o: options.getOptions()) {
+                                System.out.println(String.format("\t %s(%s) = %s", o.getOpt(), o.getLongOpt(), o.getDescription()));
+                            }
+                        }
+                        if( line.hasOption( "l" ) ) {
+                            log.info(om.writeValueAsString(stockLists));
+                            log.info(om.writeValueAsString(codes));
                         }
                     }
                     catch( ParseException exp ) {
