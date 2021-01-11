@@ -16,10 +16,7 @@ import org.apache.commons.logging.LogFactory;
 import java.io.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 import java.util.function.Predicate;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -35,15 +32,145 @@ public class Shell {
 
     public static void main(String[] args) throws IOException, InterruptedException, JstockCodeNotExistException, ParseException {
 
-        List list = getTimeList("20210111", "20210110");
-        System.out.println(
-                new ObjectMapper().writeValueAsString(list.size()));
-        System.out.println(
-                new ObjectMapper().writeValueAsString(list));
+//        List list = getTimeList("20210111", "20210110");
+//        System.out.println(
+//                new ObjectMapper().writeValueAsString(list.size()));
+//        System.out.println(
+//                new ObjectMapper().writeValueAsString(list));
 
 //        List list = getJstockCodeList("0000.*");
 //        System.out.println(
 //                new ObjectMapper().writeValueAsString(list.size()));
+
+        Date startDate = sdf.parse("2021-01-11");
+        Date endDate = sdf.parse("2021-01-11");
+        endDate.setTime(endDate.getTime()+3600*24*1000);
+        System.out.println(new Date().after(startDate));
+        System.out.println(new Date().before(endDate));
+    }
+
+
+    public static List<StockList> getTimeList(String startDateStr, String endDateStr) throws IOException, InterruptedException, ParseException {
+
+        Date startDate = sdf2.parse(startDateStr);
+        Date endDate = sdf2.parse(endDateStr);
+        endDate.setTime(endDate.getTime()+3600*24*1000);
+
+        List<StockList> stockList = new ArrayList<>();
+
+//        File path = new File("./jstocklist.txt");
+        File path = new File("./temp");
+
+        String cmd = "bypy list /jstocklog";
+
+        Process process;
+        try {
+            log.info(String.format("cmd: %s", cmd));
+            String[] envp = new String[] {
+                    "LANG=en_US.utf8",
+                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin:/opt/jdk/jdk1.8.0_221/bin",
+                    "LC_CTYPE=en_US.utf8",
+                    "LC_NUMERIC=en_US.utf8",
+                    "LC_TIME=en_US.utf8",
+                    "LC_COLLATE=en_US.utf8",
+                    "LC_MONETARY=en_US.utf8",
+                    "LC_MESSAGES=en_US.utf8",
+                    "LC_PAPER=en_US.utf8",
+                    "LC_NAME=en_US.utf8",
+                    "LC_ADDRESS=en_US.utf8",
+                    "LC_TELEPHONE=en_US.utf8",
+                    "LC_MEASUREMENT=en_US.utf8",
+                    "LC_IDENTIFICATION=en_US.utf8"
+            };
+
+            process = Runtime.getRuntime().exec(cmd, envp, path);
+//              BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(path)));
+            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+            BufferedReader errReader = new BufferedReader(new InputStreamReader(process.getErrorStream()));
+            int exitValue = process.waitFor();
+
+            Runnable runReader = new Runnable() {
+
+                @SneakyThrows
+                @Override
+                public void run() {
+                    String line;
+                    while((line = reader.readLine())!= null){
+                        Matcher m = r.matcher(line);
+                        if (m.find()) {
+                            boolean isfolderOrFile = line.split(" ")[0].equalsIgnoreCase("d");
+                            String folderOrFile = line.split(" ")[1];
+                            stockList.add(new StockList(line, isfolderOrFile, folderOrFile, sdf.parse(m.group(0))));
+                        } else {
+                            System.out.println("NO MATCH");
+                        }
+                    }
+                    if (exitValue == 0){
+                        log.info("successfully executed the linux command");
+                    } else {
+                        log.info(String.format("exit with error code: %d", exitValue));
+                    }
+                }
+            };
+
+            Runnable runErrReader = new Runnable() {
+
+                @SneakyThrows
+                @Override
+                public void run() {
+                    String line;
+                    while((line = errReader.readLine())!= null){
+                        log.error(line);
+                    }
+                }
+            };
+
+            Thread t1 = new Thread(runReader);
+            new Thread(runErrReader).start();
+
+            t1.start();
+
+            while(t1.isAlive()) {
+                Thread.sleep(300);
+            }
+            List<StockList> forReturn = stockList.stream().filter(p->{
+                return p.date.after(startDate) && p.date.before(endDate);
+            }).collect(Collectors.toList());
+
+            return forReturn;
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw e;
+        }
+    }
+
+    public static List<String> getJstockCodeList(String jstockCode) throws IOException, JstockCodeNotExistException {
+
+        List<String> stockCodeList = new ArrayList<>();
+
+        File path = new File("./stocksInWindFormat/stocks");
+
+        BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(path)));
+
+        String line;
+        while((line = reader.readLine())!= null){
+
+            String[] codes = line.split(",");
+
+            for (String code: codes) {
+                stockCodeList.add(code.replace("sse", "" ).replace("szse", "" ));
+            }
+        }
+
+        Pattern r = Pattern.compile(jstockCode);
+        stockCodeList = stockCodeList.stream().filter(p -> {
+            return r.matcher(p).find();
+        }).collect(Collectors.toList());
+        if (stockCodeList.isEmpty()) {
+            throw new JstockCodeNotExistException();
+        }
+        return stockCodeList;
     }
 
     public static void download(String fileOrFolder) throws IOException, InterruptedException {
@@ -167,10 +294,62 @@ public class Shell {
         };
 
         String[] files = path.list((f1, f2)->{
-           return !f2.contains(".xz");
+            return !f2.contains(".xz");
         });
         for (String file: files) {
             log.info(String.format("reading file %s to file %s", file, jstockCode));
+            Read.testRead(new File(path.getAbsolutePath(), file).getAbsolutePath(), p);
+        }
+    }
+
+    public static void toFile(List<String> jstockCodes, String yyyyMMdd) throws Exception, NotInTheTradingCycle {
+
+        File path = new File("./temp");
+
+        Map<String, Write> map = new HashMap<>();
+
+        for (String jstockCode: jstockCodes) {
+            File toPath = new File(jstockCode);
+            toPath.mkdir();
+            Write w = new Write(toPath.getAbsolutePath(), yyyyMMdd, true);
+            map.put(jstockCode, w);
+        }
+
+        Predicate p = new Predicate<JSONArray>() {
+
+            @SneakyThrows
+            @Override
+            public boolean test(JSONArray o) {
+
+                Data data = null;
+                try {
+                    data = new Data(o);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    return true;
+                }
+
+                for (Map.Entry<String, Write> entry: map.entrySet()) {
+                    /*
+                     * 跳过异常值
+                     */
+                    if (!Filter.check(entry.getKey(), data)) {
+                        continue;
+                    }
+
+                    if (entry.getKey().equalsIgnoreCase(data.getCode())) {
+                        entry.getValue().put(o);
+                    }
+                }
+                return true;
+            }
+        };
+
+        String[] files = path.list((f1, f2)->{
+            return !f2.contains(".xz");
+        });
+        for (String file: files) {
+            log.info(String.format("reading file %s to file %s", file, map.keySet()));
             Read.testRead(new File(path.getAbsolutePath(), file).getAbsolutePath(), p);
         }
     }
@@ -179,12 +358,10 @@ public class Shell {
 
         File path = new File("./temp");
         if (!path.exists()) path.mkdir();
-        log.info(path.getAbsolutePath());
 
         Process process;
         try {
             String cmd = String.format("%s %s/rm.sh stocksinfo* %s", "sh", path.getParentFile().getAbsolutePath(), code);
-            log.info(String.format("cmd: %s", cmd));
             process = Runtime.getRuntime().exec(cmd, null, path);
             BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
             String line;
@@ -193,7 +370,6 @@ public class Shell {
                 log.info(line);
             }
             if (exitValue == 0){
-                log.info("successfully executed the linux command");
             } else {
                 log.info(String.format("exit with error code: %d", exitValue));
             }
@@ -270,130 +446,6 @@ public class Shell {
             e.printStackTrace();
             throw e;
         }
-    }
-
-    public static List<StockList> getTimeList(String startDateStr, String endDateStr) throws IOException, InterruptedException, ParseException {
-
-        Date startDate = sdf2.parse(startDateStr);
-        Date endDate = sdf2.parse(endDateStr);
-
-        List<StockList> stockList = new ArrayList<>();
-
-//        File path = new File("./jstocklist.txt");
-        File path = new File("./temp");
-
-        String cmd = "bypy list /jstocklog";
-
-        Process process;
-        try {
-            log.info(String.format("cmd: %s", cmd));
-            String[] envp = new String[] {
-                    "LANG=en_US.utf8",
-                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin:/opt/jdk/jdk1.8.0_221/bin",
-                    "LC_CTYPE=en_US.utf8",
-                    "LC_NUMERIC=en_US.utf8",
-                    "LC_TIME=en_US.utf8",
-                    "LC_COLLATE=en_US.utf8",
-                    "LC_MONETARY=en_US.utf8",
-                    "LC_MESSAGES=en_US.utf8",
-                    "LC_PAPER=en_US.utf8",
-                    "LC_NAME=en_US.utf8",
-                    "LC_ADDRESS=en_US.utf8",
-                    "LC_TELEPHONE=en_US.utf8",
-                    "LC_MEASUREMENT=en_US.utf8",
-                    "LC_IDENTIFICATION=en_US.utf8"
-            };
-
-            process = Runtime.getRuntime().exec(cmd, envp, path);
-//              BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(path)));
-            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-            BufferedReader errReader = new BufferedReader(new InputStreamReader(process.getErrorStream()));
-            int exitValue = process.waitFor();
-
-            Runnable runReader = new Runnable() {
-
-                @SneakyThrows
-                @Override
-                public void run() {
-                    String line;
-                    while((line = reader.readLine())!= null){
-                        Matcher m = r.matcher(line);
-                        if (m.find()) {
-                            boolean isfolderOrFile = line.split(" ")[0].equalsIgnoreCase("d");
-                            String folderOrFile = line.split(" ")[1];
-                            stockList.add(new StockList(line, isfolderOrFile, folderOrFile, sdf.parse(m.group(0))));
-                        } else {
-                            System.out.println("NO MATCH");
-                        }
-                    }
-                    if (exitValue == 0){
-                        log.info("successfully executed the linux command");
-                    } else {
-                        log.info(String.format("exit with error code: %d", exitValue));
-                    }
-                }
-            };
-
-            Runnable runErrReader = new Runnable() {
-
-                @SneakyThrows
-                @Override
-                public void run() {
-                    String line;
-                    while((line = errReader.readLine())!= null){
-                        log.error(line);
-                    }
-                }
-            };
-
-            Thread t1 = new Thread(runReader);
-            new Thread(runErrReader).start();
-
-            t1.start();
-
-            while(t1.isAlive()) {
-                Thread.sleep(300);
-            }
-            List<StockList> forReturn = stockList.stream().filter(p->{
-                return p.date.after(startDate) && p.date.before(endDate);
-            }).collect(Collectors.toList());
-
-            return forReturn;
-
-        } catch (IOException e) {
-            e.printStackTrace();
-            throw e;
-        }
-    }
-
-    public static List<String> getJstockCodeList(String jstockCode) throws IOException, JstockCodeNotExistException {
-
-        List<String> stockCodeList = new ArrayList<>();
-
-        File path = new File("./stocksInWindFormat/stocks");
-
-        BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(path)));
-
-        String line;
-        while((line = reader.readLine())!= null){
-
-            log.info(line);
-
-            String[] codes = line.split(",");
-
-            for (String code: codes) {
-                stockCodeList.add(code.replace("sse", "" ).replace("szse", "" ));
-            }
-        }
-
-        Pattern r = Pattern.compile(jstockCode);
-        stockCodeList = stockCodeList.stream().filter(p -> {
-            return r.matcher(p).find();
-        }).collect(Collectors.toList());
-        if (stockCodeList.isEmpty()) {
-            throw new JstockCodeNotExistException();
-        }
-        return stockCodeList;
     }
 
     public static void mkdir(String code) throws IOException, InterruptedException {

@@ -15,6 +15,7 @@ import org.springframework.stereotype.Component;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -81,6 +82,9 @@ public class CmdRunner implements CommandLineRunner {
 
                     try {
 
+                        stockLists = null;
+                        codes = null;
+
                         CommandLine line = parser.parse( options, lineStr.split(" "));
 
                         if( line.hasOption( "a" ) ) {
@@ -113,9 +117,19 @@ public class CmdRunner implements CommandLineRunner {
                         }
                         if( line.hasOption( "t" ) ) {
                             if (line.getOptionValue("t").equalsIgnoreCase("all")) {
+                                List<String> codeList = new ArrayList<>();
                                 for (String code: codes) {
-                                    for(StockList sl: stockLists) {
-                                        Shell.toFile(code, sdf2.format(sl.getDate()));
+                                    codeList.add(code);
+                                    if (codeList.size()%300==0) {
+                                        for (StockList sl : stockLists) {
+                                            Shell.toFile(codeList, sdf2.format(sl.getDate()));
+                                        }
+                                        codeList.clear();
+                                    }
+                                }
+                                if (!codeList.isEmpty()) {
+                                    for (StockList sl : stockLists) {
+                                        Shell.toFile(codeList, sdf2.format(sl.getDate()));
                                     }
                                 }
                             } else {
@@ -191,5 +205,9 @@ public class CmdRunner implements CommandLineRunner {
         trigger = (CronTrigger)TriggerBuilder.newTrigger().withSchedule(CronScheduleBuilder.cronSchedule(endCommand)).build();
         ft = sched.scheduleJob(job, trigger);
         this.log.info(job.getKey() + " has been scheduled to run at: " + ft + " and repeat based on expression: " + trigger.getCronExpression());
+    }
+
+    public static void main(String[] args) {
+        System.out.println(200%100);
     }
 }
