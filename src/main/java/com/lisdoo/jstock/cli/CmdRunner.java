@@ -31,17 +31,21 @@ public class CmdRunner implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
+        if (args.length != 0 && args[0].equalsIgnoreCase("silence")) {
+            this.log.info(String.format("%s 模式，不启动MQ定时器。", args[0]));
+        } else {
 
-        this.log.info("------- Initializing -------------------");
-        SchedulerFactory sf = new StdSchedulerFactory();
-        Scheduler sched = sf.getScheduler();
-        this.log.info("------- Initialization Complete --------");
+            this.log.info("------- Initializing -------------------");
+            SchedulerFactory sf = new StdSchedulerFactory();
+            Scheduler sched = sf.getScheduler();
+            this.log.info("------- Initialization Complete --------");
 
-        this.schedulingJobs(sched, StartThreads.class, "0 20 9 ? * MON-FRI", ShutdownThreads.class, "0 1 15 ? * MON-FRI");
+            this.schedulingJobs(sched, StartThreads.class, "0 20 9 ? * MON-FRI", ShutdownThreads.class, "0 1 15 ? * MON-FRI");
 
-        this.log.info("------- Starting Scheduler ----------------");
-        sched.start();
-        this.log.info("------- Started Scheduler -----------------");
+            this.log.info("------- Starting Scheduler ----------------");
+            sched.start();
+            this.log.info("------- Started Scheduler -----------------");
+        }
 
         Runnable r = new Runnable() {
             @SneakyThrows
