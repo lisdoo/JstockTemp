@@ -44,9 +44,11 @@ public class Shell {
 
         Date startDate = sdf.parse("2021-01-11");
         Date endDate = sdf.parse("2021-01-11");
+        Date test = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").parse("2021-01-11 10:00:00");
         endDate.setTime(endDate.getTime()+3600*24*1000);
-        System.out.println(new Date().after(startDate));
-        System.out.println(new Date().before(endDate));
+        System.out.println(test.after(startDate));
+        System.out.println(test.before(endDate));
+        System.out.println(test.after(startDate) && test.before(endDate));
     }
 
 

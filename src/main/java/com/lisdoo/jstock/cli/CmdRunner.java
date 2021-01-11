@@ -98,12 +98,12 @@ public class CmdRunner implements CommandLineRunner {
                         if( line.hasOption( "x" ) ) {
                             stockLists =
                                     Shell.getTimeList(line.getOptionValue("x").split("-")[0], line.getOptionValue("x").split("-")[1]);
-                            log.info("get time list");
+                            log.info(String.format("get time list: %s", stockLists));
                         }
                         if( line.hasOption( "y" ) ) {
                             codes =
                                     Shell.getJstockCodeList(line.getOptionValue("y"));
-                            log.info("get codes");
+                            log.info(String.format("get codes [%d]: ", codes.size(), codes.size()<30?codes:"*******"));
                         }
                         if( line.hasOption( "d" ) ) {
                             if (line.getOptionValue("d").equalsIgnoreCase("all")) {

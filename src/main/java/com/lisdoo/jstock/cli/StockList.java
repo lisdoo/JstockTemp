@@ -16,4 +16,12 @@ public class StockList {
     boolean isFolder;
     String folderOrFile;
     Date date;
+
+    @Override
+    public String toString() {
+        return "StockList{" +
+                "folderOrFile='" + folderOrFile + '\'' +
+                ", date=" + date +
+                '}';
+    }
 }
