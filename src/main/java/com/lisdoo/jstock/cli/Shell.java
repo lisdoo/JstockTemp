@@ -70,7 +70,7 @@ public class Shell {
             log.info(String.format("cmd: %s", cmd));
             String[] envp = new String[] {
                     "LANG=en_US.utf8",
-                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin:/opt/jdk/jdk1.8.0_221/bin",
+                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin:/opt/jdk/jdk1.8.0_221/bin:/sbin:/bin",
                     "LC_CTYPE=en_US.utf8",
                     "LC_NUMERIC=en_US.utf8",
                     "LC_TIME=en_US.utf8",
@@ -111,6 +111,7 @@ public class Shell {
                         log.info("successfully executed the linux command");
                     } else {
                         log.info(String.format("exit with error code: %d", exitValue));
+                        throw new InterruptedException();
                     }
                 }
             };
@@ -134,6 +135,9 @@ public class Shell {
 
             while(t1.isAlive()) {
                 Thread.sleep(300);
+            }
+            if(exitValue != 0) {
+                throw new InterruptedException();
             }
             List<StockList> forReturn = stockList.stream().filter(p->{
                 return p.date.after(startDate) && p.date.before(endDate);
@@ -187,7 +191,7 @@ public class Shell {
             log.info(String.format("cmd: %s", cmd));
             String[] envp = new String[] {
                     "LANG=en_US.utf8",
-                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin:/opt/jdk/jdk1.8.0_221/bin",
+                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin:/opt/jdk/jdk1.8.0_221/bin:/sbin:/bin",
                     "LC_CTYPE=en_US.utf8",
                     "LC_NUMERIC=en_US.utf8",
                     "LC_TIME=en_US.utf8",
@@ -249,8 +253,17 @@ public class Shell {
                 }
             };
 
-            new Thread(runReader).start();
+            Thread t1 = new Thread(runReader);
             new Thread(runErrReader).start();
+
+            t1.start();
+
+            while(t1.isAlive()) {
+                Thread.sleep(300);
+            }
+            if(exitValue != 0) {
+                throw new InterruptedException();
+            }
 
         } catch (InterruptedException | IOException e) {
             e.printStackTrace();
@@ -378,6 +391,7 @@ public class Shell {
             if (exitValue == 0){
             } else {
                 log.info(String.format("exit with error code: %d", exitValue));
+                throw new InterruptedException();
             }
         } catch (InterruptedException | IOException e) {
             e.printStackTrace();
@@ -396,7 +410,7 @@ public class Shell {
             log.info(String.format("cmd: %s", cmd));
             String[] envp = new String[] {
                     "LANG=en_US.utf8",
-                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin:/opt/jdk/jdk1.8.0_221/bin",
+                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin:/opt/jdk/jdk1.8.0_221/bin:/sbin:/bin",
                     "LC_CTYPE=en_US.utf8",
                     "LC_NUMERIC=en_US.utf8",
                     "LC_TIME=en_US.utf8",
@@ -429,6 +443,7 @@ public class Shell {
                         log.info("successfully executed the linux command");
                     } else {
                         log.info(String.format("exit with error code: %d", exitValue));
+                        throw new InterruptedException();
                     }
                 }
             };
@@ -445,8 +460,18 @@ public class Shell {
                 }
             };
 
-            new Thread(runReader).start();
+
+            Thread t1 = new Thread(runReader);
             new Thread(runErrReader).start();
+
+            t1.start();
+
+            while(t1.isAlive()) {
+                Thread.sleep(300);
+            }
+            if(exitValue != 0) {
+                throw new InterruptedException();
+            }
 
         } catch (InterruptedException | IOException e) {
             e.printStackTrace();
@@ -465,7 +490,7 @@ public class Shell {
             log.info(cmd);
             String[] envp = new String[] {
                     "LANG=en_US.utf8",
-                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin:/opt/jdk/jdk1.8.0_221/bin",
+                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin:/opt/jdk/jdk1.8.0_221/bin:/sbin:/bin",
                     "LC_CTYPE=en_US.utf8",
                     "LC_NUMERIC=en_US.utf8",
                     "LC_TIME=en_US.utf8",
@@ -498,6 +523,7 @@ public class Shell {
                         log.info("successfully executed the linux command");
                     } else {
                         log.info(String.format("exit with error code: %d", exitValue));
+                        throw new InterruptedException();
                     }
                 }
             };
@@ -514,8 +540,18 @@ public class Shell {
                 }
             };
 
-            new Thread(runReader).start();
+
+            Thread t1 = new Thread(runReader);
             new Thread(runErrReader).start();
+
+            t1.start();
+
+            while(t1.isAlive()) {
+                Thread.sleep(300);
+            }
+            if(exitValue != 0) {
+                throw new InterruptedException();
+            }
 
         } catch (InterruptedException | IOException e) {
             e.printStackTrace();
@@ -525,18 +561,16 @@ public class Shell {
 
     public static void upload(String code, String yyyyMMdd) throws IOException, InterruptedException {
 
-        mkdir(code);
-
         File path = new File("./temp");
 
-        String cmd = String.format("bypy upload ../%s/%s /jstockcodelog/%s", code, yyyyMMdd, code);
+        String cmd = String.format("bypy upload ../%s /jstockcodelog/%s", code, code);
 
         Process process;
         try {
             log.info(cmd);
             String[] envp = new String[] {
                     "LANG=en_US.utf8",
-                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin:/opt/jdk/jdk1.8.0_221/bin",
+                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin:/opt/jdk/jdk1.8.0_221/bin:/sbin:/bin",
                     "LC_CTYPE=en_US.utf8",
                     "LC_NUMERIC=en_US.utf8",
                     "LC_TIME=en_US.utf8",
@@ -569,6 +603,7 @@ public class Shell {
                         log.info("successfully executed the linux command");
                     } else {
                         log.info(String.format("exit with error code: %d", exitValue));
+                        throw new InterruptedException();
                     }
                 }
             };
@@ -585,8 +620,17 @@ public class Shell {
                 }
             };
 
-            new Thread(runReader).start();
+            Thread t1 = new Thread(runReader);
             new Thread(runErrReader).start();
+
+            t1.start();
+
+            while(t1.isAlive()) {
+                Thread.sleep(300);
+            }
+            if(exitValue != 0) {
+                throw new InterruptedException();
+            }
 
         } catch (InterruptedException | IOException e) {
             e.printStackTrace();
@@ -607,7 +651,7 @@ public class Shell {
             log.info(cmd);
             String[] envp = new String[] {
                     "LANG=en_US.utf8",
-                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin:/opt/jdk/jdk1.8.0_221/bin",
+                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin:/opt/jdk/jdk1.8.0_221/bin:/sbin:/bin",
                     "LC_CTYPE=en_US.utf8",
                     "LC_NUMERIC=en_US.utf8",
                     "LC_TIME=en_US.utf8",
@@ -643,6 +687,7 @@ public class Shell {
                         log.info("successfully executed the linux command");
                     } else {
                         log.info(String.format("exit with error code: %d", exitValue));
+                        throw new InterruptedException();
                     }
                 }
             };
@@ -659,9 +704,6 @@ public class Shell {
                 }
             };
 
-            new Thread(runReader).start();
-            new Thread(runErrReader).start();
-
             Thread t1 = new Thread(runReader);
             new Thread(runErrReader).start();
 
@@ -669,6 +711,9 @@ public class Shell {
 
             while(t1.isAlive()) {
                 Thread.sleep(300);
+            }
+            if(exitValue != 0) {
+                throw new InterruptedException();
             }
 
             if (list.isEmpty()) {
