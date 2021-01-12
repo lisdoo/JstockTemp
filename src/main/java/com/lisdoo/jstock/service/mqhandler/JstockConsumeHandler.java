@@ -64,6 +64,9 @@ public class JstockConsumeHandler {
                 log.error("EntityExistException");
             } catch (EntityNoneException e) {
                 log.error("EntityExistException");
+            } catch (Exception e) {
+                e.printStackTrace();
+                log.error(String.format("Jstock code %s error: %s", e.getMessage()));
             }
         }
     }

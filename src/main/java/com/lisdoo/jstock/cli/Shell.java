@@ -302,6 +302,7 @@ public class Shell {
             log.info(String.format("reading file %s to file %s", file, jstockCode));
             Read.testRead(new File(path.getAbsolutePath(), file).getAbsolutePath(), p);
         }
+        w.close();
     }
 
     public static void toFile(List<String> jstockCodes, String yyyyMMdd) throws Exception, NotInTheTradingCycle {
@@ -353,6 +354,9 @@ public class Shell {
         for (String file: files) {
             log.info(String.format("reading file %s to file %s", file, map.keySet()));
             Read.testRead(new File(path.getAbsolutePath(), file).getAbsolutePath(), p);
+        }
+        for (Write w: map.values()) {
+            w.close();
         }
     }
 
