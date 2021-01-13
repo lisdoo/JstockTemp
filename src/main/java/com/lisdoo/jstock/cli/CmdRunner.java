@@ -24,6 +24,7 @@ public class CmdRunner implements CommandLineRunner {
 
     private static final Log log = LogFactory.getLog(CmdRunner.class);
 
+    private static SimpleDateFormat sdf =  new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
     private static SimpleDateFormat sdf2 = new SimpleDateFormat("yyyyMMdd");
 
     @Autowired
@@ -79,6 +80,8 @@ public class CmdRunner implements CommandLineRunner {
                 InputStreamReader isr = new InputStreamReader(System.in);
                 BufferedReader br = new BufferedReader(isr);
                 while (!((lineStr = br.readLine()) == null)) {
+
+                    Date startTime = new Date();
 
                     try {
 
@@ -186,6 +189,10 @@ public class CmdRunner implements CommandLineRunner {
                         t.printStackTrace();
                         log.info("Unexpected Throwable:" + t.getMessage());
                     }
+
+                    Date endTime = new Date();
+
+                    log.info(String.format("运行时间：%s -> %s，耗时：%d 分钟", sdf.format(startTime), sdf.format(endTime), (endTime.getTime() - startTime.getTime())/1000/60 ));
                 }
 
             }
