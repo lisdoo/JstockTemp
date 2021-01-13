@@ -55,6 +55,7 @@ public class Shell {
     public static List<StockList> getTimeList(String startDateStr, String endDateStr) throws IOException, InterruptedException, ParseException {
 
         Date startDate = sdf2.parse(startDateStr);
+        startDate.setTime(startDate.getTime()-3600*24*1000);
         Date endDate = sdf2.parse(endDateStr);
         endDate.setTime(endDate.getTime()+3600*24*1000);
 

@@ -192,7 +192,7 @@ public class CmdRunner implements CommandLineRunner {
 
                     Date endTime = new Date();
 
-                    log.info(String.format("运行时间：%s -> %s，耗时：%d 分钟", sdf.format(startTime), sdf.format(endTime), (endTime.getTime() - startTime.getTime())/1000/60 ));
+                    log.info(String.format("运行时间：%s -> %s，耗时：%d 分钟，命令：%s", sdf.format(startTime), sdf.format(endTime), (endTime.getTime() - startTime.getTime())/1000/60, lineStr ));
                 }
 
             }
