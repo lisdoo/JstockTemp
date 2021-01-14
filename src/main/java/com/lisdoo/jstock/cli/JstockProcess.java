@@ -24,14 +24,20 @@ public class JstockProcess {
 
         File path = new File("./temp");
 
-        Map<String, Long> map = new HashMap<>();
+        Map<String, Long[]> map = new HashMap<>();
 
         File toPath = new File("process");
         toPath.mkdir();
+        if (new File(toPath.getAbsolutePath(), yyyyMMdd).exists()) {
+            new File(toPath.getAbsolutePath(), yyyyMMdd).delete();
+        }
         Write w = new Write(toPath.getAbsolutePath(), yyyyMMdd, true);
 
         for (String jstockCode: jstockCodes) {
-            map.put(jstockCode, 0l);
+            Long[] l = new Long[2];
+            l[0] = 0l;
+            l[1] = 0l;
+            map.put(jstockCode, l);
         }
 
         Predicate p = new Predicate<JSONArray>() {
@@ -48,7 +54,7 @@ public class JstockProcess {
                     return true;
                 }
 
-                for (Map.Entry<String, Long> entry: map.entrySet()) {
+                for (Map.Entry<String, Long[]> entry: map.entrySet()) {
                     /*
                      * 跳过异常值
                      */
@@ -57,7 +63,16 @@ public class JstockProcess {
                     }
 
                     if (entry.getKey().equalsIgnoreCase(data.getCode())) {
-                        entry.setValue(data.getVolume() > entry.getValue()?data.getVolume():entry.getValue());
+                        // Volume
+                        if (data.getVolume() > entry.getValue()[0]) {
+                            entry.getValue()[0] = data.getVolume();
+                            entry.setValue(entry.getValue());
+                        }
+                        // Amount
+                        if (data.getAmount() > entry.getValue()[1]) {
+                            entry.getValue()[1] = data.getAmount();
+                            entry.setValue(entry.getValue());
+                        }
                     }
                 }
                 return true;
@@ -72,11 +87,13 @@ public class JstockProcess {
             Read.testRead(new File(path.getAbsolutePath(), file).getAbsolutePath(), p);
         }
 
-        w.write("code,volume\r\n");
-        for (Map.Entry<String, Long> entry: map.entrySet()) {
+        w.write("code,volume,amount\r\n");
+        for (Map.Entry<String, Long[]> entry: map.entrySet()) {
             w.write(entry.getKey());
             w.write(",");
-            w.write(Long.toString(entry.getValue()));
+            w.write(Long.toString(entry.getValue()[0]));
+            w.write(",");
+            w.write(Long.toString(entry.getValue()[1]));
             w.write("\r\n");
         }
 

@@ -144,20 +144,8 @@ public class CmdRunner implements CommandLineRunner {
                         }
                         if( line.hasOption( "p" ) ) {
                             if (line.getOptionValue("p").equalsIgnoreCase("getVolume")) {
-                                List<String> codeList = new ArrayList<>();
-                                for (String code: codes) {
-                                    codeList.add(code);
-                                    if (codeList.size()%300==0) {
-                                        for (StockList sl : stockLists) {
-                                            JstockProcess.getVolume(codeList, sdf2.format(sl.getDate()));
-                                        }
-                                        codeList.clear();
-                                    }
-                                }
-                                if (!codeList.isEmpty()) {
-                                    for (StockList sl : stockLists) {
-                                        JstockProcess.getVolume(codeList, sdf2.format(sl.getDate()));
-                                    }
+                                for (StockList sl : stockLists) {
+                                    JstockProcess.getVolume(codes, sdf2.format(sl.getDate()));
                                 }
                             } else {
                                 log.info(String.format("unknow parameter %s", line.getOptionValue("p")));
@@ -180,9 +168,7 @@ public class CmdRunner implements CommandLineRunner {
                         }
                         if( line.hasOption( "v" ) ) {
                             if (line.getOptionValue("v").equalsIgnoreCase("all")) {
-                                for (String code: codes) {
-                                    Shell.upload(code);
-                                }
+                                Shell.upload();
                             } else {
                                 Shell.upload(line.getOptionValue("u").split("-")[0]);
                             }

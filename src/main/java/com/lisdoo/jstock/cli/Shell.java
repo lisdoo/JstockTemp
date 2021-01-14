@@ -322,7 +322,7 @@ public class Shell {
     public static void toFile(List<String> jstockCodes, String yyyyMMdd) throws Exception, NotInTheTradingCycle {
 
         File path = new File("./temp");
-        File toFile = new File("./newfile");
+        File toFile = new File("./tofile");
         toFile.mkdir();
 
         Map<String, Write> map = new HashMap<>();
