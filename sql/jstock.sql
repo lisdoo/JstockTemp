@@ -11,7 +11,7 @@ left join jstock_range_record jrr on b.id = jrr.jstock_range_id
 order by `position` desc 
 ;
 
-select jrr.price , jrr.status , jrr.quote_time , jrr.volume, jrr.amount from jstock_range_record jrr where id in 
+select (select jr2.`position` from jstock_range jr2 where jr2.id = jrr.jstock_range_id) as position , jrr.price , jrr.status , jrr.quote_time , jrr.volume, jrr.amount, jrr.conform from jstock_range_record jrr where id in 
 (
 	select jrr.id from 
 	(
@@ -25,3 +25,5 @@ select jrr.price , jrr.status , jrr.quote_time , jrr.volume, jrr.amount from jst
 )
 order by jrr.quote_time;
 ;
+
+select * from jstock_strategy js where js.id = 9;
