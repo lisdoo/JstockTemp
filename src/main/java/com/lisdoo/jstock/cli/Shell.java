@@ -1,8 +1,6 @@
 package com.lisdoo.jstock.cli;
 
 import com.alibaba.fastjson.JSONArray;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.lisdoo.jstock.readwrite.Data;
 import com.lisdoo.jstock.readwrite.Filter;
 import com.lisdoo.jstock.readwrite.Read;

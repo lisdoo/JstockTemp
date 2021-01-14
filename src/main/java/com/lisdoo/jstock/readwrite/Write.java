@@ -36,6 +36,10 @@ public class Write {
         put(o.toString());
     }
 
+    public void write(String s) throws IOException {
+        bos.write(s.getBytes(StandardCharsets.UTF_8));
+    }
+
     public void close() throws IOException {
         bos.flush();
         bos.close();

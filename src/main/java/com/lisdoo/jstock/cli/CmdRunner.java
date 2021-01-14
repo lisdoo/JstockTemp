@@ -69,6 +69,7 @@ public class CmdRunner implements CommandLineRunner {
                 options.addOption( "y", "codes", true, "get codes." );
                 options.addOption( "d", "download", true, "download." );
                 options.addOption( "t", "to file", true, "to file. parameters: jstockCode-yyyyMMdd" );
+                options.addOption( "p", "process", true, "to file. parameters: jstockCode-yyyyMMdd" );
                 options.addOption( "c", "check", true, "check file. parameters: jstockCode-yyyyMMdd" );
                 options.addOption( "u", "upload", true, "upload. parameters: jstockCode-yyyyMMdd" );
                 options.addOption( "r", "clean", true, "clean. parameter: code" );
@@ -139,6 +140,28 @@ public class CmdRunner implements CommandLineRunner {
                                 Shell.toFile(line.getOptionValue("t").split("-")[0], line.getOptionValue("t").split("-")[1]);
                             }
                             log.info("to file");
+                        }
+                        if( line.hasOption( "p" ) ) {
+                            if (line.getOptionValue("p").equalsIgnoreCase("getVolume")) {
+                                List<String> codeList = new ArrayList<>();
+                                for (String code: codes) {
+                                    codeList.add(code);
+                                    if (codeList.size()%300==0) {
+                                        for (StockList sl : stockLists) {
+                                            JstockProcess.getVolume(codeList, sdf2.format(sl.getDate()));
+                                        }
+                                        codeList.clear();
+                                    }
+                                }
+                                if (!codeList.isEmpty()) {
+                                    for (StockList sl : stockLists) {
+                                        JstockProcess.getVolume(codeList, sdf2.format(sl.getDate()));
+                                    }
+                                }
+                            } else {
+                                log.info(String.format("unknow parameter %s", line.getOptionValue("p")));
+                            }
+                            log.info("process");
                         }
                         if( line.hasOption( "c" ) ) {
                             Shell.exists(line.getOptionValue("c").split("-")[0], line.getOptionValue("c").split("-")[1]);
