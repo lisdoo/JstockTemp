@@ -186,7 +186,7 @@ public class Shell {
 
         Process process;
         try {
-            String cmd = String.format("%s %s/download.sh %s", "sh", path.getParentFile().getAbsolutePath(), fileOrFolder);
+            String cmd = String.format("%s %s/download.sh %s", "bash", path.getParentFile().getAbsolutePath(), fileOrFolder);
             log.info(String.format("cmd: %s", cmd));
             String[] envp = new String[] {
                     "LANG=en_US.utf8",
@@ -273,8 +273,10 @@ public class Shell {
     public static void toFile(String jstockCode, String yyyyMMdd) throws Exception, NotInTheTradingCycle {
 
         File path = new File("./temp");
+        File toFile = new File("./newfile");
+        toFile.mkdir();
 
-        File toPath = new File(jstockCode);
+        File toPath = new File(toFile, jstockCode);
         toPath.mkdir();
 
         Write w = new Write(toPath.getAbsolutePath(), yyyyMMdd, true);
@@ -320,11 +322,13 @@ public class Shell {
     public static void toFile(List<String> jstockCodes, String yyyyMMdd) throws Exception, NotInTheTradingCycle {
 
         File path = new File("./temp");
+        File toFile = new File("./newfile");
+        toFile.mkdir();
 
         Map<String, Write> map = new HashMap<>();
 
         for (String jstockCode: jstockCodes) {
-            File toPath = new File(jstockCode);
+            File toPath = new File(toFile, jstockCode);
             toPath.mkdir();
             Write w = new Write(toPath.getAbsolutePath(), yyyyMMdd, true);
             map.put(jstockCode, w);
@@ -372,14 +376,14 @@ public class Shell {
         }
     }
 
-    public static void clean(String code) throws IOException, InterruptedException {
+    public static void clean() throws IOException, InterruptedException {
 
         File path = new File("./temp");
         if (!path.exists()) path.mkdir();
 
         Process process;
         try {
-            String cmd = String.format("%s %s/rm.sh stocksinfo* %s", "sh", path.getParentFile().getAbsolutePath(), code);
+            String cmd = String.format("%s %s/rm.sh stocksinfo* %s", "sh", path.getParentFile().getAbsolutePath(), "tofile");
             process = Runtime.getRuntime().exec(cmd, null, path);
             BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
             String line;
@@ -388,6 +392,7 @@ public class Shell {
                 log.info(line);
             }
             if (exitValue == 0){
+                log.info("successfully executed the linux command");
             } else {
                 log.info(String.format("exit with error code: %d", exitValue));
                 throw new InterruptedException();
@@ -558,11 +563,90 @@ public class Shell {
         }
     }
 
-    public static void upload(String code, String yyyyMMdd) throws IOException, InterruptedException {
+    public static void upload(String code) throws IOException, InterruptedException {
 
         File path = new File("./temp");
 
         String cmd = String.format("bypy upload ../%s /jstockcodelog/%s", code, code);
+
+        Process process;
+        try {
+            log.info(cmd);
+            String[] envp = new String[] {
+                    "LANG=en_US.utf8",
+                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin:/opt/jdk/jdk1.8.0_221/bin:/sbin:/bin",
+                    "LC_CTYPE=en_US.utf8",
+                    "LC_NUMERIC=en_US.utf8",
+                    "LC_TIME=en_US.utf8",
+                    "LC_COLLATE=en_US.utf8",
+                    "LC_MONETARY=en_US.utf8",
+                    "LC_MESSAGES=en_US.utf8",
+                    "LC_PAPER=en_US.utf8",
+                    "LC_NAME=en_US.utf8",
+                    "LC_ADDRESS=en_US.utf8",
+                    "LC_TELEPHONE=en_US.utf8",
+                    "LC_MEASUREMENT=en_US.utf8",
+                    "LC_IDENTIFICATION=en_US.utf8"
+            };
+
+            process = Runtime.getRuntime().exec(cmd, envp, path);
+            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+            BufferedReader errReader = new BufferedReader(new InputStreamReader(process.getErrorStream()));
+            int exitValue = process.waitFor();
+
+            Runnable runReader = new Runnable() {
+
+                @SneakyThrows
+                @Override
+                public void run() {
+                    String line;
+                    while((line = reader.readLine())!= null){
+                        log.info(line);
+                    }
+                    if (exitValue == 0){
+                        log.info("successfully executed the linux command");
+                    } else {
+                        log.info(String.format("exit with error code: %d", exitValue));
+                        throw new InterruptedException();
+                    }
+                }
+            };
+
+            Runnable runErrReader = new Runnable() {
+
+                @SneakyThrows
+                @Override
+                public void run() {
+                    String line;
+                    while((line = errReader.readLine())!= null){
+                        log.error(line);
+                    }
+                }
+            };
+
+            Thread t1 = new Thread(runReader);
+            new Thread(runErrReader).start();
+
+            t1.start();
+
+            while(t1.isAlive()) {
+                Thread.sleep(300);
+            }
+            if(exitValue != 0) {
+                throw new InterruptedException();
+            }
+
+        } catch (InterruptedException | IOException e) {
+            e.printStackTrace();
+            throw e;
+        }
+    }
+
+    public static void upload() throws IOException, InterruptedException {
+
+        File path = new File("./temp");
+
+        String cmd = String.format("bypy upload ../tofile /jstockcodelog");
 
         Process process;
         try {

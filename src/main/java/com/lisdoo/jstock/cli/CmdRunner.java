@@ -72,6 +72,7 @@ public class CmdRunner implements CommandLineRunner {
                 options.addOption( "p", "process", true, "to file. parameters: jstockCode-yyyyMMdd" );
                 options.addOption( "c", "check", true, "check file. parameters: jstockCode-yyyyMMdd" );
                 options.addOption( "u", "upload", true, "upload. parameters: jstockCode-yyyyMMdd" );
+                options.addOption( "v", "upload2", true, "upload. parameters: jstockCode-yyyyMMdd" );
                 options.addOption( "r", "clean", true, "clean. parameter: code" );
                 options.addOption( "e", "exec", true, "exec. parameters: *-*-...." );
                 options.addOption( "h", "help", false, "help." );
@@ -170,23 +171,25 @@ public class CmdRunner implements CommandLineRunner {
                         if( line.hasOption( "u" ) ) {
                             if (line.getOptionValue("u").equalsIgnoreCase("all")) {
                                 for (String code: codes) {
-                                    for(StockList sl: stockLists) {
-                                        Shell.upload(code, sdf2.format(sl.getDate()));
-                                    }
+                                    Shell.upload(code);
                                 }
                             } else {
-                                Shell.upload(line.getOptionValue("u").split("-")[0], line.getOptionValue("u").split("-")[1]);
+                                Shell.upload(line.getOptionValue("u").split("-")[0]);
+                            }
+                            log.info("upload");
+                        }
+                        if( line.hasOption( "v" ) ) {
+                            if (line.getOptionValue("v").equalsIgnoreCase("all")) {
+                                for (String code: codes) {
+                                    Shell.upload(code);
+                                }
+                            } else {
+                                Shell.upload(line.getOptionValue("u").split("-")[0]);
                             }
                             log.info("upload");
                         }
                         if( line.hasOption( "r" ) ) {
-                            if (codes != null) {
-                                for (String code : codes) {
-                                    Shell.clean(code);
-                                }
-                            } else {
-                                Shell.clean(line.getOptionValue("r"));
-                            }
+                            Shell.clean();
                             log.info("clean");
                         }
                         if( line.hasOption( "e" ) ) {
