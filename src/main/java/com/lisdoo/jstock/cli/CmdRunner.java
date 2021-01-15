@@ -27,6 +27,9 @@ public class CmdRunner implements CommandLineRunner {
     private static SimpleDateFormat sdf =  new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
     private static SimpleDateFormat sdf2 = new SimpleDateFormat("yyyyMMdd");
 
+    List<StockList> stockLists = null;
+    List<String> codes = null;
+
     @Autowired
     JstockMqService jms;
 
@@ -54,8 +57,6 @@ public class CmdRunner implements CommandLineRunner {
             @Override
             public void run() {
 
-                List<StockList> stockLists = null;
-                List<String> codes = null;
                 ObjectMapper om = new ObjectMapper();
 
                 // create the command line parser
@@ -224,6 +225,22 @@ public class CmdRunner implements CommandLineRunner {
         trigger = (CronTrigger)TriggerBuilder.newTrigger().withSchedule(CronScheduleBuilder.cronSchedule(endCommand)).build();
         ft = sched.scheduleJob(job, trigger);
         this.log.info(job.getKey() + " has been scheduled to run at: " + ft + " and repeat based on expression: " + trigger.getCronExpression());
+    }
+
+    public List<StockList> getStockLists() {
+        return stockLists;
+    }
+
+    public void setStockLists(List<StockList> stockLists) {
+        this.stockLists = stockLists;
+    }
+
+    public List<String> getCodes() {
+        return codes;
+    }
+
+    public void setCodes(List<String> codes) {
+        this.codes = codes;
     }
 
     public static void main(String[] args) {
