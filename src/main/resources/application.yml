@@ -9,6 +9,6 @@ spring:
       ddl-auto: update   # 第一次建表用create,之后用update，
     show-sql: false    # 在控制台打印出sql语句
 server:
-  port: 8081
+  port: 13706
   servlet:
     context-path: /jstock
