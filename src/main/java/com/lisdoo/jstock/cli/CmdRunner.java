@@ -2,6 +2,7 @@ package com.lisdoo.jstock.cli;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.lisdoo.jstock.service.exchange.process.JstockMqService;
+import lombok.Data;
 import lombok.SneakyThrows;
 import org.apache.commons.cli.*;
 import org.apache.commons.logging.Log;
@@ -15,9 +16,7 @@ import org.springframework.stereotype.Component;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @Component
 public class CmdRunner implements CommandLineRunner {
@@ -27,8 +26,8 @@ public class CmdRunner implements CommandLineRunner {
     private static SimpleDateFormat sdf =  new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
     private static SimpleDateFormat sdf2 = new SimpleDateFormat("yyyyMMdd");
 
-    List<StockList> stockLists = null;
-    List<String> codes = null;
+    List<Command> list = new ArrayList<>();
+
 
     @Autowired
     JstockMqService jms;
@@ -85,11 +84,12 @@ public class CmdRunner implements CommandLineRunner {
                 while (!((lineStr = br.readLine()) == null)) {
 
                     Date startTime = new Date();
+                    Command command = new Command();
+                    command.setLineStr(lineStr);
+                    command.setTime(startTime);
+                    list.add(command);
 
                     try {
-
-                        stockLists = null;
-                        codes = null;
 
                         CommandLine line = parser.parse( options, lineStr.split(" "));
 
@@ -102,18 +102,20 @@ public class CmdRunner implements CommandLineRunner {
                             log.info("stop mq consumer");
                         }
                         if( line.hasOption( "x" ) ) {
-                            stockLists =
-                                    Shell.getTimeList(line.getOptionValue("x").split("-")[0], line.getOptionValue("x").split("-")[1]);
-                            log.info(String.format("get time list: %s", stockLists));
+                            command.setStockLists(
+                                    Shell.getTimeList(line.getOptionValue("x").split("-")[0], line.getOptionValue("x").split("-")[1]));
+                            log.info(String.format("get time list: %s", command.getStockLists()));
                         }
                         if( line.hasOption( "y" ) ) {
-                            codes =
-                                    Shell.getJstockCodeList(line.getOptionValue("y"));
-                            log.info(String.format("get codes [%d]: ", codes.size(), codes.size()<30?codes:"*******"));
+                            command.setCodes(
+                                    Shell.getJstockCodeList(line.getOptionValue("y")));
+                            log.info(String.format("get codes [%d]: ", command.getCodes().size(), command.getCodes().size()<30?command.getCodes():"*******"));
                         }
                         if( line.hasOption( "d" ) ) {
+                            command.setStep("d");
+                            command.setStepTime(new Date());
                             if (line.getOptionValue("d").equalsIgnoreCase("all")) {
-                                for(StockList sl: stockLists) {
+                                for(StockList sl: command.getStockLists()) {
                                     Shell.download(sl.getFolderOrFile());
                                 }
                             } else {
@@ -122,19 +124,21 @@ public class CmdRunner implements CommandLineRunner {
                             log.info("download");
                         }
                         if( line.hasOption( "t" ) ) {
+                            command.setStep("t");
+                            command.setStepTime(new Date());
                             if (line.getOptionValue("t").equalsIgnoreCase("all")) {
                                 List<String> codeList = new ArrayList<>();
-                                for (String code: codes) {
+                                for (String code: command.getCodes()) {
                                     codeList.add(code);
                                     if (codeList.size()%300==0) {
-                                        for (StockList sl : stockLists) {
+                                        for (StockList sl : command.getStockLists()) {
                                             Shell.toFile(codeList, sdf2.format(sl.getDate()));
                                         }
                                         codeList.clear();
                                     }
                                 }
                                 if (!codeList.isEmpty()) {
-                                    for (StockList sl : stockLists) {
+                                    for (StockList sl : command.getStockLists()) {
                                         Shell.toFile(codeList, sdf2.format(sl.getDate()));
                                     }
                                 }
@@ -144,9 +148,11 @@ public class CmdRunner implements CommandLineRunner {
                             log.info("to file");
                         }
                         if( line.hasOption( "p" ) ) {
+                            command.setStep("p");
+                            command.setStepTime(new Date());
                             if (line.getOptionValue("p").equalsIgnoreCase("getVolume")) {
-                                for (StockList sl : stockLists) {
-                                    JstockProcess.getVolume(codes, sdf2.format(sl.getDate()));
+                                for (StockList sl : command.getStockLists()) {
+                                    JstockProcess.getVolume(command.getCodes(), sdf2.format(sl.getDate()));
                                 }
                             } else {
                                 log.info(String.format("unknow parameter %s", line.getOptionValue("p")));
@@ -154,12 +160,16 @@ public class CmdRunner implements CommandLineRunner {
                             log.info("process");
                         }
                         if( line.hasOption( "c" ) ) {
+                            command.setStep("c");
+                            command.setStepTime(new Date());
                             Shell.exists(line.getOptionValue("c").split("-")[0], line.getOptionValue("c").split("-")[1]);
                             log.info("check");
                         }
                         if( line.hasOption( "u" ) ) {
+                            command.setStep("u");
+                            command.setStepTime(new Date());
                             if (line.getOptionValue("u").equalsIgnoreCase("all")) {
-                                for (String code: codes) {
+                                for (String code: command.getCodes()) {
                                     Shell.upload(code);
                                 }
                             } else {
@@ -168,6 +178,8 @@ public class CmdRunner implements CommandLineRunner {
                             log.info("upload");
                         }
                         if( line.hasOption( "v" ) ) {
+                            command.setStep("v");
+                            command.setStepTime(new Date());
                             if (line.getOptionValue("v").equalsIgnoreCase("all")) {
                                 Shell.upload();
                             } else {
@@ -176,6 +188,8 @@ public class CmdRunner implements CommandLineRunner {
                             log.info("upload");
                         }
                         if( line.hasOption( "r" ) ) {
+                            command.setStep("r");
+                            command.setStepTime(new Date());
                             Shell.clean();
                             log.info("clean");
                         }
@@ -190,8 +204,8 @@ public class CmdRunner implements CommandLineRunner {
                             }
                         }
                         if( line.hasOption( "l" ) ) {
-                            log.info(om.writeValueAsString(stockLists));
-                            log.info(om.writeValueAsString(codes));
+                            log.info(om.writeValueAsString(command.getStockLists()));
+                            log.info(om.writeValueAsString(command.getCodes()));
                         }
                     }
                     catch( ParseException exp ) {
@@ -205,7 +219,10 @@ public class CmdRunner implements CommandLineRunner {
 
                     Date endTime = new Date();
 
-                    log.info(String.format("运行时间：%s -> %s，耗时：%d 分钟，命令：%s", sdf.format(startTime), sdf.format(endTime), (endTime.getTime() - startTime.getTime())/1000/60, lineStr ));
+                    command.setStep("end");
+                    command.setStepTime(new Date());
+                    command.setEnd(String.format("运行时间：%s -> %s，耗时：%d 分钟，命令：%s", sdf.format(startTime), sdf.format(endTime), (endTime.getTime() - startTime.getTime())/1000/60, lineStr ));
+                    log.info(command.getEnd());
                 }
 
             }
@@ -227,20 +244,24 @@ public class CmdRunner implements CommandLineRunner {
         this.log.info(job.getKey() + " has been scheduled to run at: " + ft + " and repeat based on expression: " + trigger.getCronExpression());
     }
 
-    public List<StockList> getStockLists() {
-        return stockLists;
+    public List<Command> getList() {
+        return list;
     }
 
-    public void setStockLists(List<StockList> stockLists) {
-        this.stockLists = stockLists;
+    public void setList(List<Command> list) {
+        this.list = list;
     }
 
-    public List<String> getCodes() {
-        return codes;
-    }
+    @Data
+    public class Command {
 
-    public void setCodes(List<String> codes) {
-        this.codes = codes;
+        List<StockList> stockLists = null;
+        List<String> codes = null;
+        String lineStr;
+        Date time;
+        String step;
+        Date stepTime;
+        String end;
     }
 
     public static void main(String[] args) {

@@ -273,7 +273,7 @@ public class Shell {
     public static void toFile(String jstockCode, String yyyyMMdd) throws Exception, NotInTheTradingCycle {
 
         File path = new File("./temp");
-        File toFile = new File("./newfile");
+        File toFile = new File("./tofile");
         toFile.mkdir();
 
         File toPath = new File(toFile, jstockCode);
@@ -567,7 +567,7 @@ public class Shell {
 
         File path = new File("./temp");
 
-        String cmd = String.format("bypy upload ../%s /jstockcodelog/%s", code, code);
+        String cmd = String.format("bypy upload ../tofile/%s /jstockcodelog/%s", code, code);
 
         Process process;
         try {

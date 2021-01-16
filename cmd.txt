@@ -8,8 +8,10 @@
 -x 20201222-20201223 -y .* -d all -t all -u all -r all  huawei-hk 运行时间：2021-01-13 09:21:58 -> 2021-01-14 06:25:46，耗时：543 分钟
 周末
 -x 20201218-20201221 -y .* -d all -t all -v all -r all  huawei-hk 运行时间：2021-01-14 09:13:09 -> 2021-01-15 02:07:21，耗时：1014 分钟
--x 20201216-20201217 -y .* -d all -t all -v all -r all  ali47
--x 20201214-20201215 -y .* -d all -t all -v all -r all  ali47
+-x 20201217-20201217 -y .* -d all -t all -v all -r all  ali47
+-x 20201216-20201216 -y .* -d all -t all -v all -r all  ali47
+-x 20201215-20201215 -y .* -d all -t all -v all -r all  ali47
+-x 20201214-20201214 -y .* -d all -t all -v all -r all  ali47
 周末
 -x 20201210-20201211 -y .* -d all -t all -v all -r all  qq
 -x 20201208-20201209 -y .* -d all -t all -v all -r all  qq
