@@ -567,7 +567,7 @@ public class Shell {
 
         File path = new File("./temp");
 
-        String cmd = String.format("bypy upload ../%s /jstockcodelog/%s", code, code);
+        String cmd = String.format("bypy upload ../%s /jstockcodelog/%s -r 10", code, code);
 
         Process process;
         try {
@@ -646,7 +646,7 @@ public class Shell {
 
         File path = new File("./temp");
 
-        String cmd = String.format("bypy upload ../tofile /jstockcodelog");
+        String cmd = String.format("bypy upload ../tofile /jstockcodelog -r 10");
 
         Process process;
         try {
