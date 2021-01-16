@@ -566,7 +566,7 @@ public class Shell {
     public static void upload(String code) throws IOException, InterruptedException {
 
         File path = new File("./temp");
-        
+
         String cmd = String.format("bypy upload ../tofile/%s /jstockcodelog/%s -r 10", code, code);
 
         Process process;

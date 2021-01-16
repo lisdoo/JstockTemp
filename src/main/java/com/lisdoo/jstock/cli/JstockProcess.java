@@ -34,9 +34,11 @@ public class JstockProcess {
         Write w = new Write(toPath.getAbsolutePath(), yyyyMMdd, true);
 
         for (String jstockCode: jstockCodes) {
-            Long[] l = new Long[2];
+            Long[] l = new Long[4];
             l[0] = 0l;
             l[1] = 0l;
+            l[2] = 0l;
+            l[3] = 0l;
             map.put(jstockCode, l);
         }
 
@@ -73,6 +75,16 @@ public class JstockProcess {
                             entry.getValue()[1] = data.getAmount();
                             entry.setValue(entry.getValue());
                         }
+                        // InVolume
+                        if (data.getInVolume() > entry.getValue()[2]) {
+                            entry.getValue()[2] = data.getInVolume().longValue();
+                            entry.setValue(entry.getValue());
+                        }
+                        // OutVolume
+                        if (data.getOutVolume() > entry.getValue()[3]) {
+                            entry.getValue()[3] = data.getOutVolume().longValue();
+                            entry.setValue(entry.getValue());
+                        }
                     }
                 }
                 return true;
@@ -80,7 +92,7 @@ public class JstockProcess {
         };
 
         String[] files = path.list((f1, f2)->{
-            return !f2.contains(".xz");
+            return !f2.contains(".xz") && f2.replace("-", "").contains(yyyyMMdd);
         });
         for (String file: files) {
             log.info(String.format("reading file %s to file %s", file, map.keySet()));

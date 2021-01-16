@@ -20,14 +20,14 @@ public class ToInfluxdbVolume {
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
 
-//        final String serverURL = "http://influxdb:8086", username = "root", password = "root";
-//        final InfluxDB influxDB = InfluxDBFactory.connect(serverURL, username, password);
-//
-//        String databaseName = "hexunVolume";
-//        influxDB.query(new Query("CREATE DATABASE " + databaseName));
-//        influxDB.setDatabase(databaseName);
-//
-//        influxDB.enableBatch(BatchOptions.DEFAULTS);
+        final String serverURL = "http://influxdb:8086", username = "root", password = "root";
+        final InfluxDB influxDB = InfluxDBFactory.connect(serverURL, username, password);
+
+        String databaseName = "hexunVolume";
+        influxDB.query(new Query("CREATE DATABASE " + databaseName));
+        influxDB.setDatabase(databaseName);
+
+        influxDB.enableBatch(BatchOptions.DEFAULTS);
 
         Predicate p = new Predicate<String[]>() {
 
@@ -47,19 +47,19 @@ public class ToInfluxdbVolume {
                 }
                 System.out.println(String.format("%s %s=%d,%d", data.getDateTime().toString(), data.getCode(), data.getVolume(), data.getAmount()));
 
-//                influxDB.write(Point.measurement("getVolume")
-//                        .time(data.getDateTime().getTime(), TimeUnit.MILLISECONDS)
+                influxDB.write(Point.measurement("getVolume")
+                        .time(data.getDateTime().getTime(), TimeUnit.MILLISECONDS)
 //                        .tag("name", data.getName())
-//                        .tag("code", data.getCode())
-//                        .addField("value", data.getVolume().longValue())
-//                        .build());
-//
-//                influxDB.write(Point.measurement("getAmount")
-//                        .time(data.getDateTime().getTime(), TimeUnit.MILLISECONDS)
+                        .tag("code", data.getCode())
+                        .addField("value", data.getVolume().longValue())
+                        .build());
+
+                influxDB.write(Point.measurement("getAmount")
+                        .time(data.getDateTime().getTime(), TimeUnit.MILLISECONDS)
 //                        .tag("name", data.getName())
-//                        .tag("code", data.getCode())
-//                        .addField("value", data.getAmount().longValue())
-//                        .build());
+                        .tag("code", data.getCode())
+                        .addField("value", data.getAmount().longValue())
+                        .build());
 
 //                influxDB.write(Point.measurement("getInVolume")
 //                        .time(data.getDateTime().getTime(), TimeUnit.MILLISECONDS)
@@ -98,10 +98,10 @@ public class ToInfluxdbVolume {
 
 
 
-        String folderInStr = "H:\\e\\git\\JstockTemp\\target";
+        String folderInStr = "I:\\jstock\\out";
         File[] folders = new File(folderInStr).listFiles((f1, f2) -> {
 //            if (f2.contains("_folder")) return true;
-            if (f2.contains("out")) return true;
+            if (f2.contains("process")) return true;
 //            if (f2.contains("stocksinfo.2020-01-10_folder")) return true;
             return false;
         });
@@ -118,6 +118,6 @@ public class ToInfluxdbVolume {
             }
         }
 
-//        influxDB.close();
+        influxDB.close();
     }
 }
