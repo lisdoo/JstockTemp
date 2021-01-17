@@ -45,6 +45,7 @@ public class ToInfluxdbVolume {
                     e.printStackTrace();
                     return true;
                 }
+                if(data.getAmount() == 0) return true;
                 System.out.println(String.format("%s %s=%d,%d", data.getDateTime().toString(), data.getCode(), data.getVolume(), data.getAmount()));
 
                 influxDB.write(Point.measurement("getVolume")

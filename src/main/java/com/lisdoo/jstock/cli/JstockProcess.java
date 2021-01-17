@@ -34,7 +34,7 @@ public class JstockProcess {
         Write w = new Write(toPath.getAbsolutePath(), yyyyMMdd, true);
 
         for (String jstockCode: jstockCodes) {
-            Long[] l = new Long[4];
+            Long[] l = new Long[5];
             l[0] = 0l;
             l[1] = 0l;
             l[2] = 0l;
