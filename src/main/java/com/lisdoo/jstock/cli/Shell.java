@@ -310,7 +310,7 @@ public class Shell {
         };
 
         String[] files = path.list((f1, f2)->{
-            return !f2.contains(".xz");
+            return !f2.contains(".xz") && f2.replace("-", "").contains(yyyyMMdd);
         });
         for (String file: files) {
             log.info(String.format("reading file %s to file %s", file, jstockCode));
@@ -365,7 +365,7 @@ public class Shell {
         };
 
         String[] files = path.list((f1, f2)->{
-            return !f2.contains(".xz");
+            return !f2.contains(".xz") && f2.replace("-", "").contains(yyyyMMdd);
         });
         for (String file: files) {
             log.info(String.format("reading file %s to file %s", file, map.keySet()));
@@ -567,7 +567,7 @@ public class Shell {
 
         File path = new File("./temp");
 
-        String cmd = String.format("bypy upload ../tofile/%s /jstockcodelog/%s -r 10", code, code);
+        String cmd = String.format("bypy upload ../tofile/%s /jstockcodelog2/%s -r 10", code, code);
 
         Process process;
         try {
@@ -646,7 +646,7 @@ public class Shell {
 
         File path = new File("./temp");
 
-        String cmd = String.format("bypy upload ../tofile /jstockcodelog -r 10");
+        String cmd = String.format("bypy upload ../tofile /jstockcodelog2 -r 10");
 
         Process process;
         try {

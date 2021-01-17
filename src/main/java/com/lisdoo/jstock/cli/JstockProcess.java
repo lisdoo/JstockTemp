@@ -39,6 +39,7 @@ public class JstockProcess {
             l[1] = 0l;
             l[2] = 0l;
             l[3] = 0l;
+            l[4] = 0l;
             map.put(jstockCode, l);
         }
 
@@ -85,6 +86,11 @@ public class JstockProcess {
                             entry.getValue()[3] = data.getOutVolume().longValue();
                             entry.setValue(entry.getValue());
                         }
+                        // Pe
+                        if (data.getOutVolume() > entry.getValue()[4]) {
+                            entry.getValue()[4] = data.getPE().longValue();
+                            entry.setValue(entry.getValue());
+                        }
                     }
                 }
                 return true;
@@ -106,6 +112,12 @@ public class JstockProcess {
             w.write(Long.toString(entry.getValue()[0]));
             w.write(",");
             w.write(Long.toString(entry.getValue()[1]));
+            w.write(",");
+            w.write(Long.toString(entry.getValue()[2]));
+            w.write(",");
+            w.write(Long.toString(entry.getValue()[3]));
+            w.write(",");
+            w.write(Long.toString(entry.getValue()[4]));
             w.write("\r\n");
         }
 
