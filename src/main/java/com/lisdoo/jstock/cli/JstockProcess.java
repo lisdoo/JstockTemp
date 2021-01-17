@@ -105,7 +105,7 @@ public class JstockProcess {
             Read.testRead(new File(path.getAbsolutePath(), file).getAbsolutePath(), p);
         }
 
-        w.write("code,volume,amount\r\n");
+        w.write("code,volume,amount,InVolume,OutVolume,Pe\r\n");
         for (Map.Entry<String, Long[]> entry: map.entrySet()) {
             w.write(entry.getKey());
             w.write(",");

@@ -1,6 +1,8 @@
-package com.lisdoo.jstock.readwrite;
+package com.lisdoo.jstock.readwrite.volume;
 
 import com.alibaba.fastjson.JSONArray;
+import com.lisdoo.jstock.readwrite.Data;
+import com.lisdoo.jstock.readwrite.ReadCsv;
 import com.lisdoo.jstock.service.exchange.exception.NotInTheTradingCycle;
 import org.influxdb.BatchOptions;
 import org.influxdb.InfluxDB;
