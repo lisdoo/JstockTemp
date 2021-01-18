@@ -27,24 +27,35 @@ import java.util.List;
 
 @NamedNativeQueries({
 
-		// A query using simple projections
-		@NamedNativeQuery(name = "Jstock.findAllJstocks", //
-				query = "select code, CONCAT_WS('/',:requestURL,:id) as href from jstock where id = :id") })
+        @NamedNativeQuery(name = "Jstock.findAllJstocks", //
+                query = "select code, CONCAT_WS('/',:requestURL,code) as href from jstock"),
+
+        @NamedNativeQuery(name = "Jstock.findSpecJs", //
+                query = "select j.code , CONCAT_WS('/',:requestURL,jr.jstock_strategy_id ) as href, j.status as jsStatus , jr.base_prise as basePrise , jr.last_position as lastPosition , jr.last_trade_date as lastTradeDate, jr.status as rangeStatus , js.price_range as priceRange, js.count as count, js.fre as fre, CONCAT_WS('/',REPLACE(:requestURL,code,'strategy'),jr.jstock_strategy_id ) as strategyHref from jstock j left join jstock_range jr on j.id = jr.jstock_id left join jstock_strategy js on jr.jstock_strategy_id = js.id where j.code = :code"),
+
+        @NamedNativeQuery(name = "Jstock.findRangRec", //
+                query = "select CONCAT_WS('/',:requestURL,jr.jstock_strategy_id ) as href, j.status as jsStatus , jr.base_prise as basePrise , jr.last_position as lastPosition , jr.last_trade_date as lastTradeDate, jr.status as rangeStatus , js.price_range as priceRange, js.count as count, js.fre as fre, CONCAT_WS('/',REPLACE(:requestURL,code,'strategy'),jr.jstock_strategy_id ) as strategyHref from jstock j left join jstock_range jr on j.id = jr.jstock_id left join jstock_strategy js on jr.jstock_strategy_id = js.id where j.code = :code"),
+
+        @NamedNativeQuery(name = "Jstock.findAllJstocks", //
+                query = "select code, CONCAT_WS('/',:requestURL,code) as href from jstock")})
 
 @Entity
 @Data
 @NoArgsConstructor(force = true, access = AccessLevel.PRIVATE)
 @AllArgsConstructor
-@Table(name = "jstock", uniqueConstraints = {@UniqueConstraint(columnNames="code")})
+@Table(name = "jstock", uniqueConstraints = {@UniqueConstraint(columnNames = "code")})
 public class Jstock {
 
-	private final @Id @GeneratedValue Long id = null;
-	private String code;
-	private String name;
-	private String notes;
-	private String status;
-	private @OneToMany(mappedBy = "jstock") @JsonManagedReference
-	List<JstockRange> jstockRanges;
-	private Date createDate;
-	private Date modifyDate;
+    private final @Id
+    @GeneratedValue
+    Long id = null;
+    private String code;
+    private String name;
+    private String notes;
+    private String status;
+    private @OneToMany(mappedBy = "jstock")
+    @JsonManagedReference
+    List<JstockRange> jstockRanges;
+    private Date createDate;
+    private Date modifyDate;
 }
