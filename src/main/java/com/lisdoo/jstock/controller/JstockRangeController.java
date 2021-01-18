@@ -3,10 +3,9 @@ package com.lisdoo.jstock.controller;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.lisdoo.jstock.controller.utils.Result;
 import com.lisdoo.jstock.controller.utils.ResultUtil;
-import com.lisdoo.jstock.factory.MqConsumeFactory;
 import com.lisdoo.jstock.service.exchange.*;
 import com.lisdoo.jstock.service.exchange.exception.db.EntityExistException;
-import com.lisdoo.jstock.service.jpa.JstockV;
+import com.lisdoo.jstock.service.vi.JstockV;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,8 +15,6 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
-import java.util.Optional;
-import java.util.Set;
 
 @RestController
 @RequestMapping("/jr")

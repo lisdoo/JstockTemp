@@ -34,10 +34,19 @@ import java.util.List;
                 query = "select j.code , CONCAT_WS('/',:requestURL,jr.jstock_strategy_id ) as href, j.status as jsStatus , jr.base_prise as basePrise , jr.last_position as lastPosition , jr.last_trade_date as lastTradeDate, jr.status as rangeStatus , js.price_range as priceRange, js.count as count, js.fre as fre, CONCAT_WS('/',REPLACE(:requestURL,code,'strategy'),jr.jstock_strategy_id ) as strategyHref from jstock j left join jstock_range jr on j.id = jr.jstock_id left join jstock_strategy js on jr.jstock_strategy_id = js.id where j.code = :code"),
 
         @NamedNativeQuery(name = "Jstock.findRangRec", //
-                query = "select CONCAT_WS('/',:requestURL,jr.jstock_strategy_id ) as href, j.status as jsStatus , jr.base_prise as basePrise , jr.last_position as lastPosition , jr.last_trade_date as lastTradeDate, jr.status as rangeStatus , js.price_range as priceRange, js.count as count, js.fre as fre, CONCAT_WS('/',REPLACE(:requestURL,code,'strategy'),jr.jstock_strategy_id ) as strategyHref from jstock j left join jstock_range jr on j.id = jr.jstock_id left join jstock_strategy js on jr.jstock_strategy_id = js.id where j.code = :code"),
-
-        @NamedNativeQuery(name = "Jstock.findAllJstocks", //
-                query = "select code, CONCAT_WS('/',:requestURL,code) as href from jstock")})
+                query = "select (select jr2.`position` from jstock_range jr2 where jr2.id = jrr.jstock_range_id) as `position` , (select jr3.position_prise from jstock_range jr3 where jr3.id = (select jrr2.jstock_range_id from jstock_range_record jrr2 where jrr2.id = jrr.id)) as positionPrise, jrr.price as price, jrr.status as status, jrr.quote_time as quoteTime, jrr.volume as volume, jrr.amount as amount, jrr.conform as conformStatus from jstock_range_record jrr where id in \n" +
+                        "(\n" +
+                        "\tselect jrr.id from \n" +
+                        "\t(\n" +
+                        "\t  select a.code, a.statusa, a.base_prise, a.statusb, jr.id, jr.`position` , jr.position_prise from\n" +
+                        "\t  (\n" +
+                        "\t    select j.code , j.status as statusa , jr.base_prise , jr.status as statusb , jr.id from jstock j left join jstock_range jr on j.id = jr.jstock_id where code = :code and jstock_strategy_id = :strategyId\n" +
+                        "\t  ) as a\n" +
+                        "\t  left join jstock_range jr on a.id = jr.parent_id\n" +
+                        "\t) as b\n" +
+                        "\tleft join jstock_range_record jrr on b.id = jrr.jstock_range_id \n" +
+                        ")\n" +
+                        "order by jrr.quote_time;")})
 
 @Entity
 @Data

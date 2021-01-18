@@ -15,8 +15,9 @@
  */
 package com.lisdoo.jstock.service.exchange;
 
-import com.lisdoo.jstock.service.jpa.JstockV;
-import com.lisdoo.jstock.service.jpa.SpecJsV;
+import com.lisdoo.jstock.service.vi.JstockV;
+import com.lisdoo.jstock.service.vi.SpecJsRecV;
+import com.lisdoo.jstock.service.vi.SpecJsV;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
@@ -32,4 +33,7 @@ public interface JstockRepository extends CrudRepository<Jstock, Long> {
 
     @Query(nativeQuery = true)
     public List<SpecJsV> findSpecJs(String requestURL, String code);
+
+    @Query(nativeQuery = true)
+    public List<SpecJsRecV> findRangRec(String code, Long strategyId);
 }

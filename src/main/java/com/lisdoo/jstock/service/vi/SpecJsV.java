@@ -1,4 +1,4 @@
-package com.lisdoo.jstock.service.jpa;
+package com.lisdoo.jstock.service.vi;
 
 import java.util.Date;
 
