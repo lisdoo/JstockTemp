@@ -14,9 +14,11 @@
 -x 20201215-20201215 -y .* -d all -t all -v all -r all ali47     运行时间：2021-01-18 02:36:21 -> 2021-01-18 04:03:20，耗时：86 分钟
 -x 20201214-20201214 -y .* -d all -t all -v all -r all ali47     运行时间：2021-01-18 04:03:20 -> 2021-01-18 05:28:50，耗时：85 分钟
 -x 20201211-20201211 -y .* -d all -t all -v all -r all ali47     运行时间：2021-01-18 08:58:39 -> 2021-01-18 03:39:57，耗时：401 分钟
--x 20201210-20201210 -y .* -d all -t all -v all -r all
--x 20201208-20201209 -y .* -d all -t all -v all -r all
--x 20201204-20201207 -y .* -d all -t all -v all -r all
+-x 20201210-20201210 -y .* -d all -t all -v all -r all ali47
+-x 20201209-20201209 -y .* -d all -t all -v all -r all ali47
+-x 20201208-20201208 -y .* -d all -t all -v all -r all ali47
+-x 20201207-20201207 -y .* -d all -t all -v all -r all ali47
+-x 20201204-20201204 -y .* -d all -t all -v all -r all ali47
 -x 20201202-20201203 -y .* -d all -t all -v all -r all
 -x 20201130-20201201 -y .* -d all -t all -v all -r all
 
@@ -35,18 +37,18 @@
 -x 20201207-20201211 -y .* -d all -p getVolume -r all  huawei
 -x 20201130-20201204 -y .* -d all -p getVolume -r all  huawei
 -x 20201123-20201127 -y .* -d all -p getVolume -r all  huawei
--x 20201116-20201120 -y .* -d all -p getVolume -r all
--x 20201109-20201113 -y .* -d all -p getVolume -r all
--x 20201102-20201106 -y .* -d all -p getVolume -r all
--x 20201026-20201030 -y .* -d all -p getVolume -r all
--x 20201019-20201023 -y .* -d all -p getVolume -r all
--x 20201012-20201016 -y .* -d all -p getVolume -r all
--x 20201005-20201009 -y .* -d all -p getVolume -r all
--x 20200928-20200930 -y .* -d all -p getVolume -r all
--x 20200921-20200925 -y .* -d all -p getVolume -r all
--x 20200914-20200918 -y .* -d all -p getVolume -r all
--x 20200907-20200911 -y .* -d all -p getVolume -r all
--x 20200831-20200904 -y .* -d all -p getVolume -r all
+-x 20201116-20201120 -y .* -d all -p getVolume -r all  huawei
+-x 20201109-20201113 -y .* -d all -p getVolume -r all  huawei
+-x 20201102-20201106 -y .* -d all -p getVolume -r all  huawei
+-x 20201026-20201030 -y .* -d all -p getVolume -r all  huawei
+-x 20201019-20201023 -y .* -d all -p getVolume -r all  huawei
+-x 20201012-20201016 -y .* -d all -p getVolume -r all  huawei
+-x 20201005-20201009 -y .* -d all -p getVolume -r all  huawei
+-x 20200928-20200930 -y .* -d all -p getVolume -r all  huawei
+-x 20200921-20200925 -y .* -d all -p getVolume -r all  huawei
+-x 20200914-20200918 -y .* -d all -p getVolume -r all  huawei
+-x 20200907-20200911 -y .* -d all -p getVolume -r all  huawei
+-x 20200831-20200904 -y .* -d all -p getVolume -r all  huawei
 -x 20200824-20200828 -y .* -d all -p getVolume -r all
 -x 20200817-20200821 -y .* -d all -p getVolume -r all
 -x 20200810-20200814 -y .* -d all -p getVolume -r all
