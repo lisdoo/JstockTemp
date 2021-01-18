@@ -6,11 +6,17 @@ import com.lisdoo.jstock.controller.utils.ResultUtil;
 import com.lisdoo.jstock.factory.MqConsumeFactory;
 import com.lisdoo.jstock.service.exchange.*;
 import com.lisdoo.jstock.service.exchange.exception.db.EntityExistException;
+import com.lisdoo.jstock.service.jpa.JstockV;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
+import javax.servlet.http.HttpServletRequest;
+import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 @RestController
@@ -37,5 +43,26 @@ public class JstockRangeController {
         } catch (EntityExistException e) {
             return ResultUtil.error(e);
         }
+    }
+
+    @GetMapping("/jstock")
+    public Result<List<JstockV>> all() throws JsonProcessingException {
+
+        List<JstockV> o = jr.findAllJstocks(getRequest().getRequestURL().toString(),1);
+
+        return ResultUtil.success( o);
+
+    }
+
+    private HttpServletRequest getRequest() {
+
+        HttpServletRequest request = null;
+        try {
+            request =
+                    ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return request;
     }
 }

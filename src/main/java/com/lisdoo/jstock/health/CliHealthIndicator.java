@@ -26,6 +26,7 @@ public class CliHealthIndicator extends AbstractHealthIndicator {
         Health.Builder b = builder.up();
 
         for (CmdRunner.Command command: cmdRunner.getList()) {
+            if (command.getCodes() != null) command.getCodes().clear();
             b.withDetail(sdf.format(command.getTime()), command);
         }
     }

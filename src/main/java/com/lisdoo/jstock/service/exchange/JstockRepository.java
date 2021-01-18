@@ -15,11 +15,17 @@
  */
 package com.lisdoo.jstock.service.exchange;
 
+import com.lisdoo.jstock.service.jpa.JstockV;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface JstockRepository extends CrudRepository<Jstock, Long> {
 
     public Optional<Jstock> findByCode(String code) ;
+
+    @Query(nativeQuery = true)
+    public List<JstockV> findAllJstocks(String requestURL, long id);
 }

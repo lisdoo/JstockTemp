@@ -25,6 +25,12 @@ import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
+@NamedNativeQueries({
+
+		// A query using simple projections
+		@NamedNativeQuery(name = "Jstock.findAllJstocks", //
+				query = "select code, CONCAT_WS('/',:requestURL,:id) as href from jstock where id = :id") })
+
 @Entity
 @Data
 @NoArgsConstructor(force = true, access = AccessLevel.PRIVATE)
