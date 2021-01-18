@@ -23,7 +23,7 @@ public class CmdRunner implements CommandLineRunner {
 
     private static final Log log = LogFactory.getLog(CmdRunner.class);
 
-    private static SimpleDateFormat sdf =  new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+    private static SimpleDateFormat sdf =  new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     private static SimpleDateFormat sdf2 = new SimpleDateFormat("yyyyMMdd");
 
     List<Command> list = new ArrayList<>();

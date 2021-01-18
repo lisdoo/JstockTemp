@@ -18,7 +18,7 @@ public class CliHealthIndicator extends AbstractHealthIndicator {
     @Autowired
     ObjectMapper om;
 
-    private static SimpleDateFormat sdf =  new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+    private static SimpleDateFormat sdf =  new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     @Override
     protected void doHealthCheck(Health.Builder builder) throws Exception {
