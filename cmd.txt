@@ -1,4 +1,4 @@
--x 20210114-20210115 -y .* -d all -t all -v all -r all huawei-hk
+-x 20210114-20210115 -y .* -d all -t all -v all -r all huawei-hk 运行时间：2021-01-19 07:15:53 -> 2021-01-19 19:59:27，耗时：763 分钟
 -x 20210112-20210113 -y .* -d all -t all -u all -r all qq        运行时间：2021-01-17 10:42:13 -> 2021-01-17 07:34:27，耗时：532 分钟
 -x 20210107-20210108 -y .* -d all -t all -u all -r all huawei-hk 运行时间：2021-01-17 10:42:35 -> 2021-01-18 04:42:24，耗时：1079 分钟
 -x 20210105-20210106 -y .* -d all -t all -v all -r all qq        运行时间：2021-01-17 07:47:21 -> 2021-01-18 10:01:27，耗时：854 分钟
@@ -16,16 +16,16 @@
 -x 20201211-20201211 -y .* -d all -t all -v all -r all ali47     运行时间：2021-01-18 08:58:39 -> 2021-01-18 03:39:57，耗时：401 分钟
 -x 20201210-20201210 -y .* -d all -t all -v all -r all ali47     运行时间：2021-01-18 21:38:39 -> 2021-01-19 03:42:35，耗时：363 分钟
 -x 20201209-20201209 -y .* -d all -t all -v all -r all ali47     运行时间：2021-01-19 03:42:35 -> 2021-01-19 09:41:42，耗时：359 分钟
--x 20201208-20201208 -y .* -d all -t all -v all -r all ali47
--x 20201207-20201207 -y .* -d all -t all -v all -r all ali47
+-x 20201208-20201208 -y .* -d all -t all -v all -r all ali47     运行时间：2021-01-19 09:41:42 -> 2021-01-19 16:17:34，耗时：395 分钟
+-x 20201207-20201207 -y .* -d all -t all -v all -r all ali47     运行时间：2021-01-19 16:17:34 -> 2021-01-19 22:29:32，耗时：371 分钟
 -x 20201204-20201204 -y .* -d all -t all -v all -r all ali47
 -x 20201202-20201203 -y .* -d all -t all -v all -r all qq        运行时间：2021-01-19 07:11:51 -> 2021-01-19 07:20:01，耗时：8 分钟
--x 20201130-20201201 -y .* -d all -t all -v all -r all qq
--x 20201126-20201127 -y .* -d all -t all -v all -r all
--x 20201124-20201125 -y .* -d all -t all -v all -r all
--x 20201120-20201123 -y .* -d all -t all -v all -r all
--x 20201118-20201119 -y .* -d all -t all -v all -r all
--x 20201116-20201117 -y .* -d all -t all -v all -r all
+-x 20201130-20201201 -y .* -d all -t all -v all -r all qq        运行时间：2021-01-19 07:20:01 -> 2021-01-19 10:48:09，耗时：928 分钟
+-x 20201126-20201127 -y .* -d all -t all -v all -r all huawei-hk
+-x 20201124-20201125 -y .* -d all -t all -v all -r all huawei-hk
+-x 20201120-20201123 -y .* -d all -t all -v all -r all qq
+-x 20201118-20201119 -y .* -d all -t all -v all -r all qq
+-x 20201116-20201117 -y .* -d all -t all -v all -r all qq
 -x 20201112-20201113 -y .* -d all -t all -v all -r all
 -x 20201110-20201111 -y .* -d all -t all -v all -r all
 -x 20201106-20201109 -y .* -d all -t all -v all -r all
