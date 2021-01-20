@@ -48,7 +48,7 @@ public class CmdRunner implements CommandLineRunner {
             this.log.info("------- Initialization Complete --------");
 
             this.schedulingJobs(sched, StartThreads.class, "0 20 9 ? * MON-FRI", ShutdownThreads.class, "0 1 15 ? * MON-FRI");
-            this.schedulingJob(sched, CleanAndUpload.class, "0/5 * * ? * MON-FRI");
+//            this.schedulingJob(sched, CleanAndUpload.class, " * * ? * MON-FRI");
 
             this.log.info("------- Starting Scheduler ----------------");
             sched.start();
@@ -60,14 +60,14 @@ public class CmdRunner implements CommandLineRunner {
             @Override
             public void run() {
 
-                parse(true, null);
+                parse(true, 0,null);
 
             }
         };
         new Thread(r).start();
     }
 
-    public void parse(boolean run, String cmd) throws IOException {
+    public void parse(boolean run, int count, String cmd) throws IOException {
 
         ObjectMapper om = new ObjectMapper();
 
@@ -242,7 +242,7 @@ public class CmdRunner implements CommandLineRunner {
             command.setEnd(String.format("运行时间：%s -> %s，耗时：%d 分钟，命令：%s", sdf.format(startTime), sdf.format(endTime), (endTime.getTime() - startTime.getTime())/1000/60, lineStr ));
             log.info(command.getEnd());
 
-            if (!run) break;
+            if (!run && --count==0) break;
         }
 
         br.close();
