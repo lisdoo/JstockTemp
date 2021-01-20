@@ -63,6 +63,10 @@ public class JstockRangeService {
                 jrr.setStatus(Calculation.Status.SELL.name());
                 jrr.setPrice(data.getSellPrice()/100);
             } break;
+            case NONE: {
+                jrr.setStatus(Calculation.Status.NONE.name());
+                jrr.setPrice(data.getSellPrice()/100);
+            } break;
         }
 
         jrrr.save(jrr);

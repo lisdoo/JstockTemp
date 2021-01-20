@@ -61,6 +61,10 @@ public class JstockProcessService {
                 log.info(String.format("%s 最后一次交易档位为：%d，小于当前档位：%d，执行SELL", jr.getParent().getJstock().getCode(), lastPosition, rangePosition.getKey()));
                 jrs.updateJstockRangeStatus(jr, rangePosition.getKey(), Calculation.Status.SELL.name(), data);
                 return true;
+            } else {
+                log.info(String.format("%s 最后一次交易档位为：%d，当前档位为非负：%d，不执行SELL或BUY，仅更新最后交易档位", jr.getParent().getJstock().getCode(), lastPosition, rangePosition.getKey()));
+                jrs.updateJstockRangeStatus(jr, rangePosition.getKey(), Calculation.Status.NONE.name(), data);
+                return true;
             }
         }
         return false;

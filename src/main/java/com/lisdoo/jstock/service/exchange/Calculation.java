@@ -14,7 +14,7 @@ import java.util.*;
 public class Calculation {
 
     public enum Frequency {HOUR, DAY, WEEK, MONTH, YEAR, ALWAYS};
-    public enum Status {SELL, BUY};
+    public enum Status {SELL, BUY, NONE};
     static DecimalFormat decimalFormat=new DecimalFormat("#.##");
 
     /*

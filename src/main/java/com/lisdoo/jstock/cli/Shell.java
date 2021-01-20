@@ -407,7 +407,7 @@ public class Shell {
 
         File path = new File("./temp");
 
-        cmd = cmd.replace('-', ' ');
+        cmd = cmd.replace('?', ' ');
 
         Process process;
         try {
