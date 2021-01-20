@@ -67,6 +67,7 @@ public class JstockRangeService {
 
         jrrr.save(jrr);
 
+        jr.setLastTradeDate(data.getDateTime());
         return jrp.save(jr);
     }
 }
