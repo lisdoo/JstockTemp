@@ -19,13 +19,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.Optional;
 
-public interface JstockRangeRepository extends CrudRepository<JstockRange, Long> {
+public interface JstockStrategyRepository extends CrudRepository<JstockStrategy, Long> {
 
-    public Optional<JstockRange> findByJstock(Jstock js);
-
-    public Optional<JstockRange> findByJstockAndPosition(Jstock js, Integer position);
-
-    public Optional<JstockRange> findByJstockAndParentAndPosition(Jstock js, JstockRange jr, Integer position);
-
-    public Optional<JstockRange> findByJstockStrategyIdAndPosition(Long strategyId, Integer position);
+    public Optional<JstockStrategy> findById(Long id);
 }

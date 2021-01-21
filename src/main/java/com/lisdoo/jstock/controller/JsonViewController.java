@@ -17,6 +17,8 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/view")
@@ -30,6 +32,9 @@ public class JsonViewController {
 
     @Autowired
     JstockRangeRepository jrr;
+
+    @Autowired
+    JstockStrategyRepository jsr;
 
     @GetMapping("/jstock")
     public Result<List<JstockV>> all() throws JsonProcessingException {
@@ -55,6 +60,24 @@ public class JsonViewController {
         List<SpecJsRecV> o = jr.findRangRec(code, strategyId);
 
         return ResultUtil.success( o);
+
+    }
+
+    @GetMapping("/jstock/strategy/{strategyId}")
+    public Result<Map<Integer, Float>> getStrategyInfo(@PathVariable Long strategyId) throws JsonProcessingException {
+
+        Optional<JstockStrategy> js = jsr.findById(strategyId);
+        Optional<JstockRange> jr = jrr.findByJstockStrategyIdAndPosition(strategyId, null);
+        if (js.isPresent() && jr.isPresent()) {
+            Map<Integer, Float> map = Calculation.createRangeValue(jr.get().getBasePrise(),js.get().getPriceRange(),js.get().getCount(),js.get().getOffset());
+            for (Integer i: map.keySet()) {
+                System.out.println(i);
+            }
+            return ResultUtil.success(map);
+        } else {
+            return ResultUtil.error(9999, String.format("未见数据: JstockStrategy: %b JstockRange: %b", js.isPresent(), jr.isPresent()));
+        }
+
 
     }
 

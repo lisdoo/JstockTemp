@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.File;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -39,23 +40,27 @@ public class CleanAndUpload implements Job {
         StringBuffer sb = new StringBuffer();
         sb.append(String.format("-e cp?../stockslog/stocksinfo.%s?.", currentDateInStr));
         sb.append("\r\n");
-        sb.append(String.format("-x %s-%s -y .* -d all -t all -v all -r all", currentDateInStr2, currentDateInStr2));
+        sb.append(String.format("-e mkdir?../tofile", currentDateInStr));
         sb.append("\r\n");
-        sb.append("../stockslog/zipb.sh");
+        sb.append("../stockslog/zipb.sh?.");
+        sb.append("\r\n");
+        sb.append(String.format("-x %s-%s -y .* -d all -t all -v all -r all", currentDateInStr2, currentDateInStr2));
         sb.append("\r\n");
         cmdRunner.parse(false, 3, sb.toString());
 
         log.info("执行CleanAndUpload完成。");
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
 
-        Date currentDate = new Date();
+        Date currentDate = sdf.parse("2021-01-20");
         currentDate.setTime(currentDate.getTime()-3600*24*1000);
         String currentDateInStr = sdf.format(currentDate);
         String currentDateInStr2 = sdf2.format(currentDate);
 
         System.out.println(String.format("-e cp?../stockslog/stocksinfo.%s?.", currentDateInStr));
+        System.out.println(String.format("-e mkdir?../tofile", currentDateInStr));
+        System.out.println(String.format("-e ../stockslog/zipb.sh?.", currentDateInStr));
         System.out.println(String.format("-x %s-%s -y .* -t all -v all -r all", currentDateInStr2, currentDateInStr2));
     }
 }

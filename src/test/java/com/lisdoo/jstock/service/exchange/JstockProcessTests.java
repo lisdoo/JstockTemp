@@ -144,6 +144,19 @@ public class JstockProcessTests {
         }
     }
 
+    @Test
+    @Transactional
+    public void test03() throws Exception, NotInTheTradingCycle, NotInRangeException, EntityNoneException, EntityExistException {
+
+        Optional<Jstock> j = jr.findByCode(jstockCode);
+//        System.out.println(om.writeValueAsString(j.get()));
+
+        for (JstockRange jr: j.get().getJstockRanges()) {
+                System.out.println(jr.getBasePrise());
+                log.info(String.format("%s 最后一次交易档位为：%d(%.2f %d=%.2f/%d)，加1后仍然小于当前档位：%d，执行SELL", jr.getJstock().getCode(), 1, jr.getBasePrise(), jr.getJstockStrategy().getId(), jr.getJstockStrategy().getPriceRange(), jr.getJstockStrategy().getCount(), 1));
+        }
+    }
+
     @After
     public void shutdown() {
 
