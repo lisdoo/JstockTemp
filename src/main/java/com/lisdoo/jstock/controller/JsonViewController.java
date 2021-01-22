@@ -70,9 +70,6 @@ public class JsonViewController {
         Optional<JstockRange> jr = jrr.findByJstockStrategyIdAndPosition(strategyId, null);
         if (js.isPresent() && jr.isPresent()) {
             Map<Integer, Float> map = Calculation.createRangeValue(jr.get().getBasePrise(),js.get().getPriceRange(),js.get().getCount(),js.get().getOffset());
-            for (Integer i: map.keySet()) {
-                System.out.println(i);
-            }
             return ResultUtil.success(map);
         } else {
             return ResultUtil.error(9999, String.format("未见数据: JstockStrategy: %b JstockRange: %b", js.isPresent(), jr.isPresent()));
