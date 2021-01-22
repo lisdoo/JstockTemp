@@ -18,14 +18,14 @@
 -x 20201209-20201209 -y .* -d all -t all -v all -r all ali47     运行时间：2021-01-19 03:42:35 -> 2021-01-19 09:41:42，耗时：359 分钟
 -x 20201208-20201208 -y .* -d all -t all -v all -r all ali47     运行时间：2021-01-19 09:41:42 -> 2021-01-19 16:17:34，耗时：395 分钟
 -x 20201207-20201207 -y .* -d all -t all -v all -r all ali47     运行时间：2021-01-19 16:17:34 -> 2021-01-19 22:29:32，耗时：371 分钟
--x 20201204-20201204 -y .* -d all -t all -v all -r all ali47
+-x 20201204-20201204 -y .* -d all -t all -v all -r all ali47     360 分钟
 -x 20201202-20201203 -y .* -d all -t all -v all -r all qq        运行时间：2021-01-19 07:11:51 -> 2021-01-19 07:20:01，耗时：8 分钟
 -x 20201130-20201201 -y .* -d all -t all -v all -r all qq        运行时间：2021-01-19 07:20:01 -> 2021-01-19 10:48:09，耗时：928 分钟
 -x 20201126-20201127 -y .* -d all -t all -v all -r all huawei-hk 运行时间：2021-01-19 22:48:40 -> 2021-01-20 10:48:11，耗时：719 分钟
 -x 20201124-20201125 -y .* -d all -t all -v all -r all huawei-hk 运行时间：2021-01-20 10:48:11 -> 2021-01-21 02:03:04，耗时：914 分钟
--x 20201120-20201123 -y .* -d all -t all -v all -r all qq
--x 20201118-20201119 -y .* -d all -t all -v all -r all qq
--x 20201116-20201117 -y .* -d all -t all -v all -r all qq
+-x 20201120-20201123 -y .* -d all -t all -v all -r all qq        运行时间：2021-01-19 10:53:04 -> 2021-01-20 02:11:59，耗时：918 分钟
+-x 20201118-20201119 -y .* -d all -t all -v all -r all qq        运行时间：2021-01-20 02:11:59 -> 2021-01-20 10:39:00，耗时：507 分钟
+-x 20201116-20201117 -y .* -d all -t all -v all -r all qq        运行时间：2021-01-20 10:39:00 -> 2021-01-21 02:57:38，耗时：978 分钟
 -x 20201112-20201113 -y .* -d all -t all -v all -r all huawei-hk
 -x 20201110-20201111 -y .* -d all -t all -v all -r all huawei-hk
 -x 20201106-20201109 -y .* -d all -t all -v all -r all huawei-hk
@@ -35,10 +35,10 @@
 -x 20201027-20201028 -y .* -d all -t all -v all -r all
 -x 20201023-20201026 -y .* -d all -t all -v all -r all
 -x 20201021-20201022 -y .* -d all -t all -v all -r all
--x 20201019-20201020 -y .* -d all -t all -v all -r all qq?
--x 20201015-20201016 -y .* -d all -t all -v all -r all qq?
--x 20201013-20201214 -y .* -d all -t all -v all -r all qq?
--x 20201009-20201012 -y .* -d all -t all -v all -r all qq?
+-x 20201019-20201020 -y .* -d all -t all -v all -r all qq
+-x 20201015-20201016 -y .* -d all -t all -v all -r all qq
+-x 20201013-20201214 -y .* -d all -t all -v all -r all qq
+-x 20201009-20201012 -y .* -d all -t all -v all -r all qq
 -x 20201007-20201008 -y .* -d all -t all -v all -r all
 -x 20200929-20200930 -y .* -d all -t all -v all -r all
 -x 20200925-20200928 -y .* -d all -t all -v all -r all
