@@ -44,7 +44,7 @@ public class CleanAndUpload implements Job {
         sb.append("\r\n");
         sb.append("-e ../stockslog/zipb.sh?.");
         sb.append("\r\n");
-        sb.append(String.format("-x %s-%s -y .* -d all -t all -v all -r all", currentDateInStr2, currentDateInStr2));
+        sb.append(String.format("-x %s-%s -y .* -t all -v all -r all", currentDateInStr2, currentDateInStr2));
         sb.append("\r\n");
         cmdRunner.parse(false, 4, sb.toString());
 

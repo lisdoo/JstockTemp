@@ -52,7 +52,7 @@ do
             done
         fi
         echo "        " bypy uploading file /home/lisdoo/$file_folder to folder /$file_folder
-        bypy $pytycommand_upload /home/lisdoo/$file_folder /$file_folder
+        bypy $pytycommand_upload /home/lisdoo/$file_folder /jstocklog/$file_folder
         exitCode=$?
         if [ $exitCode -ne 0]
         then
