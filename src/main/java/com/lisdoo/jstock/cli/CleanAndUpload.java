@@ -42,11 +42,11 @@ public class CleanAndUpload implements Job {
         sb.append("\r\n");
         sb.append(String.format("-e mkdir?../tofile", currentDateInStr));
         sb.append("\r\n");
-        sb.append("../stockslog/zipb.sh?.");
+        sb.append("-e ../stockslog/zipb.sh?.");
         sb.append("\r\n");
         sb.append(String.format("-x %s-%s -y .* -d all -t all -v all -r all", currentDateInStr2, currentDateInStr2));
         sb.append("\r\n");
-        cmdRunner.parse(false, 3, sb.toString());
+        cmdRunner.parse(false, 4, sb.toString());
 
         log.info("执行CleanAndUpload完成。");
     }
