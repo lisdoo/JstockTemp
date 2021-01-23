@@ -26,16 +26,16 @@
 -x 20201120-20201123 -y .* -d all -t all -v all -r all qq        运行时间：2021-01-19 10:53:04 -> 2021-01-20 02:11:59，耗时：918 分钟
 -x 20201118-20201119 -y .* -d all -t all -v all -r all qq        运行时间：2021-01-20 02:11:59 -> 2021-01-20 10:39:00，耗时：507 分钟
 -x 20201116-20201117 -y .* -d all -t all -v all -r all qq        运行时间：2021-01-20 10:39:00 -> 2021-01-21 02:57:38，耗时：978 分钟
--x 20201112-20201113 -y .* -d all -t all -v all -r all huawei-hk
--x 20201110-20201111 -y .* -d all -t all -v all -r all huawei-hk
--x 20201106-20201109 -y .* -d all -t all -v all -r all huawei-hk
--x 20201104-20201105 -y .* -d all -t all -v all -r all huawei-hk
--x 20201102-20201103 -y .* -d all -t all -v all -r all
--x 20201029-20201030 -y .* -d all -t all -v all -r all
--x 20201027-20201028 -y .* -d all -t all -v all -r all
--x 20201023-20201026 -y .* -d all -t all -v all -r all
--x 20201021-20201022 -y .* -d all -t all -v all -r all
--x 20201019-20201020 -y .* -d all -t all -v all -r all qq
+-x 20201112-20201113 -y .* -d all -t all -v all -r all huawei-hk 运行时间：2021-01-21 09:06:17 -> 2021-01-21 17:53:08，耗时：526 分钟
+-x 20201110-20201111 -y .* -d all -t all -v all -r all huawei-hk 运行时间：2021-01-21 17:53:08 -> 2021-01-22 02:58:01，耗时：544 分钟
+-x 20201106-20201109 -y .* -d all -t all -v all -r all huawei-hk 运行时间：2021-01-22 02:58:01 -> 2021-01-22 14:12:40，耗时：674 分钟
+-x 20201104-20201105 -y .* -d all -t all -v all -r all huawei-hk 运行时间：2021-01-22 14:12:40 -> 2021-01-23 03:56:36，耗时：823 分钟
+-x 20201102-20201103 -y .* -d all -t all -v all -r all huawei-hk
+-x 20201029-20201030 -y .* -d all -t all -v all -r all huawei-hk
+-x 20201027-20201028 -y .* -d all -t all -v all -r all huawei-hk
+-x 20201023-20201026 -y .* -d all -t all -v all -r all huawei-hk
+-x 20201021-20201022 -y .* -d all -t all -v all -r all huawei-hk
+-x 20201019-20201020 -y .* -d all -t all -v all -r all qq        运行时间：2021-01-22 10:57:17 -> 2021-01-23 02:23:18，耗时：926 分钟
 -x 20201015-20201016 -y .* -d all -t all -v all -r all qq
 -x 20201013-20201214 -y .* -d all -t all -v all -r all qq
 -x 20201009-20201012 -y .* -d all -t all -v all -r all qq
@@ -157,67 +157,96 @@
 -x 20191014-20191018 -y .* -d all -p getVolume -r all  huawei
 -x 20191007-20191011 -y .* -d all -p getVolume -r all  huawei
 -x 20190930-20191004 -y .* -d all -p getVolume -r all  huawei
--x 20190923-20190927 -y .* -d all -p getVolume -r all
--x 20190916-20190920 -y .* -d all -p getVolume -r all
--x 20190909-20190913 -y .* -d all -p getVolume -r all
--x 20190902-20190906 -y .* -d all -p getVolume -r all
--x 20190823-20190830 -y .* -d all -p getVolume -r all
--x 20190819-20190823 -y .* -d all -p getVolume -r all
--x 20190812-20190816 -y .* -d all -p getVolume -r all
--x 20190805-20190809 -y .* -d all -p getVolume -r all
--x 20190729-20190802 -y .* -d all -p getVolume -r all
--x 20190722-20190726 -y .* -d all -p getVolume -r all
--x 20190715-20190719 -y .* -d all -p getVolume -r all
--x 20190708-20190712 -y .* -d all -p getVolume -r all
--x 20190701-20190705 -y .* -d all -p getVolume -r all
--x 20190624-20190628 -y .* -d all -p getVolume -r all
--x 20190617-20190612 -y .* -d all -p getVolume -r all
--x 20190610-20190614 -y .* -d all -p getVolume -r all
--x 20190603-20190607 -y .* -d all -p getVolume -r all
--x 20190527-20190531 -y .* -d all -p getVolume -r all
--x 20190520-20190524 -y .* -d all -p getVolume -r all
--x 20190513-20190517 -y .* -d all -p getVolume -r all
--x 20190506-20190510 -y .* -d all -p getVolume -r all
--x 20190429-20190503 -y .* -d all -p getVolume -r all
--x 20190422-20190426 -y .* -d all -p getVolume -r all
--x 20190415-20190419 -y .* -d all -p getVolume -r all
--x 20190408-20190414 -y .* -d all -p getVolume -r all
--x 20190401-20190405 -y .* -d all -p getVolume -r all
--x 20190325-20190329 -y .* -d all -p getVolume -r all
--x 20190318-20190322 -y .* -d all -p getVolume -r all
--x 20190311-20190315 -y .* -d all -p getVolume -r all
--x 20190304-20190308 -y .* -d all -p getVolume -r all
--x 20190225-20190301 -y .* -d all -p getVolume -r all
--x 20190218-20190222 -y .* -d all -p getVolume -r all
--x 20190211-20190215 -y .* -d all -p getVolume -r all
--x 20190204-20190208 -y .* -d all -p getVolume -r all
--x 20190128-20190101 -y .* -d all -p getVolume -r all
--x 20190121-20190125 -y .* -d all -p getVolume -r all
--x 20190114-20190118 -y .* -d all -p getVolume -r all
--x 20190107-20190111 -y .* -d all -p getVolume -r all
--x 20181231-20190104 -y .* -d all -p getVolume -r all
--x 20190000-20190000 -y .* -d all -p getVolume -r all
--x 20190000-20190000 -y .* -d all -p getVolume -r all
--x 20190000-20190000 -y .* -d all -p getVolume -r all
--x 20190000-20190000 -y .* -d all -p getVolume -r all
--x 20190000-20190000 -y .* -d all -p getVolume -r all
--x 20190000-20190000 -y .* -d all -p getVolume -r all
--x 20190000-20190000 -y .* -d all -p getVolume -r all
--x 20190000-20190000 -y .* -d all -p getVolume -r all
--x 20190000-20190000 -y .* -d all -p getVolume -r all
--x 20190000-20190000 -y .* -d all -p getVolume -r all
--x 20190000-20190000 -y .* -d all -p getVolume -r all
--x 20190000-20190000 -y .* -d all -p getVolume -r all
--x 20190000-20190000 -y .* -d all -p getVolume -r all
--x 20190000-20190000 -y .* -d all -p getVolume -r all
--x 20190000-20190000 -y .* -d all -p getVolume -r all
--x 20190000-20190000 -y .* -d all -p getVolume -r all
--x 20190000-20190000 -y .* -d all -p getVolume -r all
--x 20190000-20190000 -y .* -d all -p getVolume -r all
--x 20190000-20190000 -y .* -d all -p getVolume -r all
--x 20190000-20190000 -y .* -d all -p getVolume -r all
--x 20190000-20190000 -y .* -d all -p getVolume -r all
--x 20190000-20190000 -y .* -d all -p getVolume -r all
--x 20190000-20190000 -y .* -d all -p getVolume -r all
+-x 20190923-20190927 -y .* -d all -p getVolume -r all  huawei
+-x 20190916-20190920 -y .* -d all -p getVolume -r all  huawei
+-x 20190909-20190913 -y .* -d all -p getVolume -r all  huawei
+-x 20190902-20190906 -y .* -d all -p getVolume -r all  huawei
+-x 20190823-20190830 -y .* -d all -p getVolume -r all  huawei
+-x 20190819-20190823 -y .* -d all -p getVolume -r all  huawei
+-x 20190812-20190816 -y .* -d all -p getVolume -r all  huawei
+-x 20190805-20190809 -y .* -d all -p getVolume -r all  huawei
+-x 20190729-20190802 -y .* -d all -p getVolume -r all  huawei
+-x 20190722-20190726 -y .* -d all -p getVolume -r all  huawei
+-x 20190715-20190719 -y .* -d all -p getVolume -r all  huawei
+-x 20190708-20190712 -y .* -d all -p getVolume -r all  huawei
+-x 20190701-20190705 -y .* -d all -p getVolume -r all  huawei
+-x 20190624-20190628 -y .* -d all -p getVolume -r all  huawei
+-x 20190617-20190612 -y .* -d all -p getVolume -r all  huawei
+-x 20190610-20190614 -y .* -d all -p getVolume -r all  huawei
+-x 20190603-20190607 -y .* -d all -p getVolume -r all  huawei
+-x 20190527-20190531 -y .* -d all -p getVolume -r all  huawei
+-x 20190520-20190524 -y .* -d all -p getVolume -r all  huawei
+-x 20190513-20190517 -y .* -d all -p getVolume -r all  huawei
+-x 20190506-20190510 -y .* -d all -p getVolume -r all  huawei
+-x 20190429-20190503 -y .* -d all -p getVolume -r all  huawei
+-x 20190422-20190426 -y .* -d all -p getVolume -r all  huawei
+-x 20190415-20190419 -y .* -d all -p getVolume -r all  huawei
+-x 20190408-20190414 -y .* -d all -p getVolume -r all  huawei
+-x 20190401-20190405 -y .* -d all -p getVolume -r all  huawei
+-x 20190325-20190329 -y .* -d all -p getVolume -r all  huawei
+-x 20190318-20190322 -y .* -d all -p getVolume -r all  huawei
+-x 20190311-20190315 -y .* -d all -p getVolume -r all  huawei
+-x 20190304-20190308 -y .* -d all -p getVolume -r all  huawei
+-x 20190225-20190301 -y .* -d all -p getVolume -r all  huawei
+-x 20190218-20190222 -y .* -d all -p getVolume -r all  huawei
+-x 20190211-20190215 -y .* -d all -p getVolume -r all  huawei
+-x 20190204-20190208 -y .* -d all -p getVolume -r all  huawei
+-x 20190128-20190101 -y .* -d all -p getVolume -r all  huawei
+-x 20190121-20190125 -y .* -d all -p getVolume -r all  huawei
+-x 20190114-20190118 -y .* -d all -p getVolume -r all  huawei
+-x 20190107-20190111 -y .* -d all -p getVolume -r all  huawei
+-x 20181231-20190104 -y .* -d all -p getVolume -r all  huawei
+-x 20181224-20181228 -y .* -d all -p getVolume -r all
+-x 20181217-20181221 -y .* -d all -p getVolume -r all
+-x 20181210-20181214 -y .* -d all -p getVolume -r all
+-x 20181203-20181217 -y .* -d all -p getVolume -r all
+-x 20181126-20181130 -y .* -d all -p getVolume -r all
+-x 20181119-20181123 -y .* -d all -p getVolume -r all
+-x 20181112-20181116 -y .* -d all -p getVolume -r all
+-x 20181105-20181109 -y .* -d all -p getVolume -r all
+-x 20181029-20181102 -y .* -d all -p getVolume -r all
+-x 20181022-20181026 -y .* -d all -p getVolume -r all
+-x 20181015-20181019 -y .* -d all -p getVolume -r all
+-x 20181008-20181012 -y .* -d all -p getVolume -r all
+-x 20180924-20180928 -y .* -d all -p getVolume -r all
+-x 20180917-20180921 -y .* -d all -p getVolume -r all
+-x 20180910-20180914 -y .* -d all -p getVolume -r all
+-x 20180903-20180907 -y .* -d all -p getVolume -r all
+-x 20180827-20180831 -y .* -d all -p getVolume -r all
+-x 20180820-20180824 -y .* -d all -p getVolume -r all
+-x 20180813-20180817 -y .* -d all -p getVolume -r all
+-x 20180806-20180810 -y .* -d all -p getVolume -r all
+-x 20180730-20180803 -y .* -d all -p getVolume -r all
+-x 20180723-20180727 -y .* -d all -p getVolume -r all
+-x 20180716-20180720 -y .* -d all -p getVolume -r all
+-x 20180709-20180713 -y .* -d all -p getVolume -r all
+-x 20180702-20180706 -y .* -d all -p getVolume -r all
+-x 20180625-20180629 -y .* -d all -p getVolume -r all
+-x 20180618-20180622 -y .* -d all -p getVolume -r all
+-x 20180611-20180615 -y .* -d all -p getVolume -r all
+-x 20180604-20180608 -y .* -d all -p getVolume -r all
+-x 20180528-20180601 -y .* -d all -p getVolume -r all
+-x 20180521-20180525 -y .* -d all -p getVolume -r all
+-x 20180514-20180518 -y .* -d all -p getVolume -r all
+-x 20180507-20180511 -y .* -d all -p getVolume -r all
+-x 20180430-20180504 -y .* -d all -p getVolume -r all
+-x 20180423-20180427 -y .* -d all -p getVolume -r all
+-x 20180416-20180420 -y .* -d all -p getVolume -r all
+-x 20180409-20180413 -y .* -d all -p getVolume -r all
+-x 20180402-20180406 -y .* -d all -p getVolume -r all
+-x 20180326-20180330 -y .* -d all -p getVolume -r all
+-x 20180319-20180323 -y .* -d all -p getVolume -r all
+-x 20180312-20180316 -y .* -d all -p getVolume -r all
+-x 20180305-20180309 -y .* -d all -p getVolume -r all
+-x 20180226-20180302 -y .* -d all -p getVolume -r all
+-x 20180219-20180223 -y .* -d all -p getVolume -r all
+-x 20180212-20180216 -y .* -d all -p getVolume -r all
+-x 20180205-20180209 -y .* -d all -p getVolume -r all
+-x 20180129-20180202 -y .* -d all -p getVolume -r all
+-x 20180122-20180126 -y .* -d all -p getVolume -r all
+-x 20180115-20180119 -y .* -d all -p getVolume -r all
+-x 20180108-20180112 -y .* -d all -p getVolume -r all
+-x 20180101-20180105 -y .* -d all -p getVolume -r all
+-x 20170000-20170000 -y .* -d all -p getVolume -r all
 
 

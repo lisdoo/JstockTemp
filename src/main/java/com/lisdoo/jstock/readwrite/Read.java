@@ -59,6 +59,10 @@ public class Read {
     }
 
     public static void testRead(String filePath, Predicate p) throws Exception, NotInTheTradingCycle {
+        testRead(filePath, p, true);
+    }
+
+    public static void testRead(String filePath, Predicate p, boolean jumpLines) throws Exception, NotInTheTradingCycle {
 
         int countRows = 0;
         int countRecords = 0;
@@ -79,11 +83,14 @@ public class Read {
             while ((line = bufferedReader.readLine()) != null) {
 //                System.out.println("this is {} line [" + counter++);
 
-
-                if (!line.contains("callback") || (line.contains("callback") && line.indexOf("callback")>100)) continue;
-                countRows++;
-                currentLen += line.length();
-                if (countRows > 9999 && countRows % 10000 == 0) System.out.println(String.format("%02.0f%% %d", currentLen/fileLen*100, countRows));
+                if (jumpLines) {
+                    if (!line.contains("callback") || (line.contains("callback") && line.indexOf("callback") > 100))
+                        continue;
+                    countRows++;
+                    currentLen += line.length();
+                    if (countRows > 9999 && countRows % 10000 == 0)
+                        System.out.println(String.format("%02.0f%% %d", currentLen / fileLen * 100, countRows));
+                }
 
                 String str = line.substring(line.indexOf("callback"));
                 JSONObject jo = null;
