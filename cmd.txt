@@ -36,12 +36,12 @@
 -x 20201023-20201026 -y .* -d all -t all -v all -r all huawei-hk
 -x 20201021-20201022 -y .* -d all -t all -v all -r all huawei-hk
 -x 20201019-20201020 -y .* -d all -t all -v all -r all qq        运行时间：2021-01-22 10:57:17 -> 2021-01-23 02:23:18，耗时：926 分钟
--x 20201015-20201016 -y .* -d all -t all -v all -r all qq
--x 20201013-20201214 -y .* -d all -t all -v all -r all qq
+-x 20201015-20201016 -y .* -d all -t all -v all -r all qq        运行时间：2021-01-23 02:23:18 -> 2021-01-23 10:30:25，耗时：487 分钟
+-x 20201013-20201014 -y .* -d all -t all -v all -r all qq
 -x 20201009-20201012 -y .* -d all -t all -v all -r all qq
--x 20201007-20201008 -y .* -d all -t all -v all -r all
--x 20200929-20200930 -y .* -d all -t all -v all -r all
--x 20200925-20200928 -y .* -d all -t all -v all -r all
+-x 20201007-20201008 -y .* -d all -t all -v all -r all qq
+-x 20200929-20200930 -y .* -d all -t all -v all -r all qq
+-x 20200925-20200928 -y .* -d all -t all -v all -r all qq
 -x 20200923-20200924 -y .* -d all -t all -v all -r all
 -x 20200921-20200922 -y .* -d all -t all -v all -r all
 -x 20200917-20200918 -y .* -d all -t all -v all -r all
