@@ -21,13 +21,13 @@ public class ToFileInOut {
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
         SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String folderInStr = "I:\\BaiduNetdiskDownload";
+        String folderInStr = "I:\\jstock\\out\\codes";
 
         File out = new File(folderInStr, "all.csv");
         out.delete();
         FileOutputStream fos = new FileOutputStream(out);
         BufferedOutputStream bos = new BufferedOutputStream(fos);
-        bos.write("Code,DateTime,In,Out,Volume,Amount,SettlePrice,ChangeInVolume,ChangeOutVolume\r\n".getBytes());
+        bos.write("Code,DateTime,In,Out,Volume,Amount,SettlePrice,Check,ChangeInVolume,ChangeOutVolume,\r\n".getBytes());
 
 
 
@@ -64,7 +64,14 @@ public class ToFileInOut {
                     lastOutVolume = data.getOutVolume();
                 }
 
-                String line = String.format("\"%s\",%s,%d,%d,%d,%d,%.2f,%b,%s,%s\r\n", data.getCode(), sdf2.format(data.getDateTime()), data.getInVolume(), data.getOutVolume(),data.getVolume(), data.getAmount(), Float.parseFloat(data.getPrice().toString())/100, data.getInVolume()+data.getOutVolume()==data.getVolume(),changeInVolume==null?"":changeInVolume.toString(),changeOutVolume==null?"":changeOutVolume.toString());
+                if (changeInVolume != null && changeInVolume < 0) {
+                    return true;
+                }
+                if (changeOutVolume != null && changeOutVolume < 0) {
+                    return true;
+                }
+
+                String line = String.format("\"%s\",%s,%d,%d,%d,%d,%.2f,%b,%s,%s,\r\n", data.getCode(), sdf2.format(data.getDateTime()), data.getInVolume(), data.getOutVolume(),data.getVolume(), data.getAmount(), Float.parseFloat(data.getPrice().toString())/100, data.getInVolume()+data.getOutVolume()==data.getVolume(),changeInVolume==null?"":changeInVolume.toString(),changeOutVolume==null?"":changeOutVolume.toString());
                 System.out.print(line);
                 bos.write(line.getBytes());
 
@@ -93,7 +100,7 @@ public class ToFileInOut {
             for (File fullFolder : folder.listFiles()) {
                 System.out.println(fullFolder.getName());
                 Read.testRead(fullFolder.getAbsolutePath(), p, false);
-                break;
+//                break;
             }
         }
 
