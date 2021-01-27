@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.io.File;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 public class CleanAndUpload implements Job {
@@ -31,8 +32,15 @@ public class CleanAndUpload implements Job {
 
         log.info("执行CleanAndUpload");
 
+        Calendar cal = Calendar.getInstance();
+
         Date currentDate = new Date();
         currentDate.setTime(currentDate.getTime()-3600*24*1000);
+        cal.setTime(currentDate);
+        if (cal.get(Calendar.DAY_OF_WEEK) == 1) {
+            currentDate.setTime(currentDate.getTime()-3600*24*1000*2);
+        }
+
         String currentDateInStr = sdf.format(currentDate);
         String currentDateInStr2 = sdf2.format(currentDate);
 
@@ -53,8 +61,15 @@ public class CleanAndUpload implements Job {
 
     public static void main(String[] args) throws ParseException {
 
-        Date currentDate = sdf.parse("2021-01-20");
+        Calendar cal = Calendar.getInstance();
+
+        Date currentDate = sdf.parse("2021-01-25");
         currentDate.setTime(currentDate.getTime()-3600*24*1000);
+        cal.setTime(currentDate);
+        if (cal.get(Calendar.DAY_OF_WEEK) == 1) {
+            currentDate.setTime(currentDate.getTime()-3600*24*1000*2);
+        }
+
         String currentDateInStr = sdf.format(currentDate);
         String currentDateInStr2 = sdf2.format(currentDate);
 
