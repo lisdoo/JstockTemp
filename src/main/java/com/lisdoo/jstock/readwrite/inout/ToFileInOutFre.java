@@ -1,10 +1,8 @@
 package com.lisdoo.jstock.readwrite.inout;
 
 import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
 import com.lisdoo.jstock.readwrite.Data;
 import com.lisdoo.jstock.readwrite.Read;
-import com.lisdoo.jstock.readwrite.ReadCsv;
 import com.lisdoo.jstock.service.exchange.exception.NotInTheTradingCycle;
 import lombok.SneakyThrows;
 
@@ -15,7 +13,7 @@ import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.function.Predicate;
 
-public class ToFileInOut {
+public class ToFileInOutFre {
 
     public static void main(String args[]) throws Exception, NotInTheTradingCycle {
 
@@ -27,7 +25,7 @@ public class ToFileInOut {
         out.delete();
         FileOutputStream fos = new FileOutputStream(out);
         BufferedOutputStream bos = new BufferedOutputStream(fos);
-        bos.write("Code,DateTime,In,Out,Volume,Amount,SettlePrice,Check,ChangeInVolume,ChangeOutVolume,\r\n".getBytes());
+        bos.write("Code,DateTime,Fre,\r\n".getBytes());
 
 
 
