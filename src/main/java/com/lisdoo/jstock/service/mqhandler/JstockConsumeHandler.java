@@ -56,17 +56,22 @@ public class JstockConsumeHandler {
             if ((jr.getStatus()) == null || (!jr.getStatus().equalsIgnoreCase("on"))) continue;
             try {
                 jps.makeRange(jr, ja);
-            } catch (NotInTheTradingCycle notInTheTradingCycle) {
+            } catch (NotInTheTradingCycle e) {
+                e.printStackTrace();
                 log.trace("notInTheTradingCycle");
             } catch (NotInRangeException e) {
-                log.error(String.format("JstockCode: %s %s %s", jr.getParent().getJstock().getCode(), e.getCode(), "NotInRangeException"));
+                e.printStackTrace();
+                log.error(String.format("JstockCode: %s %s %s", jr.getJstock().getCode(), e.getCode(), "NotInRangeException"));
             } catch (EntityExistException e) {
+                e.printStackTrace();
                 log.error("EntityExistException");
             } catch (EntityNoneException e) {
+                e.printStackTrace();
                 log.error("EntityExistException");
             } catch (Exception e) {
                 e.printStackTrace();
-                log.error(String.format("Jstock code %s error: %s", jr.getParent().getJstock().getCode(), e.getMessage()));
+                e.printStackTrace();
+                log.error(String.format("Jstock code %s error: %s", jr.getJstock().getCode(), e.getMessage()));
             }
         }
     }

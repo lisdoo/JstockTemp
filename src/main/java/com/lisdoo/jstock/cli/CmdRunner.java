@@ -48,7 +48,7 @@ public class CmdRunner implements CommandLineRunner {
             this.log.info("------- Initialization Complete --------");
 
             this.schedulingJobs(sched, StartThreads.class, "0 20 9 ? * MON-FRI", ShutdownThreads.class, "0 1 15 ? * MON-FRI");
-            this.schedulingJob(sched, CleanAndUpload.class, "0 10 18 ? * MON-FRI");
+            this.schedulingJob(sched, CleanAndUpload.class, "0 20 01 ? * TUE-SAT");
 
             this.log.info("------- Starting Scheduler ----------------");
             sched.start();
