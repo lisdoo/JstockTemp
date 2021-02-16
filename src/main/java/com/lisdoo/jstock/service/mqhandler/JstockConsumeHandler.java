@@ -40,9 +40,21 @@ public class JstockConsumeHandler {
     Date startDate;
 
     Integer count;
+    Integer countNotInTheTradingCycle;
+    Integer countNotInRangeException;
+    Integer countEntityExistException;
+    Integer countEntityNoneException;
+    Integer countNumberFormatException;
+    Integer countException;
 
     public JstockConsumeHandler() {
         count = 0;
+        countNotInTheTradingCycle = 0;
+        countNotInRangeException = 0;
+        countEntityExistException = 0;
+        countEntityNoneException = 0;
+        countNumberFormatException = 0;
+        countException = 0;
         startDate = new Date();
     }
 
@@ -67,21 +79,25 @@ public class JstockConsumeHandler {
             try {
                 jps.makeRange(jr, ja);
             } catch (NotInTheTradingCycle e) {
-                e.printStackTrace();
-                log.trace("notInTheTradingCycle");
+                countNotInTheTradingCycle++;
+                log.error(String.format("JstockCode: %s error: %s exception: %s", jr.getJstock().getCode(), e.getMessage(), "NotInTheTradingCycle"));
             } catch (NotInRangeException e) {
-                e.printStackTrace();
-                log.error(String.format("JstockCode: %s %s %s", jr.getJstock().getCode(), e.getCode(), "NotInRangeException"));
+                countNotInRangeException++;
+                log.error(String.format("JstockCode: %s error: %s exception: %s", jr.getJstock().getCode(), e.getMessage(), "NotInRangeException"));
             } catch (EntityExistException e) {
-                e.printStackTrace();
-                log.error("EntityExistException");
+                countEntityExistException++;
+                log.error(String.format("JstockCode: %s error: %s exception: %s", jr.getJstock().getCode(), e.getMessage(), "EntityExistException"));
             } catch (EntityNoneException e) {
+                countEntityNoneException++;
+                log.error(String.format("JstockCode: %s error: %s exception: %s", jr.getJstock().getCode(), e.getMessage(), "EntityNoneException"));
+            } catch (NumberFormatException e) {
+                countNumberFormatException++;
                 e.printStackTrace();
-                log.error("EntityExistException");
+                log.error(String.format("JstockCode: %s error: %s exception: %s", jr.getJstock().getCode(), e.getMessage(), "NumberFormatException"));
             } catch (Exception e) {
+                countException++;
                 e.printStackTrace();
-                e.printStackTrace();
-                log.error(String.format("Jstock code %s error: %s", jr.getJstock().getCode(), e.getMessage()));
+                log.error(String.format("JstockCode: %s error: %s exception: %s", jr.getJstock().getCode(), e.getMessage(), "Exception"));
             }
         }
     }
@@ -124,5 +140,53 @@ public class JstockConsumeHandler {
 
     public void setCount(Integer count) {
         this.count = count;
+    }
+
+    public Integer getCountNotInTheTradingCycle() {
+        return countNotInTheTradingCycle;
+    }
+
+    public void setCountNotInTheTradingCycle(Integer countNotInTheTradingCycle) {
+        this.countNotInTheTradingCycle = countNotInTheTradingCycle;
+    }
+
+    public Integer getCountNotInRangeException() {
+        return countNotInRangeException;
+    }
+
+    public void setCountNotInRangeException(Integer countNotInRangeException) {
+        this.countNotInRangeException = countNotInRangeException;
+    }
+
+    public Integer getCountEntityExistException() {
+        return countEntityExistException;
+    }
+
+    public void setCountEntityExistException(Integer countEntityExistException) {
+        this.countEntityExistException = countEntityExistException;
+    }
+
+    public Integer getCountEntityNoneException() {
+        return countEntityNoneException;
+    }
+
+    public void setCountEntityNoneException(Integer countEntityNoneException) {
+        this.countEntityNoneException = countEntityNoneException;
+    }
+
+    public Integer getCountNumberFormatException() {
+        return countNumberFormatException;
+    }
+
+    public void setCountNumberFormatException(Integer countNumberFormatException) {
+        this.countNumberFormatException = countNumberFormatException;
+    }
+
+    public Integer getCountException() {
+        return countException;
+    }
+
+    public void setCountException(Integer countException) {
+        this.countException = countException;
     }
 }

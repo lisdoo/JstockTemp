@@ -89,9 +89,24 @@ public class MqConsumeFactory {
                 //对比的时间
                 String day = sf.format(container.getJch().getStartDate());
                 if (day.equals(nowDay)) {
-                    return String.format("今天处理量：%d", container.getJch().getCount());
+                    return String.format("今天处理量：%d，其中countNotInTheTradingCycle:%d，countNotInRangeException:%d，countEntityExistException:%d，countEntityNoneException:%d，countNumberFormatException:%d，countException:%d",
+                            container.getJch().getCount(),
+                            container.getJch().getCountNotInTheTradingCycle(),
+                            container.getJch().getCountNotInRangeException(),
+                            container.getJch().getCountEntityExistException(),
+                            container.getJch().getCountEntityNoneException(),
+                            container.getJch().getCountNumberFormatException(),
+                            container.getJch().getCountException());
                 } else {
-                    return String.format("%s的处理量:%d", day, container.getJch().getCount());
+                    return String.format("%s的处理量:%d，其中countNotInTheTradingCycle:%d，countNotInRangeException:%d，countEntityExistException:%d，countEntityNoneException:%d，countNumberFormatException:%d，countException:%d",
+                            day,
+                            container.getJch().getCount(),
+                            container.getJch().getCountNotInTheTradingCycle(),
+                            container.getJch().getCountNotInRangeException(),
+                            container.getJch().getCountEntityExistException(),
+                            container.getJch().getCountEntityNoneException(),
+                            container.getJch().getCountNumberFormatException(),
+                            container.getJch().getCountException());
                 }
             }
         }
