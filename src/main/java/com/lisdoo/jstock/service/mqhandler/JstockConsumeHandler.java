@@ -17,6 +17,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Date;
 import java.util.Iterator;
 import java.util.Optional;
 import java.util.StringTokenizer;
@@ -36,6 +37,15 @@ public class JstockConsumeHandler {
 
     String jstockCode;
 
+    Date startDate;
+
+    Integer count;
+
+    public JstockConsumeHandler() {
+        count = 0;
+        startDate = new Date();
+    }
+
     public static String[] stockColumns = new String[34];
     static {
         StringTokenizer tokenizer = new StringTokenizer("DateTime,LastClose,Open,High,Low,Price,Volume,Amount,LastSettle,SettlePrice,OpenPosition,ClosePosition,BuyPrice,BuyVolume,SellPrice,SellVolume,PriceWeight,EntrustRatio,UpDown,EntrustDiff,UpDownRate,OutVolume,InVolume,AvePrice,VolumeRatio,PE,ExchangeRatio,LastVolume,VibrationRatio,DateTime,OpenTime,CloseTime,Name,Code", ",");
@@ -48,7 +58,7 @@ public class JstockConsumeHandler {
     }
 
     public void handleMessage(JSONArray ja) throws Exception {
-
+        count++;
 //        System.out.println("Received: " + ja.toString());
 //        show(ja);
         Optional<Jstock> j = jr.findByCode(jstockCode);
@@ -98,5 +108,21 @@ public class JstockConsumeHandler {
 
     public void setJstockCode(String jstockCode) {
         this.jstockCode = jstockCode;
+    }
+
+    public Date getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
+    }
+
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
     }
 }

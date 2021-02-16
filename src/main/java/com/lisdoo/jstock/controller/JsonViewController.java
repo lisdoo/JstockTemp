@@ -2,7 +2,9 @@ package com.lisdoo.jstock.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.lisdoo.jstock.controller.utils.Result;
+import com.lisdoo.jstock.controller.utils.ResultEnum;
 import com.lisdoo.jstock.controller.utils.ResultUtil;
+import com.lisdoo.jstock.factory.MqConsumeFactory;
 import com.lisdoo.jstock.service.exchange.*;
 import com.lisdoo.jstock.service.vi.JstockV;
 import com.lisdoo.jstock.service.vi.SpecJsRecV;
@@ -50,7 +52,11 @@ public class JsonViewController {
 
         List<SpecJsV> o = jr.findSpecJs(getRequest().getRequestURL().toString(), code);
 
-        return ResultUtil.success( o);
+        Result result = new Result();
+        result.setCode(ResultEnum.SUCCESS.getCode());
+        result.setMsg(MqConsumeFactory.getInfo(code));
+        result.setData(o);
+        return result;
 
     }
 
