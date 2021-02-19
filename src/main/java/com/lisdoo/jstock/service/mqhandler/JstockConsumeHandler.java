@@ -80,7 +80,7 @@ public class JstockConsumeHandler {
                 jps.makeRange(jr, ja);
             } catch (NotInTheTradingCycle e) {
                 countNotInTheTradingCycle++;
-                log.error(String.format("JstockCode: %s error: %s exception: %s", jr.getJstock().getCode(), e.getMessage(), "NotInTheTradingCycle"));
+//                log.error(String.format("JstockCode: %s error: %s exception: %s", jr.getJstock().getCode(), e.getMessage(), "NotInTheTradingCycle"));
             } catch (NotInRangeException e) {
                 countNotInRangeException++;
                 log.error(String.format("JstockCode: %s error: %s exception: %s", jr.getJstock().getCode(), e.getMessage(), "NotInRangeException"));
