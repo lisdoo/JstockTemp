@@ -146,7 +146,8 @@ public class CmdRunner implements CommandLineRunner {
                     command.setStepTime(new Date());
                     if (line.getOptionValue("t").equalsIgnoreCase("all")) {
                         List<String> codeList = new ArrayList<>();
-                        for (String code: command.getCodes()) {
+                        ArrayList<String> tempList = new ArrayList<String>(command.getCodes());
+                        for (String code: tempList) {
                             codeList.add(code);
                             if (codeList.size()%300==0) {
                                 for (StockList sl : command.getStockLists()) {
