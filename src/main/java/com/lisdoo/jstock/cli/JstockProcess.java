@@ -34,12 +34,14 @@ public class JstockProcess {
         Write w = new Write(toPath.getAbsolutePath(), yyyyMMdd, true);
 
         for (String jstockCode: jstockCodes) {
-            Long[] l = new Long[5];
+            Long[] l = new Long[7];
             l[0] = 0l;
             l[1] = 0l;
             l[2] = 0l;
             l[3] = 0l;
             l[4] = 0l;
+            l[5] = 0l;
+            l[6] = 99999999l;
             map.put(jstockCode, l);
         }
 
@@ -91,6 +93,16 @@ public class JstockProcess {
                             entry.getValue()[4] = data.getPE().longValue();
                             entry.setValue(entry.getValue());
                         }
+                        // 最高
+                        if (data.getBuyPrice() > entry.getValue()[5]) {
+                            entry.getValue()[5] = data.getBuyPrice().longValue();
+                            entry.setValue(entry.getValue());
+                        }
+                        // 最低
+                        if (data.getSellPrice() !=0 && data.getSellPrice() < entry.getValue()[6]) {
+                            entry.getValue()[6] = data.getSellPrice().longValue();
+                            entry.setValue(entry.getValue());
+                        }
                     }
                 }
                 return true;
@@ -105,7 +117,7 @@ public class JstockProcess {
             Read.testRead(new File(path.getAbsolutePath(), file).getAbsolutePath(), p);
         }
 
-        w.write("code,volume,amount,InVolume,OutVolume,Pe\r\n");
+        w.write("code,volume,amount,InVolume,OutVolume,Pe,maxPrice,minPrice\r\n");
         for (Map.Entry<String, Long[]> entry: map.entrySet()) {
             w.write(entry.getKey());
             w.write(",");
@@ -118,6 +130,10 @@ public class JstockProcess {
             w.write(Long.toString(entry.getValue()[3]));
             w.write(",");
             w.write(Long.toString(entry.getValue()[4]));
+            w.write(",");
+            w.write(Long.toString(entry.getValue()[5]));
+            w.write(",");
+            w.write(Long.toString(entry.getValue()[6]));
             w.write("\r\n");
         }
 
