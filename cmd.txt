@@ -89,14 +89,14 @@
 
 
 
--x 20210301-20210305 -y .* -d all -p getVolume -r all
--x 20210222-20210226 -y .* -d all -p getVolume -r all
--x 20210215-20210219 -y .* -d all -p getVolume -r all
--x 20210208-20210212 -y .* -d all -p getVolume -r all
--x 20210201-20210205 -y .* -d all -p getVolume -r all
--x 20210155-20210129 -y .* -d all -p getVolume -r all
--x 20210118-20210122 -y .* -d all -p getVolume -r all
--x 20210115-20210115 -y .* -d all -p getVolume -r all
+-x 20210301-20210305 -y .* -d all -p getVolume -r all  huawei
+-x 20210222-20210226 -y .* -d all -p getVolume -r all  huawei
+-x 20210215-20210219 -y .* -d all -p getVolume -r all  huawei
+-x 20210208-20210212 -y .* -d all -p getVolume -r all  huawei
+-x 20210201-20210205 -y .* -d all -p getVolume -r all  huawei
+-x 20210155-20210129 -y .* -d all -p getVolume -r all  huawei
+-x 20210118-20210122 -y .* -d all -p getVolume -r all  huawei
+-x 20210115-20210115 -y .* -d all -p getVolume -r all  huawei
 -x 20210111-20210114 -y .* -d all -p getVolume -r all  huawei
 -x 20210105-20210108 -y .* -d all -p getVolume -r all  huawei
 -x 20201231-20210104 -y .* -d all -p getVolume -r all  huawei
